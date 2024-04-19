@@ -1,0 +1,9 @@
+@import "reset";
+@import "variables/global";
+@import "themes/dark";
+@import "themes/normal";
+
+.app{
+  background-color: rgb(255, 228, 196);
+  font: var(--font-m);
+}
