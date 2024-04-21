@@ -1,4 +1,3 @@
-import className from "*.scss";
 
 type Mods = Record<string, boolean | string>
 
