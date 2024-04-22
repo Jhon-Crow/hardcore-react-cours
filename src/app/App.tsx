@@ -5,6 +5,7 @@ import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/ThemeProvider/index";
 import {AboutPage} from "pages/AboutPage/index";
 import {MainPage} from "pages/MainPage/index";
+import {AppRouter} from "app/providers/router/index";
 
 
 
@@ -17,12 +18,7 @@ const App = () => {
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
 
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                        <Route path={'/about'} element={<AboutPage/>}/>
-                        <Route path={'/'} element={<MainPage/>}/>
-                </Routes>
-            </Suspense>
+            <AppRouter/>
         </div>
     );
 };
