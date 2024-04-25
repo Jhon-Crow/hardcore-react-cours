@@ -13,26 +13,19 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
     const {theme, toggleTheme} = useTheme();
     return (
         <div>
-            {theme === Theme.DARK
-                ?
-                <DarkIcon/>
-            :
-                <LightIcon/>
-            }
+
 
             <Button
-                theme={ThemeButton.PRIMARY}
+                theme={ThemeButton.CLEAR}
                 className={classNames(cls.Button, {}, [className])}
                 onClick={toggleTheme}>
-                Toggle
+                {theme === Theme.DARK
+                    ?
+                    <DarkIcon/>
+                    :
+                    <LightIcon/>
+                }
             </Button>
-
-       {/*<button className={classNames(cls.ThemeSwitcher, {}, [className])}*/}
-       {/*        onClick={toggleTheme}*/}
-       {/*>*/}
-
-       {/*    Toggle*/}
-       {/*</button>*/}
         </div>
     );
 };
