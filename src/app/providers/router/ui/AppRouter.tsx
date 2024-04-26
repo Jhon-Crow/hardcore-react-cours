@@ -15,7 +15,6 @@ const AppRouter = () => {
                     ))}
                 </Routes>
             </div>
-
         </Suspense>
     );
 };
