@@ -1,22 +1,22 @@
-.Button{
-  cursor: pointer;
+.Button {
+    cursor: pointer;
 }
 
-.clear{
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: none;
-  outline: 0;
+.clear {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+    outline: 0;
 }
 
 .primary {
-  padding: 0 .5rem;
-  opacity: 20%;
-  border-radius: 10rem;
-  border: none;
+    padding: 0 0.5rem;
+    opacity: 0.2;
+    border-radius: 10rem;
+    border: none;
 }
 
-.primary:hover{
-  opacity: 50%;
+.primary:hover {
+    opacity: 0.5;
 }
