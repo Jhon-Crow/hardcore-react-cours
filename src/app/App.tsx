@@ -1,11 +1,12 @@
-import React, { Suspense, useContext, useState } from 'react';
+import React, {
+    Suspense, useContext, useEffect, useState,
+} from 'react';
 import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'app/providers/ThemeProvider/index';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router/index';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useTranslation } from 'react-i18next';
 
 const App = () => {
     const { theme } = useTheme();
