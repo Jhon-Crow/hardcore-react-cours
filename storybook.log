@@ -1,0 +1,6 @@
+npm ERR! code ETARGET
+npm ERR! notarget No matching version found for @storybook/addon-mdx-gfm@6.4.19.
+npm ERR! notarget In most cases you or one of your dependencies are requesting
+npm ERR! notarget a package version that doesn't exist.
+
+npm ERR! A complete log of this run can be found in: C:\Users\Ваня-ПК\AppData\Local\npm-cache\_logs\2024-05-01T08_03_15_813Z-debug-0.log
