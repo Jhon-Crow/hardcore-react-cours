@@ -1,3 +1,5 @@
+
+
 .Button {
     cursor: pointer;
 }
@@ -19,4 +21,12 @@
 
 .primary:hover {
     opacity: 0.5;
+}
+
+.outline {
+    background: none;
+    padding: 0 0.9375rem;
+    border-radius: 10rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
