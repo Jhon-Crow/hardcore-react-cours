@@ -1,8 +1,8 @@
 import type { Preview } from '@storybook/react';
 import React from 'react';
-import { StyleDecorator } from './StyleDecorator/StyleDecorator';
-import { ThemeDecorator } from './ThemeDecorator/ThemeDecorator';
-import { Theme } from '../../src/app/providers/ThemeProvider';
+import { Theme } from 'app/providers/ThemeProvider';
+import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 const preview: Preview = {
 
@@ -16,7 +16,7 @@ const preview: Preview = {
     },
     decorators: [
         StyleDecorator,
-        ThemeDecorator(Theme.DARK),
+        ThemeDecorator(Theme.NORMAL),
     ],
 };
 
