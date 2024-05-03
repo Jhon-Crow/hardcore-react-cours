@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/index';
-import { Sidebar } from './Sidebar';
+import { Navbar } from './Navbar';
 
-const meta: Meta<typeof Sidebar> = {
-    title: 'widget/Sidebar',
-    component: Sidebar,
+const meta: Meta<typeof Navbar> = {
+    title: 'widget/Navbar',
+    component: Navbar,
     parameters: {
         layout: 'centered',
     },
@@ -18,7 +18,7 @@ const meta: Meta<typeof Sidebar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Sidebar>;
+type Story = StoryObj<typeof Navbar>;
 
 export const Normal: Story = {
     args: {},
