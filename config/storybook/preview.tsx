@@ -3,6 +3,7 @@ import React from 'react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const preview: Preview = {
 
@@ -17,6 +18,7 @@ const preview: Preview = {
     decorators: [
         StyleDecorator,
         ThemeDecorator(Theme.NORMAL),
+        RouterDecorator,
     ],
 };
 
