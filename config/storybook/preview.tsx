@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import React from 'react';
+import { StyleDecorator } from './StyleDecorator/StyleDecorator';
 
 const preview: Preview = {
 
@@ -12,12 +13,7 @@ const preview: Preview = {
         },
     },
     decorators: [
-        (Story) => (
-            <div style={{ backgroundColor: 'red' }}>
-                {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
-                <Story />
-            </div>
-        ),
+        (Story) => StyleDecorator(Story),
     ],
 };
 
