@@ -4,6 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import 'loki/configure-react';
 
 const preview: Preview = {
 
