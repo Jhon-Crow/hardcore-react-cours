@@ -15,7 +15,9 @@ const meta: Meta<typeof AboutPage> = {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    args: { onClick: fn() },
+    args: {
+        onClick: fn(),
+    },
 };
 
 export default meta;
