@@ -23,6 +23,10 @@ jobs:
         run: npm run build:prod
       - name: linting typescript
         run: npm run lint:ts
+      - name: install missing dependency
+        run: npm install postcss/lib/stringifier
+      - name: update stylelint-config-recommended-scss
+        run: npm update stylelint-config-recommended-scss
       - name: linting scss
         run: npm run lint:scss
       - name: unit testing
