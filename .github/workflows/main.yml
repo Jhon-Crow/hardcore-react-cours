@@ -24,7 +24,7 @@ jobs:
       - name: linting typescript
         run: npm run lint:ts
       - name: install missing dependency
-        run: npm install postcss postcss-loader
+        run: npm install postcss postcss-loader --legacy-peer-deps
 #      - name: update stylelint-config-recommended-scss
 #        run: npm update stylelint-config-recommended-scss
       - name: linting scss
