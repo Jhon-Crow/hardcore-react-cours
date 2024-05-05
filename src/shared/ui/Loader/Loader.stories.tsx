@@ -13,9 +13,11 @@ const meta: Meta<typeof Loader> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        backgroundColor: { control: 'color' },
+        // backgroundColor: { control: 'color' },
     },
-    args: { onClick: fn() },
+    args: {
+        // onClick: fn()
+    },
 };
 
 export default meta;

@@ -13,10 +13,10 @@ const meta: Meta<typeof AboutPage> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        backgroundColor: { control: 'color' },
+        // backgroundColor: { control: 'color' },
     },
     args: {
-        onClick: fn(),
+        // onClick: fn(),
     },
 };
 

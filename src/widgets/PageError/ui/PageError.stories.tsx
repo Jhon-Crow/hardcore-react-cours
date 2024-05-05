@@ -12,9 +12,11 @@ const meta: Meta<typeof PageError> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        backgroundColor: { control: 'color' },
+        // backgroundColor: { control: 'color' },
     },
-    args: { onClick: fn() },
+    args: {
+        // onClick: fn()
+    },
 };
 
 export default meta;
