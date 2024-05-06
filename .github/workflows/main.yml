@@ -39,9 +39,3 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
         if: always()
-      - name: screenshot aprove
-        run: npm run test:ui:approve
-        if: always()
-      - name: screenshot testing next try
-        run: npm run test:ui:ci
-        if: always()
