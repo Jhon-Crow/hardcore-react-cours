@@ -11,7 +11,7 @@ import { Modal } from 'shared/ui/Modal/Modal';
 const App = () => {
     const { theme } = useTheme();
     return (
-        <div id="A1" className={classNames('app', {}, [theme])}>
+        <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
