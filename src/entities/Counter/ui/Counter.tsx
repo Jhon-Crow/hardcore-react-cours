@@ -17,14 +17,14 @@ export const Counter = () => {
     return (
         <div>
             {/* eslint-disable i18next/no-literal-string */}
-            <h1>
+            <h1 data-testid="value-title">
                 value=
                 {counterValue}
             </h1>
-            <Button onClick={increment}>
+            <Button data-testid="increment-btn" onClick={increment}>
                 increment
             </Button>
-            <Button onClick={decrement}>
+            <Button data-testid="decrement-btn" onClick={decrement}>
                 decrement
             </Button>
         </div>
