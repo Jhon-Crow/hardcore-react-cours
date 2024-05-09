@@ -25,15 +25,14 @@ export const LoginForm = (props: LoginFormProps) => {
         <div className={classNames(cls.LoginForm, {}, [className])}>
             <Input
                 type="text"
-                placeholder=">"
+                placeholder={t('Введите логин')}
                 onChange={onChange}
-                // value={value}
+                autofocus
             />
             <Input
                 type="text"
-                placeholder=">"
+                placeholder={t('Введите пароль')}
                 onChange={onChange}
-                // value={value}
             />
             <Button
                 theme={ButtonTheme.OUTLINE}

@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { InputHTMLAttributes, memo } from 'react';
+import React, {
+    InputHTMLAttributes, memo, useEffect, useState, useRef,
+} from 'react';
 import cls from './input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLElement>, 'value' | 'onChange'>
@@ -9,6 +11,7 @@ interface inputProps extends HTMLInputProps{
     className?: string;
     value?: string;
     onChange?: (value: string) => void;
+    autofocus?: boolean;
 }
 
 export const Input = memo((props: inputProps) => {
@@ -18,11 +21,32 @@ export const Input = memo((props: inputProps) => {
         onChange,
         type = 'text',
         placeholder,
+        autofocus,
         ...otherProps
     } = props;
 
+    const ref = useRef<HTMLInputElement>(null);
+
+    const [isFocused, setIsFocused] = useState(false);
+    const [caretPosition, setCaretPosition] = useState(0);
+
+    useEffect(() => {
+        if (autofocus) {
+            setIsFocused(true);
+            ref.current.focus();
+        }
+    }, [autofocus]);
+
+    const onFocuseHandler = () => setIsFocused(true);
+    const onBlurHandler = () => setIsFocused(false);
+
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
+        setCaretPosition(e.target.value.length);
+    };
+
+    const onSelectHandler = (e: any) => {
+        setCaretPosition(e?.target?.selectionStart || 0);
     };
 
     return (
@@ -34,13 +58,26 @@ export const Input = memo((props: inputProps) => {
                     {`${placeholder}>`}
                 </div>
             )}
-            <input
-                className={classNames(cls.Input, {}, [className])}
-                type={type}
-                value={value}
-                onChange={onChangeHandler}
-            />
+            <div className={cls.caretWrapper}>
+                <input
+                    ref={ref}
+                    onFocus={onFocuseHandler}
+                    onBlur={onBlurHandler}
+                    className={classNames(cls.Input, {}, [className])}
+                    type={type}
+                    value={value}
+                    onChange={onChangeHandler}
+                    onSelect={onSelectHandler}
+                    {...otherProps}
+                />
+                {isFocused
+                    && (
+                        <span
+                            className={cls.caret}
+                            style={{ left: `${caretPosition * 8.6}px` }}
+                        />
+                    )}
+            </div>
         </div>
-
     );
 });
