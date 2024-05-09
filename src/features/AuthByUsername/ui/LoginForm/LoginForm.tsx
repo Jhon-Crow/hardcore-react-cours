@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/input/input';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
