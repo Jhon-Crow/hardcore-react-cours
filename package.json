@@ -20,7 +20,7 @@
     "storybook:build": "storybook build -c ./config/storybook",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
     "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "json-server": "node ./json-server/index.js",
+    "start:dev:server": "node ./json-server/index.js",
     "prepare": "husky install"
   },
   "keywords": [],

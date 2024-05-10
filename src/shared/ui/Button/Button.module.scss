@@ -1,6 +1,7 @@
 .Button {
     cursor: pointer;
     padding: 0 .5rem;
+    transition: all 80ms ease-in;
 }
 
 .clear {
@@ -9,6 +10,7 @@
     border: 0;
     background: none;
     outline: 0;
+    transition: none;
 }
 
 .primary {
@@ -34,7 +36,6 @@
     color: var(--bg-color);
     border: none;
     opacity: .7;
-    transition: all 80ms ease-in;
 }
 
 .background:hover {
@@ -49,7 +50,6 @@
     border: 1px solid var(--primary-color);
     border-left: none;
     opacity: .7;
-    transition: all 80ms ease-in;
 }
 
 .backgroundInverted:hover {
@@ -83,4 +83,11 @@
 
 .size_xl {
     font: var(--font-xl);
+}
+
+.disabled {
+    text-decoration: line-through;
+    pointer-events: none;
+    transform: scale(.9);
+    opacity: .4;
 }
