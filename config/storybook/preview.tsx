@@ -5,6 +5,8 @@ import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDeco
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 import 'loki/configure-react';
+import { TranslationDecorator }
+    from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 
 const preview: Preview = {
 
@@ -20,6 +22,7 @@ const preview: Preview = {
         StyleDecorator,
         ThemeDecorator(Theme.NORMAL),
         RouterDecorator,
+        TranslationDecorator,
     ],
 };
 

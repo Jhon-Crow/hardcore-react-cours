@@ -27,14 +27,21 @@ export const Normal: Story = {
     args: {},
 };
 Normal.decorators = [ThemeDecorator(Theme.NORMAL),
+    StoreDecorator({}),
+];
+
+export const Auth: Story = {
+    args: {},
+};
+Auth.decorators = [ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
-        loginForm: { username: 'admin', password: '123' },
-    })];
+        user: { authData: {} },
+    }),
+];
 
 export const Dark: Story = {
     args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        loginForm: { username: 'admin', password: '123' },
-    })];
+    StoreDecorator({}),
+];
