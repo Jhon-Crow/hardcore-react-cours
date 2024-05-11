@@ -1,5 +1,6 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
+import { CLIPlugin } from 'webpack-cli/lib/plugins/CLIPlugin';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -26,6 +27,11 @@ export default ({ config }: {config: webpack.Configuration}) => {
         use: ['@svgr/webpack'],
     });
     config.module.rules.push(buildCssLoader(true));
+
+    // // @ts-ignore
+    // config.plugins.push(new webpack.DefinePlugin({
+    //     __IS_DEV__: true,
+    // }));
 
     return config;
 };
