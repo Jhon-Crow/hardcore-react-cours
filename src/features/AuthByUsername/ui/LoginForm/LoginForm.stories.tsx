@@ -33,7 +33,9 @@ export const Dark: Story = {
     args: {
     },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-Dark.decorators = [StoreDecorator({
-    loginForm: { username: 'admin', password: '123' },
-})];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        loginForm: { username: 'admin', password: '123' },
+    }),
+];
