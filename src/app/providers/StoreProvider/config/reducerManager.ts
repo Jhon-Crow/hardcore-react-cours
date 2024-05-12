@@ -1,16 +1,21 @@
-import { ReducersMapObject } from '@reduxjs/toolkit';
-import { StateScheme } from 'app/providers/StoreProvider';
+import {
+    AnyAction, combineReducers, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
+import { StateSchemaKey, StateScheme } from './StateScheme';
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateScheme>) {
     const reducers = { ...initialReducers };
+
     let combinedReducer = combineReducers(reducers);
-    let keysToRemove = [];
+
+    let keysToRemove: StateSchemaKey[] = [];
 
     return {
         getReducerMap: () => reducers,
-        reduce: (state, action) => {
+        reduce: (state: StateScheme, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
+                // eslint-disable-next-line no-restricted-syntax
                 for (const key of keysToRemove) {
                     delete state[key];
                 }
@@ -18,14 +23,14 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
             }
             return combinedReducer(state, action);
         },
-        add: (key, reducer) => {
+        add: (key: StateSchemaKey, reducer: Reducer) => {
             if (!key || reducers[key]) {
                 return;
             }
             reducers[key] = reducer;
             combinedReducer = combineReducers(reducers);
         },
-        remove: (key) => {
+        remove: (key: StateSchemaKey) => {
             if (!key || !reducers[key]) {
                 return;
             }

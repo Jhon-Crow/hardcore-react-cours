@@ -5,6 +5,8 @@ import { LoginScheme } from 'features/AuthByUsername';
 export interface StateScheme {
     counter: CounterScheme;
     user: UserSheme;
+
+    // Асинхронные редюсеры.
     loginForm?: LoginScheme;
 }
 
