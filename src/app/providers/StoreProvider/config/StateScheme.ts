@@ -7,3 +7,5 @@ export interface StateScheme {
     user: UserSheme;
     loginForm?: LoginScheme;
 }
+
+export type StateSchemaKey = keyof StateScheme;

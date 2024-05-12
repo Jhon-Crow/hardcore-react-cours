@@ -31,6 +31,5 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
             new webpack.HotModuleReplacementPlugin(),
         );
     }
-
     return plugins;
 }
