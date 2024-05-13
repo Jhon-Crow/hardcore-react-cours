@@ -1,9 +1,10 @@
 import {
     AnyAction, combineReducers, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { StateSchemaKey, StateScheme } from './StateScheme';
+import { ReducerManager, StateSchemaKey, StateScheme } from './StateScheme';
 
-export function createReducerManager(initialReducers: ReducersMapObject<StateScheme>) {
+// eslint-disable-next-line max-len
+export function createReducerManager(initialReducers: ReducersMapObject<StateScheme>): ReducerManager {
     const reducers = { ...initialReducers };
 
     let combinedReducer = combineReducers(reducers);
