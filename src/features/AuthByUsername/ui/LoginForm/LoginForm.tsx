@@ -8,7 +8,8 @@ import React, {
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList }
+    from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -21,25 +22,23 @@ export interface LoginFormProps {
     className?: string;
 }
 
+const initialReducers: ReducersList = {
+    loginForm: loginReducer,
+};
+
 const LoginForm = memo((props: LoginFormProps) => {
     const { t } = useTranslation();
     const {
         className,
     } = props;
 
-    const [value, setValue] = useState('');
+    // const [value, setValue] = useState('');
 
-    const onChange = (val: string) => {
-        setValue(val);
-    };
+    // const onChange = (val: string) => {
+    //     setValue(val);
+    // };
 
     const dispatch = useDispatch();
-    // const {
-    //     username,
-    //     password,
-    //     error,
-    //     isLoading,
-    // } = useSelector(getLoginState);
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -60,7 +59,10 @@ const LoginForm = memo((props: LoginFormProps) => {
 
     return (
         // eslint-disable-next-line i18next/no-literal-string
-        <DynamicModuleLoader name="loginForm" reducer={loginReducer}>
+        <DynamicModuleLoader
+            removeAfterUnmount
+            reducers={initialReducers}
+        >
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
                 {error && (
