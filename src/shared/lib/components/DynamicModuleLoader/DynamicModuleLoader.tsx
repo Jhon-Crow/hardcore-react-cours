@@ -19,8 +19,6 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-    const { t } = useTranslation();
-
     const {
         children,
         reducers,
