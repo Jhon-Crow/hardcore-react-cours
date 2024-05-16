@@ -8,10 +8,11 @@ interface LoginByUsernameProps {
     password: string;
 }
 
-// enum LoginError {
-//     INCORRECT_DATA = '',
-//     SERVER_ERROR = '',
-// }
+export enum LoginError {
+    TEST_ERROR = 'loginByUsername faild!',
+    INCORRECT_DATA = '',
+    SERVER_ERROR = '',
+}
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string}>(
     'login/loginByUsername',
@@ -30,7 +31,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
             return response.data;
         } catch (e) {
             console.log(e);
-            return thunkAPI.rejectWithValue('loginByUsername faild!');
+            return thunkAPI.rejectWithValue(LoginError.TEST_ERROR);
         }
     },
 );
