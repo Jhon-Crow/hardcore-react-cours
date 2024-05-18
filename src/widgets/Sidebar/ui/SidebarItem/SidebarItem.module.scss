@@ -1,0 +1,29 @@
+.linkItems {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.link {
+    opacity: 1;
+    transition: opacity 250ms ease-out;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.icon {
+    fill: var(--secondary-color);
+}
+
+.collapsed {
+    .link {
+        width: 0;
+        opacity: 0;
+    }
+}
