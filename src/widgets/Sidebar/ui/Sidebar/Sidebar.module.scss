@@ -35,31 +35,9 @@
     gap: 2rem;
 }
 
-//
-//.link {
-//    opacity: 1;
-//    transition: opacity 250ms ease-out;
-//}
-//
-//.item {
-//    display: flex;
-//    align-items: center;
-//    gap: .4rem;
-//}
-//
-//.icon {
-//    fill: var(--secondary-color);
-//}
-//
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
-    //
-    //    .link {
-    //        width: 0;
-    //        opacity: 0;
-    //    }
-    //
     .linkItems {
         padding-left: .4rem;
     }
