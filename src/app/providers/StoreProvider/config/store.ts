@@ -1,5 +1,6 @@
 import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
+import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { counterReducer } from '../../../../entities/Counter/index';
 import { userReducer } from '../../../../entities/User/index';
@@ -17,10 +18,17 @@ export function createReduxStore(
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store = configureStore<StateScheme>({
+    const store = configureStore({
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: $api,
+                },
+            },
+        }),
     });
 
     // @ts-ignore
