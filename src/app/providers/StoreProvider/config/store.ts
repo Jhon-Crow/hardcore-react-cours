@@ -9,7 +9,6 @@ import { StateScheme } from './StateScheme';
 export function createReduxStore(
     initialState?: StateScheme,
     asyncReducers?: ReducersMapObject<StateScheme>,
-
     navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
     const rootReducers: ReducersMapObject<StateScheme> = {
