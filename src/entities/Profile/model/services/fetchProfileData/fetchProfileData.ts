@@ -4,14 +4,15 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { User } from 'entities/User';
 import { LoginError } from 'features/AuthByUsername/model/services/loginByUsername';
+import { Profile } from '../../types/profile';
 
-export const fetchProfileData = createAsyncThunk<User, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
     'profile/fetchProfileData',
-    async (authData, thunkAPI) => {
-        const { extra, dispatch, rejectWithValue } = thunkAPI;
+    async (_, thunkAPI) => {
+        const { extra, rejectWithValue } = thunkAPI;
 
         try {
-            const response = await extra.api.post<User>('/login', authData);
+            const response = await extra.api.get<Profile>('/profile');
 
             return response.data;
         } catch (e) {
