@@ -7,7 +7,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { profileReducer } from 'entities/Profile/model/slice/profileSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchProfileData } from 'entities/Profile';
+import { fetchProfileData, ProfileCard } from 'entities/Profile';
 // import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -33,7 +33,7 @@ const ProfilePage = (props: ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
-                {t('PROFILE PAGE')}
+                <ProfileCard />
             </div>
         </DynamicModuleLoader>
     );
