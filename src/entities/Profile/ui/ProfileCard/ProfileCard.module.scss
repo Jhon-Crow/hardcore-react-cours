@@ -1,18 +1,18 @@
 .ProfileCard {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  border: 1px dashed var(--inverted-bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border: 1px dashed var(--inverted-bg-color);
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .data {
-  display: flex;
-  flex-direction: column;
-  gap: .7rem;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
 }
