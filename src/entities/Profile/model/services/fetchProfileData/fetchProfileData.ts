@@ -6,7 +6,11 @@ import { User } from 'entities/User';
 import { LoginError } from 'features/AuthByUsername/model/services/loginByUsername';
 import { Profile } from '../../types/profile';
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<
+    Profile,
+    void,
+    ThunkConfig<string>
+>(
     'profile/fetchProfileData',
     async (_, thunkAPI) => {
         const { extra, rejectWithValue } = thunkAPI;
