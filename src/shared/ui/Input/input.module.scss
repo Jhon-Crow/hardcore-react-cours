@@ -30,6 +30,10 @@
     animation: blink infinite ease-out 1s;
 }
 
+.readonly {
+    opacity: 0;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;
