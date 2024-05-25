@@ -6,13 +6,22 @@
     border: 1px dashed var(--inverted-bg-color);
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-}
-
 .data {
     display: flex;
     flex-direction: column;
     gap: .7rem;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18.75rem;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18.75rem;
 }

@@ -66,8 +66,8 @@ const LoginForm = memo((props: LoginFormProps) => {
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
                 {error && (
-                    // eslint-disable-next-line i18next/no-literal-string
-                    <Text theme={TextTheme.ERROR} title="ERROR: " text={error} />
+                    // eslint-disable-next-line
+                    <Text theme={TextTheme.ERROR} title={t('ERROR')} text={error} />
                 )}
                 <Input
                     type="text"

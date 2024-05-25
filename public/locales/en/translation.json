@@ -7,10 +7,12 @@
   "Обновить страницу": "Reload page",
   "Главная": "Main",
   "О сайте": "About",
+  "Профиль": "Profile",
   "Переключить": "Toggle",
   "Короткий язык": "EN",
   "Войти": "Log in",
   "Введите пароль": "Enter password",
   "Введите логин": "Enter login",
-  "Форма авторизации": "Authorization form"
+  "Форма авторизации": "Authorization form",
+  "ERROR": "ERROR"
 }

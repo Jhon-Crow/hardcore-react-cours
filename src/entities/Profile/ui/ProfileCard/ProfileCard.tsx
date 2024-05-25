@@ -1,36 +1,52 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/input';
+import { Loader } from 'shared/ui/Loader/Loader';
+import React from 'react';
+import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
+    data?: Profile;
+    error?: string;
+    isLoading?: boolean;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
-    const data = useSelector(getProfileData);
-    const isLoading = useSelector(getProfileIsLoading);
-    const error = useSelector(getProfileError);
 
     const {
         className,
+        data,
+        error,
+        isLoading,
     } = props;
+
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+                <Loader />
+            </div>
+        );
+    }
+    if (error) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+                <Text
+                    theme={TextTheme.ERROR}
+                    title={t('ERROR')}
+                    text={t('try to reload page')}
+                    align={TextAlign.CENTER}
+                />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
-            <div className={cls.header}>
-                <Text title={t('Профиль')} />
-                <Button theme={ButtonTheme.BACKGROUND}>
-                    {t('Редактировать')}
-                </Button>
-            </div>
             <div className={cls.data}>
                 <Input
                     value={data?.first}
