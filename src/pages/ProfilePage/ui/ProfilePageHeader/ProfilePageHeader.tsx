@@ -4,7 +4,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import React, { useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
@@ -22,8 +22,12 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
         dispatch(profileActions.setReadonly(false));
     }, [dispatch]);
 
+    const onSave = useCallback(() => {
+        dispatch(updateProfileData());
+    }, [dispatch]);
+
     const onCancelEdit = useCallback(() => {
-        dispatch(profileActions.setReadonly(true));
+        dispatch(profileActions.cancelEdit());
     }, [dispatch]);
 
     const {
@@ -43,12 +47,21 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                     </Button>
                 )
                 : (
-                    <Button
-                        theme={ButtonTheme.OUTLINE}
-                        onClick={onCancelEdit}
-                    >
-                        {t('Отменить')}
-                    </Button>
+                    <div>
+                        <Button
+                            theme={ButtonTheme.OUTLINE_RED}
+                            onClick={onCancelEdit}
+                        >
+                            {t('Отменить')}
+                        </Button>
+                        <Button
+                            style={{ marginLeft: '1rem' }}
+                            theme={ButtonTheme.BACKGROUND}
+                            onClick={onSave}
+                        >
+                            {t('Сохранить')}
+                        </Button>
+                    </div>
                 )}
 
         </div>

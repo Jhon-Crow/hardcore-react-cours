@@ -2,5 +2,9 @@
   "Профиль": "Profile",
   "Редактировать": "Edit",
   "Ваше имя": "Your name",
-  "Ваша фамилия": "Your lastname"
+  "Ваша фамилия": "Your lastname",
+  "Сохранить": "Save",
+  "Отменить": "Cancel",
+  "Ваш возраст": "Your age",
+  "Ваш город": "Your city"
 }

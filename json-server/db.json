@@ -1,15 +1,47 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "a title", "views": 100 },
-    { "id": "3", "title": "a title", "views": 100 },
-    { "id": "4", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "3",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "4",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "a comment about post 1", "postId": "2" },
-    { "id": "3", "text": "a comment about post 1", "postId": "3" },
-    { "id": "4", "text": "another comment about post 1", "postId": "4" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "a comment about post 1",
+      "postId": "2"
+    },
+    {
+      "id": "3",
+      "text": "a comment about post 1",
+      "postId": "3"
+    },
+    {
+      "id": "4",
+      "text": "another comment about post 1",
+      "postId": "4"
+    }
   ],
   "users": [
     {
@@ -25,7 +57,7 @@
     "currency": "RUB",
     "country": "Russia",
     "city": "The City",
-    "username": "admin",
+    "username": "the_best_username_ever",
     "avatar": "https://avatars.githubusercontent.com/u/133867474?v=4"
   }
 }

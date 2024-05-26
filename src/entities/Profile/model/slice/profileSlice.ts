@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { Profile, ProfileScheme } from '../types/profile';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 
@@ -18,6 +17,16 @@ export const profileSlice = createSlice({
         setReadonly: (state, action: PayloadAction<boolean>) => {
             state.readonly = action.payload;
         },
+        cancelEdit: (state) => {
+            state.readonly = true;
+            state.form = state.data;
+        },
+        updateProfile: (state, action: PayloadAction<Profile>) => {
+            state.form = {
+                ...state.form,
+                ...action.payload,
+            };
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -31,8 +40,25 @@ export const profileSlice = createSlice({
             ) => {
                 state.isLoading = false;
                 state.data = action.payload;
+                state.form = action.payload;
             })
             .addCase(fetchProfileData.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            })
+            .addCase(updateProfileData.pending, (state, action) => {
+                state.error = undefined;
+                state.isLoading = true;
+            })
+            .addCase(updateProfileData.fulfilled, (
+                state,
+                action: PayloadAction<Profile>,
+            ) => {
+                state.isLoading = false;
+                state.data = action.payload;
+                state.form = action.payload;
+            })
+            .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });

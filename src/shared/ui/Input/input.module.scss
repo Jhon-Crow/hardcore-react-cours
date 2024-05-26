@@ -31,7 +31,9 @@
 }
 
 .readonly {
-    opacity: 0;
+    opacity: .4;
+    pointer-events: none;
+    cursor: none;
 }
 
 @keyframes blink {

@@ -31,6 +31,14 @@
     color: var(--primary-color);
 }
 
+.outline_red {
+    background: none;
+    padding: 0 .9375rem;
+    border-radius: 10rem;
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+}
+
 .background {
     background-color: var(--inverted-bg-color);
     color: var(--bg-color);
