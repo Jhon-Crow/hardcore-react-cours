@@ -14,5 +14,6 @@
   "Введите пароль": "Enter password",
   "Введите логин": "Enter login",
   "Форма авторизации": "Authorization form",
-  "ERROR": "ERROR"
+  "ERROR": "ERROR",
+  "Укажите валюту": "Укажите валюту"
 }

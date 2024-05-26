@@ -1,0 +1,21 @@
+.Wrapper {
+    display: flex;
+    gap: .1rem;
+}
+
+.select {
+    background: rgb(255 255 255 / 22%);
+    border: none;
+    color: var(--primary-color);
+    border-radius: .3rem;
+    cursor: pointer;
+    outline: none;
+    padding: .125rem .625rem .125rem .125rem;
+}
+
+.option {
+    background: rgb(255 255 255 / 22%);
+    border: none;
+    color: var(--secondary-color);
+    border-radius: .3rem;
+}
