@@ -7,10 +7,12 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import React from 'react';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
-import { Currency } from 'entities/Currency/model/types/currency';
-import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
+import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
+import { Currency } from '../../../Currency/model/types/currency';
+import { CurrencySelect } from '../../../Currency/ui/CurrencySelect/CurrencySelect';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
+import { Country } from '../../../Country/model/types/country';
 
 interface ProfileCardProps {
     className?: string;
@@ -25,7 +27,7 @@ interface ProfileCardProps {
     onChangeUsername?: (value?: string) => void;
     onChangeAvatar?: (value?: string) => void;
     onChangeCurrency?: (currency: Currency) => void;
-    // onChangeCountry?: (country: Country) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -44,7 +46,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeUsername,
         onChangeAvatar,
         onChangeCurrency,
-        // onChangeCountry,
+        onChangeCountry,
     } = props;
 
     const mods: Mods = {
@@ -122,8 +124,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCurrency}
                     readonly={readonly}
                 />
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                <Select lable="Select in ProfileCard" options={optionsList} />
+                <CountrySelect
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    readonly={readonly}
+                />
             </div>
         </div>
     );
