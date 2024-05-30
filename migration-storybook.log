@@ -1,0 +1,97 @@
+🔎 checking possible migrations..
+
+🔎 found a 'react-docgen' migration:
+╭ Automigration detected ─────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                         │
+│   Since Storybook 8.0, react-docgen is now the default for generating component controls, replacing     │
+│   react-docgen-typescript.                                                                              │
+│   This offers better performance and suits most cases.                                                  │
+│   However, for complex TypeScript types or specific type features, the generated controls might not     │
+│   be as precise.                                                                                        │
+│                                                                                                         │
+│   For more on this change, check the migration guide:                                                   │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-docgen-component-analysis-by-   │
+│   default                                                                                               │
+│                                                                                                         │
+│   For known "react-docgen" limitations, see:                                                            │
+│   https://github.com/storybookjs/storybook/issues/26606                                                 │
+│                                                                                                         │
+│   Press Y to revert to react-docgen-typesript, press N to use react-docgen                              │
+│                                                                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'react-docgen' migration on your project? » (Y/n)√ Do you want to run the 'react-docgen' migration on your project? ... yes
+✅ Setting typescript.reactDocgen
+✅ ran react-docgen migration
+
+🔎 found a 'upgradeStorybookRelatedDependencies' migration:
+╭ Automigration detected ─────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                         │
+│   You're upgrading to the latest version of Storybook. We recommend upgrading the following packages:   │
+│   - @chromatic-com/storybook: 1.3.3 => 1.5.0                                                            │
+│   - @storybook/addon-webpack5-compiler-swc: 1.0.2 => 1.0.3                                              │
+│                                                                                                         │
+│   After upgrading, we will run the dedupe command, which could possibly have effects on dependencies    │
+│   that are not Storybook related.                                                                       │
+│   see: https://docs.npmjs.com/cli/commands/npm-dedupe                                                   │
+│                                                                                                         │
+│   Do you want to proceed (upgrade the detected packages)?                                               │
+│                                                                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'upgradeStorybookRelatedDependencies' migration on your project? » (y/N)√ Do you want to run the 'upgradeStorybookRelatedDependencies' migration on your project? ... yes
+Installing dependencies...
+
+An error occurred while installing dependencies.
+❌ error when running upgradeStorybookRelatedDependencies migration
+HandledError: Error: Command failed with exit code 1: npm install
+    at NPMProxy.installDependencies (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core-common\dist\index.js:28:4695)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.run (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:571:541)
+    ... 2 lines matching cause stack trace ...
+    at async doUpgrade (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:650:1628)
+    at async withTelemetry (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core-server\dist\index.js:28:3599)
+    at async upgrade (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:650:2097) {
+  handled: true,
+  cause: Error: Command failed with exit code 1: npm install
+      at makeError (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\execa\lib\error.js:60:11)
+      at handlePromise (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\execa\index.js:118:26)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async NPMProxy.executeCommand (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core-common\dist\index.js:35:1948)
+      at async NPMProxy.runInstall (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core-common\dist\index.js:35:5264)
+      at async NPMProxy.installDependencies (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\core-common\dist\index.js:28:4590)
+      at async Object.run (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:571:541)
+      at async runFixes (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:636:1794)
+      at async automigrate (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:634:1635)
+      at async doUpgrade (C:\Users\Ваня-ПК\AppData\Local\npm-cache\_npx\bc7e1e37fcb46ffc\node_modules\@storybook\cli\dist\generate.js:650:1628) {
+    shortMessage: 'Command failed with exit code 1: npm install',
+    command: 'npm install',
+    escapedCommand: 'npm install',
+    exitCode: 1,
+    signal: undefined,
+    signalDescription: undefined,
+    stdout: undefined,
+    stderr: undefined,
+    failed: true,
+    timedOut: false,
+    isCanceled: false,
+    killed: false
+  }
+}
+
+
+🔎 found a 'autodocs-tags' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                       │
+│   The docs.autodocs setting in config\storybook\main.ts is deprecated.                                │
+│                                                                                                       │
+│   There is no docs.autodocs = false equivalent.                                                       │
+│   You'll need to check your stories to ensure none are tagged with autodocs.                          │
+│                                                                                                       │
+│   Learn more:                                                                                         │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mainjs-docsautodocs-is-deprecated   │
+│                                                                                                       │
+│   Remove docs.autodocs?                                                                               │
+│                                                                                                       │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'autodocs-tags' migration on your project? » (Y/n)√ Do you want to run the 'autodocs-tags' migration on your project? ... yes
+✅ Removing "docs.autodocs" from config\storybook\main.ts
+✅ ran autodocs-tags migration
