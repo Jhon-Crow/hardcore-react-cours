@@ -52,5 +52,19 @@ export const Dark: Story = {
 };
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator({}),
+    StoreDecorator({
+        profile: {
+            form: {
+                first: 'Jhon',
+                lastname: 'Crow',
+                age: 23,
+                currency: Currency.RUB,
+                country: Country.Russia,
+                city: 'The City',
+                username: 'the_best_username_ever',
+                avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+            },
+            readonly: true,
+        },
+    }),
 ];
