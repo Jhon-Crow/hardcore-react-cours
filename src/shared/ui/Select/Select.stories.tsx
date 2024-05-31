@@ -6,7 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Select } from './Select';
 
 const meta: Meta<typeof Select> = {
-    title: 'shered/Select',
+    title: 'shared/Select',
     component: Select,
     parameters: {
         layout: 'centered',

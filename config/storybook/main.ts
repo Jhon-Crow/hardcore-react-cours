@@ -1,6 +1,12 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
-const config: StorybookConfig = {
+const config: {
+    stories: string[];
+    framework: { name: string; options: {} };
+    docs: { autodocs: boolean };
+    addons: string[];
+    typescript: { reactDocgen: string }
+} = {
     stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 
     addons: [
@@ -17,10 +23,12 @@ const config: StorybookConfig = {
         options: {},
     },
 
-    docs: {},
+    docs: {
+        autodocs: false,
+    },
 
     typescript: {
-        reactDocgen: 'react-docgen-typescript'
-    }
+        reactDocgen: 'react-docgen-typescript',
+    },
 };
 export default config;
