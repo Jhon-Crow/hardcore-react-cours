@@ -3,6 +3,7 @@ import { StateScheme } from 'app/providers/StoreProvider';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { ValidateProfileError } from 'entities/Profile';
 import { updateProfileData } from './updateProfileData';
 
 const data = {
@@ -17,16 +18,13 @@ const data = {
 };
 
 describe('updateProfileData.test', () => {
-    let dispatch: Dispatch;
-    let getState: () => StateScheme;
-
-    beforeEach(() => {
-        dispatch = jest.fn();
-        getState = jest.fn();
-    });
-
     test('success', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData);
+        // @ts-ignore
+        const thunk = new TestAsyncThunk(updateProfileData, {
+            profile: {
+                form: data,
+            },
+        });
         thunk.api.put.mockReturnValue(Promise.resolve({ data }));
         const result = await thunk.callThunk();
 
@@ -36,9 +34,31 @@ describe('updateProfileData.test', () => {
     });
 
     test('error ', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData);
+        // @ts-ignore
+        const thunk = new TestAsyncThunk(updateProfileData, {
+            profile: {
+                form: data,
+            },
+        });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk();
         expect(result.meta.requestStatus).toBe('rejected');
+        expect(result.payload).toEqual([
+            ValidateProfileError.SERVER_ERROR,
+        ]);
+    });
+
+    test('validate error ', async () => {
+        // @ts-ignore
+        const thunk = new TestAsyncThunk(updateProfileData, {
+            profile: {
+                form: { ...data, lastname: '' },
+            },
+        });
+        const result = await thunk.callThunk();
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(result.payload).toEqual([
+            ValidateProfileError.INCORRECT_USER_DATA,
+        ]);
     });
 });
