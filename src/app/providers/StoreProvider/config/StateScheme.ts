@@ -1,5 +1,5 @@
 import { CounterScheme } from 'entities/Counter';
-import { UserSheme } from 'entities/User';
+import { UserScheme } from 'entities/User';
 import { LoginScheme } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
@@ -10,7 +10,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateScheme {
     counter: CounterScheme;
-    user: UserSheme;
+    user: UserScheme;
 
     // Асинхронные редюсеры.
     loginForm?: LoginScheme;

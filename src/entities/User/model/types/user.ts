@@ -3,6 +3,7 @@ export interface User {
     username: string;
 }
 
-export interface UserSheme {
+export interface UserScheme {
     authData?: User;
+    _inited: boolean;
 }
