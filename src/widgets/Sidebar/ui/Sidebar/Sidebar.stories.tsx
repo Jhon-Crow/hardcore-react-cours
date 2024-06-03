@@ -28,8 +28,16 @@ export const Normal: Story = {
 Normal.decorators = [
     ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
-        loginForm: { username: 'admin', password: '123' },
+        user: { authData: {} },
     }),
+];
+
+export const NoAuth: Story = {
+    args: {},
+};
+NoAuth.decorators = [
+    ThemeDecorator(Theme.NORMAL),
+    StoreDecorator({}),
 ];
 
 export const Dark: Story = {
@@ -37,5 +45,7 @@ export const Dark: Story = {
 };
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator({}),
+    StoreDecorator({
+        user: { authData: {} },
+    }),
 ];
