@@ -19,3 +19,9 @@
     color: var(--secondary-color);
     border-radius: .3rem;
 }
+
+.readonly {
+    opacity: .7;
+    pointer-events: none;
+    cursor: none;
+}
