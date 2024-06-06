@@ -2,12 +2,19 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/Skeleton/Skeleton';
+import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -35,6 +42,19 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         className,
         id,
     } = props;
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.CODE:
+            return <ArticleCodeBlockComponent />;
+        case ArticleBlockType.IMAGE:
+            return <ArticleImageBlockComponent />;
+        case ArticleBlockType.TEXT:
+            return <ArticleTextBlockComponent block={block} />;
+        default:
+            return null;
+        }
+    }, []);
 
     useEffect(() => {
         dispatch(fetchArticleById(id));
@@ -69,17 +89,27 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.avatar}
                 />
                 <Text
+                    className={cls.title}
                     theme={TextTheme.PRIMARY}
                     title={article?.title}
                     text={article?.subtitle}
+                    size={TextSize.L}
                 />
+                <div className={cls.indicatorWrapper}>
+                    <Icon Svg={EyeIcon} />
+                    <Text text={`${article?.views}`} />
+                </div>
+                <div className={cls.indicatorWrapper}>
+                    <Icon Svg={CalendarIcon} />
+                    <Text text={article?.createdAt} />
+                </div>
+                {article?.blocks.map(renderBlock)}
             </>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
             <div className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
             </div>

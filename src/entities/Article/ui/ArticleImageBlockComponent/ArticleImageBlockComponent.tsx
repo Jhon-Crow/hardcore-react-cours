@@ -1,15 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import cls from './ArticleImageBlockComponent.module.scss';
-import {useTranslation} from 'react-i18next';
 
 interface ArticleImageBlockComponentProps {
     className?: string;
 }
 
-export const ArticleImageBlockComponent = (props: ArticleImageBlockComponentProps) => {
-
-    const {t} = useTranslation();
-
+export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
     const {
         className,
     } = props;
@@ -19,4 +17,4 @@ export const ArticleImageBlockComponent = (props: ArticleImageBlockComponentProp
             ArticleImageBlockComponent
         </div>
     );
-};
+});
