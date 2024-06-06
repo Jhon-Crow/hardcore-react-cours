@@ -8,7 +8,7 @@ import { ProfileCard } from './ProfileCard';
 import AvatarImg from '../../../../shared/assets/icons/user-32-32.png';
 
 const meta: Meta<typeof ProfileCard> = {
-    title: 'enteties/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     parameters: {
         layout: 'centered',

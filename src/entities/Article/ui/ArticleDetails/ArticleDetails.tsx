@@ -7,6 +7,7 @@ import { fetchArticleById } from 'entities/Article/model/services/fetchArticleBy
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Skeleton } from 'shared/Skeleton/Skeleton';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -27,7 +28,8 @@ const reducers: ReducersList = {
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const isLoading = useSelector(getArticleDetailsIsLoading);
+    const isLoading = true;
+    // const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
     const {
@@ -43,8 +45,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <div>
-                <Loader />
+            <div className={cls.skeleton}>
+                <Skeleton className={cls.avatar} height={200} width={200} border="50%" />
+                <Skeleton height="2.4rem" width="50%" border="0" />
+                <Skeleton height="1.5rem" width="95%" border="0" />
+                <Skeleton height="10rem" width="100%" border="0" />
+                <Skeleton height="10rem" width="100%" border="0" />
             </div>
         );
     } else if (error) {

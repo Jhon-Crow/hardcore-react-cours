@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
 
 const meta: Meta<typeof ArticleCodeBlockComponent> = {
-    title: 'shared/ArticleCodeBlockComponent',
+    title: 'entities/ArticleCodeBlockComponent',
     component: ArticleCodeBlockComponent,
     parameters: {
         layout: 'centered',

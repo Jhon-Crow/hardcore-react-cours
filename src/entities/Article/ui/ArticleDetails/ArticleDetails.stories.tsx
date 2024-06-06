@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'shared/ArticleDetails',
+    title: 'entities/ArticleDetails',
     component: ArticleDetails,
     parameters: {
         layout: 'centered',
