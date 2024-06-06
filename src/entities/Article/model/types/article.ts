@@ -9,7 +9,7 @@ export interface ArticleBlockBase {
     type: ArticleBlockType;
 }
 
-export interface ArticleCodBlock extends ArticleBlockBase{
+export interface ArticleCodeBlock extends ArticleBlockBase{
     type: ArticleBlockType.CODE;
     code: string;
 }
@@ -26,7 +26,7 @@ export interface ArticleTextBlock extends ArticleBlockBase{
     title?: string;
 }
 
-export type ArticleBlock = ArticleCodBlock | ArticleImageBlock | ArticleTextBlock
+export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
 
 export enum ArticleType {
     IT = 'IT',

@@ -1,3 +1,18 @@
 .Code {
+    display: flex;
+    border: 1px solid var(--primary-color);
+    padding: 1.25rem;
+    position: relative;
+    background: var(--code-bg);
+    width: 100%;
+}
 
+.codeChildren {
+    font-size: 95%;
+}
+
+.copyBtn {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
 }

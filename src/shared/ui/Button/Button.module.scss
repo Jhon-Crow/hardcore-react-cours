@@ -10,7 +10,11 @@
     border: 0;
     background: none;
     outline: 0;
-    transition: none;
+    color: var(--primary-color);
+
+    &:hover {
+        transform: scale(.95);
+    }
 }
 
 .primary {
