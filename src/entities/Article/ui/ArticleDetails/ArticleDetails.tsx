@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import { memo, useEffect } from 'react';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/Skeleton/Skeleton';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -28,8 +28,7 @@ const reducers: ReducersList = {
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const isLoading = true;
-    // const isLoading = useSelector(getArticleDetailsIsLoading);
+    const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
     const {
@@ -62,9 +61,19 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else {
         content = (
-            <div>
-                ARTICLE DETAILS
-            </div>
+            <>
+                <Avatar
+                    src={article?.img}
+                    size={200}
+                    radius={100}
+                    className={cls.avatar}
+                />
+                <Text
+                    theme={TextTheme.PRIMARY}
+                    title={article?.title}
+                    text={article?.subtitle}
+                />
+            </>
         );
     }
 
