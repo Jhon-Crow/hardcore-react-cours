@@ -68,7 +68,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <div className={cls.skeleton}>
                 <Skeleton className={cls.avatar} height={200} width={200} border="50%" />
-                <Skeleton height="2.4rem" width="50%" border="0" />
+                <Skeleton height="2rem" width="50%" border="0" />
                 <Skeleton height="1.5rem" width="95%" border="0" />
                 <Skeleton height="10rem" width="100%" border="0" />
                 <Skeleton height="10rem" width="100%" border="0" />
