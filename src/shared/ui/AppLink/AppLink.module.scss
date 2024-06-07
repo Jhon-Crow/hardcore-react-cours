@@ -5,6 +5,11 @@
     &:hover {
         transform: rotate(2deg) scale(1.07);
     }
+
+    &:active {
+        transform: scale(1.2);
+        opacity: 0;
+    }
 }
 
 .primary {

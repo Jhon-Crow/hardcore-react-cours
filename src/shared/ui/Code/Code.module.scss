@@ -5,6 +5,7 @@
     position: relative;
     background: var(--code-bg);
     width: 100%;
+    overflow: auto;
 }
 
 .codeChildren {
@@ -15,4 +16,8 @@
     position: absolute;
     right: 1.25rem;
     top: 1.25rem;
+}
+
+.copyIcon path {
+    stroke: var(--primary-color);
 }
