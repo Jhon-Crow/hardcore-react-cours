@@ -6,8 +6,8 @@ import AboutIcon from 'shared/assets/icons/about.svg';
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
+import { SidebarItemType } from 'widgets/Sidebar/module/types/sidebar';
 import cls from './SidebarItem.module.scss';
-import { SidebarItemType } from '../../module/items';
 
 interface SidebarItemProps {
     item: SidebarItemType;
