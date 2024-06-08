@@ -60,10 +60,8 @@ export const Normal: Story = {
     args: {},
 };
 
-Normal.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: article,
-        },
-    }),
-];
+Normal.decorators = [StoreDecorator({
+    articleDetails: {
+        data: article,
+    },
+})];

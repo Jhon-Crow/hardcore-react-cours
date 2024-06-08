@@ -12,7 +12,7 @@ import myAvatar from '../../../../shared/assets/icons/user-32-32.png';
 
 interface CommentCardProps {
     className?: string;
-    comment: Comment;
+    comment?: Comment;
     isLoading?: boolean;
 }
 
@@ -33,6 +33,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 <Skeleton width="33rem" height="1rem" />
             </div>
         );
+    }
+
+    if (!comment) {
+        return null;
     }
 
     return (
