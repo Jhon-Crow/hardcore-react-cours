@@ -15,6 +15,7 @@ const data = {
     city: 'The City',
     username: 'the_best_username_ever',
     avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {

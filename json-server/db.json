@@ -29,7 +29,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s",
       "views": 6,
       "createdAt": "04.06.2024",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -110,6 +112,42 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "TEST",
+      "id": "5JKSq7j"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "TEST",
+      "id": "yqj4UXr"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "TEST",
+      "id": "EhaXWqj"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user2 TEST",
+      "id": "GiidYPV"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "7357",
+      "id": "m7OJkKU"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "works?",
+      "id": "_3BdQHU"
     }
   ],
   "users": [
@@ -127,14 +165,28 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s"
     }
   ],
-  "profile": {
-    "first": "Jhon",
-    "lastname": "Crow",
-    "age": "23",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "The City",
-    "username": "the_best_username_ever",
-    "avatar": "https://avatars.githubusercontent.com/u/133867474?v=4"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Jhon",
+      "lastname": "Crow",
+      "age": "23",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "The City",
+      "username": "the_best_username_ever",
+      "avatar": "https://avatars.githubusercontent.com/u/133867474?v=4"
+    },
+    {
+      "id": "2",
+      "first": "TestChanged?",
+      "lastname": "Worningdude",
+      "age": "20",
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "warning?",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s"
+    }
+  ]
 }

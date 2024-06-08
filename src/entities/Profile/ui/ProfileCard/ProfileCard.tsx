@@ -82,7 +82,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
             <div className={cls.data}>
-                {data?.avatar && <Avatar src={data?.avatar} />}
+                {data?.avatar && <Avatar size={60} src={data?.avatar} />}
                 <Input
                     value={data?.first}
                     placeholder={t('Ваше имя')}
