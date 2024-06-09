@@ -4,4 +4,4 @@ export {
     AboutPageAsync as AboutPage,
 };
 
-// export {AboutPageAsync} from './ui/AboutPage.js';
+export { ArticlesPageScheme } from 'pages/ArticlesPage/model/types/articlesPageScheme';

@@ -1,0 +1,9 @@
+.Selected {
+    fill: var(--primary-color);
+    transform: scale(1.3);
+}
+
+.notSelected {
+    fill: var(--secondary-color);
+    transform: scale(1);
+}
