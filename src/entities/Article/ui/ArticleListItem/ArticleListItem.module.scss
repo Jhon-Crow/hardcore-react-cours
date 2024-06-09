@@ -1,12 +1,53 @@
-.ArticleListItem {
-    cursor: pointer;
-}
-
 .BIG {
+    width: 100%;
 
+    .card {
+        gap: .2rem;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .mainWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .img {
+        margin: 1.3rem 0;
+        width: 100%;
+        max-height: 15.625rem;
+        object-fit: cover;
+    }
+
+    .textBlock {
+        overflow-y: hidden;
+        max-height: 12.5rem;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .Btn {
+        cursor: pointer;
+        padding: .7rem 2.1rem;
+    }
+
+    .views {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+    }
 }
 
 .SMALL {
+    cursor: pointer;
     width: 14.375rem;
     transition: .2s;
 
@@ -20,13 +61,13 @@
     &:hover {
         opacity: .8;
         transform: scale(1.01);
+
         .data {
             display: block;
         }
     }
 
     .infoWrapper {
-        //margin-top: 0.5rem;
         display: flex;
         align-items: center;
     }
