@@ -1,0 +1,61 @@
+.ArticleListItem {
+    cursor: pointer;
+}
+
+.BIG {
+
+}
+
+.SMALL {
+    width: 14.375rem;
+    transition: .2s;
+
+    .data {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+    }
+
+    &:hover {
+        opacity: .8;
+        transform: scale(1.01);
+        .data {
+            display: block;
+        }
+    }
+
+    .infoWrapper {
+        //margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .imageWrapper {
+        width: 12.5rem;
+        height: 12.5rem;
+        position: relative;
+    }
+
+    .img {
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    .types p {
+        width: 7.1875rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .views {
+        margin-left: auto;
+    }
+
+    .title p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
