@@ -1,7 +1,9 @@
 import {
     AnyAction, combineReducers, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ReducerManager, StateSchemaKey, StateScheme } from './StateScheme';
+import {
+    MountedReducers, ReducerManager, StateScheme, StateSchemeKey,
+} from './StateScheme';
 
 // eslint-disable-next-line max-len
 export function createReducerManager(initialReducers: ReducersMapObject<StateScheme>): ReducerManager {
@@ -9,10 +11,13 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
 
     let combinedReducer = combineReducers(reducers);
 
-    let keysToRemove: StateSchemaKey[] = [];
+    let keysToRemove: StateSchemeKey[] = [];
+
+    const mountedReducers: MountedReducers = {};
 
     return {
         getReducerMap: () => reducers,
+        getMountedReducers: () => mountedReducers,
         reduce: (state: StateScheme, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
@@ -24,19 +29,21 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
             }
             return combinedReducer(state, action);
         },
-        add: (key: StateSchemaKey, reducer: Reducer) => {
+        add: (key: StateSchemeKey, reducer: Reducer) => {
             if (!key || reducers[key]) {
                 return;
             }
             reducers[key] = reducer;
+            mountedReducers[key] = true;
             combinedReducer = combineReducers(reducers);
         },
-        remove: (key: StateSchemaKey) => {
+        remove: (key: StateSchemeKey) => {
             if (!key || !reducers[key]) {
                 return;
             }
             delete reducers[key];
             keysToRemove.push(key);
+            mountedReducers[key] = false;
             combinedReducer = combineReducers(reducers);
         },
     };

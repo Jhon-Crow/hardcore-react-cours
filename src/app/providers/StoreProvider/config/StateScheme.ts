@@ -29,13 +29,14 @@ export interface StateScheme {
     articlesPage?: ArticlesPageScheme;
 }
 
-export type StateSchemaKey = keyof StateScheme;
-
+export type StateSchemeKey = keyof StateScheme;
+export type MountedReducers = OptionalRecord<StateSchemeKey, boolean>
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateScheme>;
     reduce: (state: StateScheme, action: AnyAction) => CombinedState<StateScheme>;
-    add: (key: StateSchemaKey, reducer: Reducer) => void;
-    remove: (key: StateSchemaKey) => void;
+    add: (key: StateSchemeKey, reducer: Reducer) => void;
+    remove: (key: StateSchemeKey) => void;
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateScheme> {
@@ -44,7 +45,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateScheme> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {
