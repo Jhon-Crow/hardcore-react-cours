@@ -4,6 +4,8 @@
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
+
+    //position: fixed;
     transition: width 250ms ease-out;
 }
 

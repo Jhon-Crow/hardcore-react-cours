@@ -32,19 +32,19 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.Navbar, {}, [className])}>
+            <header className={classNames(cls.Navbar, {}, [className])}>
                 <Button
                     theme={ButtonTheme.BACKGROUND_INVERTED}
                     onClick={onLogout}
                 >
                     {t('Выйти')}
                 </Button>
-            </div>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                 <Button
                     theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -59,6 +59,6 @@ export const Navbar = ({ className }: NavbarProps) => {
                     onClose={onClosModal}
                 />
             )}
-        </div>
+        </header>
     );
 };
