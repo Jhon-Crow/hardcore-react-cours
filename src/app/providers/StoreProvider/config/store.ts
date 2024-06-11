@@ -3,6 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
+import { PositionSaverActions, PositionSaverReducer } from 'widgets/Page';
 import { createReducerManager } from './reducerManager';
 import { counterReducer } from '../../../../entities/Counter/index';
 import { userReducer } from '../../../../entities/User/index';
@@ -17,6 +18,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        PositionSaver: PositionSaverReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

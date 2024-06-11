@@ -2,24 +2,20 @@ import { CounterScheme } from 'entities/Counter';
 import { UserScheme } from 'entities/User';
 import { LoginScheme } from 'features/AuthByUsername';
 import {
-    AnyAction,
-    CombinedState,
-    EnhancedStore,
-    Reducer,
-    ReducersMapObject,
+    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { ProfileScheme } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsScheme } from 'entities/Article';
 import { ArticleDetailsCommentScheme } from 'pages/ArticleDetailsPage';
 import { AddCommentFormScheme } from 'features/addCommentForm';
 import { ArticlesPageScheme } from 'pages/AboutPage';
+import { PositionSaverScheme } from 'widgets/Page';
 
 export interface StateScheme {
     counter: CounterScheme;
     user: UserScheme;
-
+    PositionSaver: PositionSaverScheme;
     // Асинхронные редюсеры.
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
