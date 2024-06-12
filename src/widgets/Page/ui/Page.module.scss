@@ -5,3 +5,8 @@
     width: calc(100vw - var(--sidebar-width));
     overflow-y: auto;
 }
+
+.trigger {
+    height: 1.25rem;
+    margin: .625rem;
+}

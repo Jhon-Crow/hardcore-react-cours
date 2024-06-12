@@ -27,8 +27,8 @@
       "title": "Айтишники не нужны?",
       "subtitle": "Кризис на рынке IT",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s",
-      "views": 6,
-      "createdAt": "04.06.2024",
+      "views": 600,
+      "createdAt": "04.03.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -104,7 +104,9 @@
       "userId": "2",
       "type": [
         "Philosophy",
-        "Politics"
+        "Politics",
+        "ECONOMICS",
+        "Economics"
       ],
       "blocks": [
         {
@@ -242,11 +244,11 @@
     },
     {
       "id": "4",
-      "title": "Киберпанк на наших улицах!",
+      "title": "Киберпанк 3333333 улицах!",
       "subtitle": "Капиталистический реализм в действии",
       "img": "https://gamemag.ru/images/cache/Reviews/Reviews2120/8d535498e7-2_1390x600.jpg",
-      "views": 96,
-      "createdAt": "09.06.2024",
+      "views": 936,
+      "createdAt": "09.06.2023",
       "userId": "1",
       "type": [
         "Philosophy",
@@ -296,14 +298,14 @@
     },
     {
       "id": "5",
-      "title": "Киберпанк на наших улицах!",
+      "title": " на наших улицах!",
       "subtitle": "Капиталистический реализм в действии",
       "img": "https://gamemag.ru/images/cache/Reviews/Reviews2120/8d535498e7-2_1390x600.jpg",
-      "views": 96,
+      "views": 10,
       "createdAt": "09.06.2024",
       "userId": "1",
       "type": [
-        "Philosophy",
+        "IT",
         "Politics"
       ],
       "blocks": [
@@ -411,7 +413,6 @@
       "createdAt": "09.06.2024",
       "userId": "1",
       "type": [
-        "Philosophy",
         "Politics"
       ],
       "blocks": [
@@ -462,7 +463,7 @@
       "subtitle": "Капиталистический реализм в действии",
       "img": "https://gamemag.ru/images/cache/Reviews/Reviews2120/8d535498e7-2_1390x600.jpg",
       "views": 96,
-      "createdAt": "09.06.2024",
+      "createdAt": "19.06.2024",
       "userId": "1",
       "type": [
         "Philosophy",

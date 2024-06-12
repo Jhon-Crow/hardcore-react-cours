@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleViewSelector } from './ArticleViewSelector';
+import { ArticlesPageFilters } from './ArticlesPageFilters';
 
-const meta: Meta<typeof ArticleViewSelector> = {
-    title: 'entities/Article/ArticleViewSelector',
-    component: ArticleViewSelector,
+const meta: Meta<typeof ArticlesPageFilters> = {
+    title: 'pages/Article/ArticlesPageFilters',
+    component: ArticlesPageFilters,
     parameters: {
         layout: 'centered',
     },
@@ -15,7 +15,7 @@ const meta: Meta<typeof ArticleViewSelector> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleViewSelector>;
+type Story = StoryObj<typeof ArticlesPageFilters>;
 
 export const Normal: Story = {
     args: {},

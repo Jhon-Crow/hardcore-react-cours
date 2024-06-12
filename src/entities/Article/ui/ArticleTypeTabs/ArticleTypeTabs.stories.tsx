@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleViewSelector } from './ArticleViewSelector';
+import { ArticleTypeTabs } from './ArticleTypeTabs';
 
-const meta: Meta<typeof ArticleViewSelector> = {
-    title: 'entities/Article/ArticleViewSelector',
-    component: ArticleViewSelector,
+const meta: Meta<typeof ArticleTypeTabs> = {
+    title: 'entities/Article/ArticleTypeTabs',
+    component: ArticleTypeTabs,
     parameters: {
         layout: 'centered',
     },
@@ -15,7 +15,7 @@ const meta: Meta<typeof ArticleViewSelector> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleViewSelector>;
+type Story = StoryObj<typeof ArticleTypeTabs>;
 
 export const Normal: Story = {
     args: {},

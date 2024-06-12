@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleViewSelector } from './ArticleViewSelector';
+import { ArticleSortSelector } from './ArticleSortSelector';
 
-const meta: Meta<typeof ArticleViewSelector> = {
-    title: 'entities/Article/ArticleViewSelector',
-    component: ArticleViewSelector,
+const meta: Meta<typeof ArticleSortSelector> = {
+    title: 'entities/Article/ArticleSortSelector',
+    component: ArticleSortSelector,
     parameters: {
         layout: 'centered',
     },
@@ -15,7 +15,7 @@ const meta: Meta<typeof ArticleViewSelector> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleViewSelector>;
+type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Normal: Story = {
     args: {},
