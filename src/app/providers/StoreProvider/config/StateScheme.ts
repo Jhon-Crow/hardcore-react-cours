@@ -7,7 +7,10 @@ import {
 import { ProfileScheme } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsScheme } from 'entities/Article';
-import { ArticleDetailsCommentScheme } from 'pages/ArticleDetailsPage';
+import {
+    ArticleDetailsCommentScheme,
+    ArticleDetailsRecommendationsScheme,
+} from 'pages/ArticleDetailsPage';
 import { AddCommentFormScheme } from 'features/addCommentForm';
 import { ArticlesPageScheme } from 'pages/AboutPage';
 import { PositionSaverScheme } from 'widgets/Page';
@@ -21,6 +24,7 @@ export interface StateScheme {
     profile?: ProfileScheme;
     articleDetails?: ArticleDetailsScheme;
     articleDetailsComments?: ArticleDetailsCommentScheme;
+    articleDetailsRecommendations?: ArticleDetailsRecommendationsScheme;
     addCommentForm?: AddCommentFormScheme;
     articlesPage?: ArticlesPageScheme;
 }
