@@ -19,15 +19,13 @@ import {
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/ui/Page';
-import {
-    articleDetailsRecommendationsReducer,
-    getArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/slice/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slice/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
 import {
     fetchArticlesRecommendations,
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
+import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -35,9 +33,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecommendations: articleDetailsRecommendationsReducer,
-
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -90,6 +86,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     title={t('Рекомендации')}
                 />
                 <ArticleList
+                    target="_blank"
                     className={cls.recommendations}
                     articles={recommendations}
                     isLoading={recommendationsIsLoading}

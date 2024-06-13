@@ -14,6 +14,7 @@ import {
 import { AddCommentFormScheme } from 'features/addCommentForm';
 import { ArticlesPageScheme } from 'pages/AboutPage';
 import { PositionSaverScheme } from 'widgets/Page';
+import { ArticleDetailsPageScheme } from 'pages/ArticleDetailsPage/model/types';
 
 export interface StateScheme {
     counter: CounterScheme;
@@ -23,10 +24,9 @@ export interface StateScheme {
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
     articleDetails?: ArticleDetailsScheme;
-    articleDetailsComments?: ArticleDetailsCommentScheme;
-    articleDetailsRecommendations?: ArticleDetailsRecommendationsScheme;
     addCommentForm?: AddCommentFormScheme;
     articlesPage?: ArticlesPageScheme;
+    articleDetailsPage?: ArticleDetailsPageScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;
