@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback } from 'react';
-import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -14,13 +14,11 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
     getArticlesPageError,
-    getArticlesPageHasMore,
     getArticlesPageIsLoading,
-    getArticlesPageNum,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 
 interface ArticlesPageProps {
     className?: string;
@@ -43,8 +41,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
     const [searchParams] = useSearchParams();
-    // const page = useSelector(getArticlesPageNum);
-    // const hasMore = useSelector(getArticlesPageHasMore);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());

@@ -25,6 +25,7 @@ import {
     fetchArticlesRecommendations,
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
+import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -47,11 +48,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
+    // const navigate = useNavigate();
+    //
+    // const onBackToList = useCallback(() => {
+    //     navigate(RoutePath.articles);
+    // }, [navigate]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -73,12 +74,13 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button
-                    onClick={onBackToList}
-                    theme={ButtonTheme.BACKGROUND_INVERTED}
-                >
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsPageHeader />
+                {/* <Button */}
+                {/*    onClick={onBackToList} */}
+                {/*    theme={ButtonTheme.BACKGROUND_INVERTED} */}
+                {/* > */}
+                {/*    {t('Назад к списку')} */}
+                {/* </Button> */}
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}
