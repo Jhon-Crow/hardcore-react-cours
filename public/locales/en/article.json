@@ -1,4 +1,12 @@
 {
-  "ARTICLE DETAILS": "ARTICLE DETAILS",
-  "ARTICLES PAGE": "ARTICLES PAGE"
+  "Подробности статьи": "ARTICLE DETAILS",
+  "Страница статей": "ARTICLES PAGE",
+  "Поиск": "Search",
+  "возрастанию": "increasing",
+  "убыванию": "descending",
+  "дате создания": "creation date",
+  "названию": "name",
+  "просмотрам": "views",
+  "Сортировать ПО": "Sort BY",
+  "по": "by"
 }

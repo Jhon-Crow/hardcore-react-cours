@@ -58,6 +58,26 @@
         display: none;
     }
 
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .imageWrapper {
+        display: flex;
+        width: 12.5rem;
+        height: 12.5rem;
+        position: relative;
+        justify-content: center;
+    }
+
+    .img {
+        transition: width .2s;
+        height: 12.5rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
     &:hover {
         opacity: .8;
         transform: scale(1.01);
@@ -65,22 +85,10 @@
         .data {
             display: block;
         }
-    }
 
-    .infoWrapper {
-        display: flex;
-        align-items: center;
-    }
-
-    .imageWrapper {
-        width: 12.5rem;
-        height: 12.5rem;
-        position: relative;
-    }
-
-    .img {
-        width: 12.5rem;
-        height: 12.5rem;
+        .img {
+            width: 115%;
+        }
     }
 
     .types p {
