@@ -4,7 +4,7 @@ export function buildCssLoader(isDev: boolean) {
     return {
         test: /\.s[ac]ss$/i,
         use: [
-            MiniCssExtractPlugin.loader,
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
                 loader: 'css-loader',
                 options: {
@@ -12,7 +12,7 @@ export function buildCssLoader(isDev: boolean) {
                         auto: (resPath: string) => resPath.includes('.module.'),
                         localIdentName: isDev
                             ? '[path][name]__[local]'
-                            : '[hash.base64:8]',
+                            : '[hash:base64:8]',
                     },
                 },
             },
