@@ -60,6 +60,13 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text
+                align={TextAlign.CENTER}
+                theme={TextTheme.INVERTED}
+                size={TextSize.M}
+                className={cls.appTitle}
+                title={t('Avangard214 App')}
+            />
             <div className={cls.links}>
                 <Button
                     theme={ButtonTheme.BACKGROUND_INVERTED}

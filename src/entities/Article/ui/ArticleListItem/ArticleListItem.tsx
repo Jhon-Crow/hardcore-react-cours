@@ -62,9 +62,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         )}
                     </div>
                     <div className={cls.footer}>
-                        <AppLink
+                        <a
+                            href={RoutePath.article_details + article.id}
                             target={target}
-                            to={RoutePath.article_details + article.id}
                         >
                             <Button
                                 theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -72,7 +72,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             >
                                 {t('Read more')}
                             </Button>
-                        </AppLink>
+                        </a>
                         <div className={cls.views}>
                             {views}
                         </div>
