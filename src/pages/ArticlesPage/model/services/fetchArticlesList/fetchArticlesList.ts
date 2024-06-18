@@ -45,10 +45,9 @@ export const fetchArticlesList = createAsyncThunk<
                     _sort: sort,
                     _order: order,
                     q: search,
-                    type_like: type === ArticleType.ALL ? '' : type,
+                    type_like: type === ArticleType.ALL ? '' : `\\b${type}\\b`,
                 },
             });
-            console.log('TYPE =  ', type);
             if (!response.data) {
                 throw new Error();
             }
