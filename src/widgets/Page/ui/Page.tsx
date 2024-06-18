@@ -18,6 +18,8 @@ interface PageProps {
     onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = 'PAGE_ID';
+
 export const Page = memo((props: PageProps) => {
     const {
         className,
@@ -47,6 +49,7 @@ export const Page = memo((props: PageProps) => {
 
     return (
         <section
+            id={PAGE_ID}
             onScroll={onScroll}
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
