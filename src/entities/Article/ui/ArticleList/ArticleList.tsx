@@ -4,6 +4,7 @@ import React, { HTMLAttributeAnchorTarget, memo } from 'react';
 import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Virtuoso } from 'react-virtuoso';
 import { Article, ArticleView } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 
@@ -48,11 +49,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length
-                ? articles.map(renderArticle)
-                : null}
-            {isLoading && getSkeletons(view)}
-        </div>
+
+        <Virtuoso
+            data={articles} // массив данных для списка
+            // itemContent={renderArticle}
+            itemContent={(index, article, context) => (
+                // Рендер каждого элемента списка
+                <ArticleListItem
+                    target={target}
+                    article={article}
+                    view={view}
+                    key={index}
+                    // key={article.id}
+                />
+            )}
+            // style={{ height: '400px' }} // высота контейнера списка
+            overscan={4} // количество элементов, рендеримых за пределами видимой области
+        />
+        //
+        // <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        //     {articles.length
+        //         ? articles.map(renderArticle)
+        //         : null}
+        //     {isLoading && getSkeletons(view)}
+        // </div>
     );
 });
