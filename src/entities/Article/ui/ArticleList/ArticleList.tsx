@@ -54,9 +54,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <div>
             <Virtuoso
                 className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-                style={{ height: '39.25rem' }} // высота контейнера списка
+                // style={{ height: '68vh' }} // высота контейнера списка
+                // style={{ height: '39.25rem' }} // высота контейнера списка
                 totalCount={articles.length}
-                // useWindowScroll
+                useWindowScroll
                 endReached={onScrollEnd}
                 overscan={view === ArticleView.BIG ? 4 : 10} // количество элементов, рендеримых за пределами видимой области
                 data={articles} // массив данных для списка
