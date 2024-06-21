@@ -4,3 +4,17 @@
     gap: .7rem;
     justify-content: center;
 }
+
+.itemWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start; // Выравнивание элементов по верхнему краю
+    justify-content: flex-start; // Выравнивание элементов по левому краю
+}
+
+.child {
+    flex: 0 1 auto; // Элементы могут сжиматься и растягиваться, но не заполняют всю ширину
+    width: 250px; // Фиксированная ширина для каждого элемента
+}
