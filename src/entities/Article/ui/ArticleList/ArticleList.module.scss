@@ -8,7 +8,8 @@
 .itemWrapper {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+
+    // flex-wrap: wrap;
     gap: 1rem;
     align-items: flex-start; // Выравнивание элементов по верхнему краю
     justify-content: flex-start; // Выравнивание элементов по левому краю

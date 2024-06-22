@@ -19,46 +19,9 @@ interface ArticleListProps {
     onScrollEnd?: () => void;
 }
 
-// Компоненты, вынесенные за пределы основного компонента
 interface ListProps extends HTMLAttributes<HTMLDivElement> {}
 
 interface ItemProps extends HTMLAttributes<HTMLDivElement> {}
-
-// const gridComponents = {
-//     List: forwardRef<HTMLDivElement, ListProps>(({ children, ...props }, ref) => (
-//         <div
-//             ref={ref}
-//             {...props}
-//             style={{
-//                 display: 'flex',
-//                 flexWrap: 'wrap',
-//                 gap: '.8rem',
-//             }}
-//         >
-//             {children}
-//         </div>
-//     )),
-//     Item: ({ children, ...props }: ItemProps) => (
-//         <div
-//             {...props}
-//             className={cls.child}
-//         >
-//             {children}
-//             {/* {isLoading && getSkeletons(view)} */}
-//
-//         </div>
-//     ),
-// };
-//
-// // Обертка для элемента списка
-// const ItemWrapper = ({ children, ...props }: { children: React.ReactNode }) => (
-//     <div
-//         {...props}
-//         className={cls.itemWrapper}
-//     >
-//         {children}
-//     </div>
-// );
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 15 : 4)
     .fill(0)
@@ -87,6 +50,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: '.8rem',
+                    // height: '100vh',
                 }}
             >
                 {children}
@@ -96,6 +60,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
             <div
                 {...props}
                 className={cls.child}
+                // style={{
+                //     padding: '0.5rem',
+                //     // width: '33%',
+                //     display: 'flex',
+                //     flex: 'none',
+                //     alignContent: 'stretch',
+                //     boxSizing: 'border-box',
+                // }}
             >
                 {children}
                 {isLoading && getSkeletons(view)}
@@ -109,6 +81,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <div
             {...props}
             className={cls.itemWrapper}
+            // style={{
+            //     display: 'flex',
+            //     flex: 1,
+            //     textAlign: 'center',
+            //     padding: '1rem 1rem',
+            //     whiteSpace: 'nowrap',
+            // }}
         >
             {children}
         </div>
@@ -126,7 +105,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     totalCount={articles.length}
                     useWindowScroll
                     endReached={onScrollEnd}
-                    overscan={4} // количество элементов, рендеримых за пределами видимой области
+                    overscan={8} // количество элементов, рендеримых за пределами видимой области
                     data={articles} // массив данных для списка
                     itemContent={(index, article) => (
                         <ArticleListItem
@@ -145,13 +124,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <div>
             <VirtuosoGrid
                 className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-                style={{ height: '500px' }}
+                style={{ height: '100vh' }}
                 totalCount={articles.length}
                 components={gridComponents}
+                overscan={4}
                 endReached={onScrollEnd}
                 useWindowScroll
                 itemContent={(index) => (
-                    <ItemWrapper>
+                    <ItemWrapper key={index}>
                         <ArticleListItem
                             target={target}
                             article={articles[index]}
@@ -161,7 +141,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     </ItemWrapper>
                 )}
             />
-            {/* {isLoading && getSkeletons(view)} */}
         </div>
     );
 });
