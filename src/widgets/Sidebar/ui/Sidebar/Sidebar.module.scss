@@ -29,11 +29,17 @@
 }
 
 .collapsedBtn {
-    padding-left: 1.9rem;
+    opacity: .9;
+    border: none;
+    top: calc(var(--navbar-height) + .2rem);
+    padding-left: 2.1rem;
     position: absolute;
     right: .09rem;
-    bottom: 14.5rem;
     font: var(--font-line-m);
+    border-radius: 25%;
+}
+
+.collapsedBtn:hover {
     border-radius: .15rem;
 }
 
@@ -53,6 +59,10 @@
         position: absolute;
         right: 13.79rem;
         font: var(--font-line-m);
+        border-radius: 25%;
+    }
+
+    .collapsedBtn:hover {
         border-radius: .15rem;
     }
 
