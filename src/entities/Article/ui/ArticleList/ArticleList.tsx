@@ -1,7 +1,6 @@
-
-import {ArticleListItem} from 'entities/Article/ui/ArticleListItem/ArticleListItem';
-import {ArticleListItemSkeleton} from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
-import {fetchNextArticlesPage} from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import React, {
     CSSProperties,
     forwardRef,
@@ -11,13 +10,13 @@ import React, {
     ReactNode,
     useCallback,
 } from 'react';
-import {useTranslation} from 'react-i18next';
-import {useSelector} from "react-redux";
-import {GridComponents, Virtuoso, VirtuosoGrid} from 'react-virtuoso';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Loader} from "shared/ui/Loader/Loader";
-import {Article, ArticleView} from '../../model/types/article';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { Article, ArticleView } from '../../model/types/article';
 
 import cls from './ArticleList.module.scss';
 
@@ -39,9 +38,8 @@ interface ItemProps extends HTMLAttributes<HTMLDivElement> {
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 15 : 2)
     .fill(0)
     .map((_, index) => (
-        <ArticleListItemSkeleton key={index} view={view}/>
+        <ArticleListItemSkeleton key={index} view={view} />
     ));
-
 
 const Item = (article: Article, view: ArticleView, key: number) => () => (
     <ArticleListItem
@@ -55,9 +53,9 @@ const ItemWrapper = ({ children, ...props }: { children: ReactNode}) => (
     <div
         {...props}
         style={{
-            display: "flex",
+            display: 'flex',
             flex: 1,
-            padding: "1rem 1rem",
+            padding: '1rem 1rem',
             gap: 8,
         }}
     >
@@ -66,7 +64,11 @@ const ItemWrapper = ({ children, ...props }: { children: ReactNode}) => (
 );
 
 const gridComponents: GridComponents<any> = {
-    List: forwardRef(({ style, children, ...props }: {style?: CSSProperties, children?: ReactNode}, ref: LegacyRef<HTMLDivElement> ) => (
+    List: forwardRef(({
+        style,
+        children,
+        ...props
+    }: {style?: CSSProperties, children?: ReactNode}, ref: LegacyRef<HTMLDivElement>) => (
         <div
             ref={ref}
             {...props}
@@ -84,12 +86,11 @@ const gridComponents: GridComponents<any> = {
         >
             {children}
         </div>
-    )
-}
+    ),
+};
 
 export const ArticleList = memo((props: ArticleListProps) => {
-
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const {
         className,
@@ -100,53 +101,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         onScrollEnd,
     } = props;
     const dispatch = useAppDispatch();
-
-
-//    const { t } = useTranslation();
-
-//    const isBig = view === ArticleView.BIG;
-//    const itemsPerRow = isBig ? 1 : 3;
-//    const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
-
-//    const rowRender = ({
-//        index, isScrolling, key, style,
-//    }: ListRowProps) => {
-//        const items = [];
-//        const fromIndex = index * itemsPerRow;
-//        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
-
-//        for (let i = fromIndex; i < toIndex; i += 1) {
-  //          items.push(
-//                <ArticleListItem
-    //                target={target}
-  //                  article={articles[i]}
-//                    view={view}
-      //              key={`str${i}`}
-    //                className={cls.card}
-  //              />,
-//            );
-//        }
-
-//        return (
-//            <div
-//                key={key}
-//                style={style}
-//                className={cls.row}
-//            >
-//                {items}
-//            </div>
-//        );
-//    };
-
-    // const renderArticle = (article: Article) => (
-    // <ArticleListItem
-    //     target={target}
-    //     article={article}
-    //     view={view}
-    //     key={article.id}
-    // />
-    // );
-
 
     const loadMore = useCallback((_) => {
         dispatch(fetchNextArticlesPage());
@@ -185,7 +139,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <div>
             <VirtuosoGrid
                 className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-                style={{height: '100%'}}
+                style={{ height: '100%' }}
                 data={articles}
                 components={gridComponents}
                 endReached={onScrollEnd}
@@ -201,46 +155,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     </ItemWrapper>
                 )}
             />
-            {isLoading && (<div className={cls.loader}><Loader/></div>)}
+            {isLoading && (<div className={cls.loader}><Loader /></div>)}
         </div>
-
-    //    <WindowScroller
-  //          onScroll={() => console.log('scroll')}
-     //       scrollElement={document.getElementById(PAGE_ID) as Element}
-   //     >
-     //       {({
-   //             width,
-         //       height,
-       //         registerChild,
-     //           onChildScroll,
-        //        scrollTop,
-      //          isScrolling,
-    //        }) => (
-       //         <div
-     //               ref={registerChild}
-   //                 className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-       //         >
-     //               <List
-   //                     height={height ?? 700}
-      //                  rowCount={rowCount}
-    //                    rowHeight={isBig ? 700 : 330}
-  //                      rowRenderer={rowRender}
-              //          width={width}
-            //            onScroll={onChildScroll}
-          //              scrollTop={scrollTop}
-        //                autoHeight
-      //              />
-    //                {isLoading && getSkeletons(view)}
-    //            </div>
-    //        )}
-    //    </WindowScroller>
-
-    // <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-    //     {articles.length
-    //         ? articles.map(renderArticle)
-    //         : null}
-    //     {isLoading && getSkeletons(view)}
-    // </div>
-
     );
 });

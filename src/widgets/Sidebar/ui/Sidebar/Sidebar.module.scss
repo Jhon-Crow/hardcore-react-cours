@@ -1,14 +1,11 @@
 .Sidebar {
     z-index: 1;
-    //height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
     clip-path: inset(0);
     will-change: width;
-    margin-top: calc(var(--navbar-height)*-1);
-
-    //position: fixed;
+    margin-top: calc(var(--navbar-height) * -1);
     transition: width 250ms ease-out;
 }
 
@@ -21,6 +18,7 @@
 }
 
 .switchers {
+    transition: all .4s;
     position: absolute;
     bottom: 1.25rem;
     display: flex;
@@ -33,15 +31,14 @@
 .collapsedBtn {
     padding-left: 1.9rem;
     position: absolute;
-    right: -2.5rem;
-    bottom: 2.5rem;
+    right: .09rem;
+    bottom: 14.5rem;
     font: var(--font-line-m);
-    border-top-right-radius: .15rem;
-    border-bottom-right-radius: .15rem;
+    border-radius: .15rem;
 }
 
 .linkItems {
-    padding-top: 4rem;
+    padding-top: 9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +48,21 @@
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
+    .collapsedBtn {
+        padding-left: 1.9rem;
+        position: absolute;
+        right: 13.79rem;
+        font: var(--font-line-m);
+        border-radius: .15rem;
+    }
+
     .linkItems {
-        padding-left: .4rem;
+        align-items: start;
+        margin-left: 1.95rem;
+    }
+
+    .switchers {
+        margin-left: .9rem;
+        width: 20%;
     }
 }

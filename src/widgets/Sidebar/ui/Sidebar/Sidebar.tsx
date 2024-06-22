@@ -29,13 +29,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     )), [sidebarItemsList, collapsed]);
 
     return (
-        <aside
+        <menu
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
             <div className={cls.sidebarWrapper}>
                 <Button
-                    theme={ButtonTheme.BACKGROUND}
+                    // style={{ background: 'red' }}
+                    theme={ButtonTheme.BACKGROUND_INVERTED}
                     square
                     size={ButtonSize.XL}
                     data-testid="sidebar-toggle"
@@ -54,6 +55,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                     />
                 </div>
             </div>
-        </aside>
+        </menu>
     );
 });
