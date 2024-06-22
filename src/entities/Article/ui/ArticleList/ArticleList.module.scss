@@ -1,19 +1,51 @@
 .ArticleList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .7rem;
-    justify-content: center;
+    margin: 0 auto;
+
 }
 
 .SMALL {
-    .card {
-        display: inline-flex;
-        width: 300px;
-        height: 300px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 3rem;
+}
 
-    .row {
-        display: flex;
-        gap: 1.8rem;
-    }
+.loader {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.itemWrapper {
+    display: flex;
+    flex-direction: row;
+
+     flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start; // Выравнивание элементов по верхнему краю
+    justify-content: flex-start; // Выравнивание элементов по левому краю
+}
+
+.child {
+    flex: 0 1 auto; // Элементы могут сжиматься и растягиваться, но не заполняют всю ширину
+    width: 250px; // Фиксированная ширина для каждого элемента
+}
+
+
+.item {
+    height: auto;
+
+// .SMALL {
+//    .card {
+//        display: inline-flex;
+//        width: 300px;
+//        height: 300px;
+//    }
+
+//    .row {
+//        display: flex;
+//        gap: 1.8rem;
+//    }
+
 }

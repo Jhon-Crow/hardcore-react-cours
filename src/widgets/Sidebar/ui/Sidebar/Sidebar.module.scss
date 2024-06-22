@@ -1,12 +1,23 @@
 .Sidebar {
     z-index: 1;
-    height: calc(100vh - var(--navbar-height));
+    //height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
+    clip-path: inset(0);
+    will-change: width;
+    margin-top: calc(var(--navbar-height)*-1);
 
     //position: fixed;
     transition: width 250ms ease-out;
+}
+
+.sidebarWrapper {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 .switchers {

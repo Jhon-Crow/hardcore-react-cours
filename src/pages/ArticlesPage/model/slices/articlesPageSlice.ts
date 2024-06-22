@@ -2,6 +2,7 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 import { StateScheme } from 'app/providers/StoreProvider';
 import { Article, ArticleType, ArticleView } from 'entities/Article';
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import {MutableRefObject} from "react";
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { ArticleSortField } from 'entities/Article/model/types/article';
 import { SortOrders } from 'shared/types';
@@ -26,7 +27,7 @@ const articlesPageSlice = createSlice({
         page: 1,
         hasMore: true,
         _inited: false,
-        limit: 9,
+        limit: 15,
         search: '',
         order: 'asc',
         sort: ArticleSortField.CREATED,
@@ -55,7 +56,7 @@ const articlesPageSlice = createSlice({
         initState: (state) => {
             const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
             state.view = view;
-            state.limit = view === ArticleView.BIG ? 4 : 9;
+            state.limit = view === ArticleView.BIG ? 4 : 24;
             state._inited = true;
         },
     },

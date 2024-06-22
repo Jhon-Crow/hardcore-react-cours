@@ -52,6 +52,8 @@ export const fetchArticlesList = createAsyncThunk<
                 throw new Error();
             }
 
+            console.log('fetch: ', limit);
+
             return response.data;
         } catch (e) {
             return rejectWithValue('fetch article error');
