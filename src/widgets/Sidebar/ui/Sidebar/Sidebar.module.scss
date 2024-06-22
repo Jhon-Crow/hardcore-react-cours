@@ -13,7 +13,7 @@
     width: var(--sidebar-width);
     min-height: 100vh;
     max-height: 100vh;
-    position: sticky;
+    position: relative;
     top: 0;
 }
 
@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.7rem;
 }
 
 .collapsed {
@@ -68,11 +68,12 @@
 
     .linkItems {
         align-items: start;
-        margin-left: 1.95rem;
+        margin-left: 2rem;
     }
 
     .switchers {
         margin-left: .9rem;
         width: 20%;
+        gap: 0;
     }
 }
