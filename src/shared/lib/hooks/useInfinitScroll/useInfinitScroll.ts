@@ -11,7 +11,7 @@ export function useInfiniteScroll({ callback, wrapperRef, triggerRef }: UseInfin
         const wrapperElement = wrapperRef.current;
         const triggerElement = triggerRef.current;
         let observer: IntersectionObserver | null = null;
-        if (callback) {
+        if (callback && triggerElement) {
             const options = {
                 root: wrapperElement,
                 rootMargin: '0px',

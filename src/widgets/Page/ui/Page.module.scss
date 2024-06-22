@@ -3,8 +3,9 @@
     padding: 1.8125rem 1.8125rem 1.8125rem 2.8125rem;
     //height: calc(100vh - var(--navbar-height));
     width: calc(100vw - var(--sidebar-width));
-    height: 100%;
-    overflow-y: auto;
+    max-height: unset;
+    //height: 100%;
+    //overflow-y: auto;
 }
 
 .trigger {

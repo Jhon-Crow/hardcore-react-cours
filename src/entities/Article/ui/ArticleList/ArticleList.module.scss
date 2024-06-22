@@ -1,7 +1,18 @@
 .ArticleList {
+    margin: 0 auto;
+
+}
+
+.SMALL {
     display: flex;
     flex-wrap: wrap;
-    gap: .7rem;
+    height: 100%;
+    gap: 3rem;
+}
+
+.loader {
+    display: flex;
+    width: 100%;
     justify-content: center;
 }
 
@@ -9,7 +20,7 @@
     display: flex;
     flex-direction: row;
 
-    // flex-wrap: wrap;
+     flex-wrap: wrap;
     gap: 1rem;
     align-items: flex-start; // Выравнивание элементов по верхнему краю
     justify-content: flex-start; // Выравнивание элементов по левому краю
@@ -18,4 +29,9 @@
 .child {
     flex: 0 1 auto; // Элементы могут сжиматься и растягиваться, но не заполняют всю ширину
     width: 250px; // Фиксированная ширина для каждого элемента
+}
+
+
+.item {
+    height: auto;
 }
