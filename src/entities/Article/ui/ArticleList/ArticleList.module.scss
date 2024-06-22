@@ -16,6 +16,7 @@
     justify-content: center;
 }
 
+
 .itemWrapper {
     display: flex;
     flex-direction: row;
@@ -34,4 +35,17 @@
 
 .item {
     height: auto;
+
+// .SMALL {
+//    .card {
+//        display: inline-flex;
+//        width: 300px;
+//        height: 300px;
+//    }
+
+//    .row {
+//        display: flex;
+//        gap: 1.8rem;
+//    }
+
 }
