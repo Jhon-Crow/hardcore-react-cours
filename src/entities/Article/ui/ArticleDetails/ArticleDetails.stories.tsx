@@ -1,12 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { Simulate } from 'react-dom/test-utils';
+import { ArticleBlockType, ArticleType, Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
-import error = Simulate.error;
 
 const meta: Meta<typeof ArticleDetails> = {
     title: 'entities/ArticleDetails',

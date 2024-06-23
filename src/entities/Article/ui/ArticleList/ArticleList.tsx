@@ -1,23 +1,22 @@
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import React, {
     CSSProperties,
     forwardRef,
     HTMLAttributeAnchorTarget,
-    HTMLAttributes, LegacyRef,
+    HTMLAttributes,
+    LegacyRef,
     memo,
     ReactNode,
     useCallback,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
-
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
@@ -29,11 +28,9 @@ interface ArticleListProps {
     onScrollEnd?: () => void;
 }
 
-interface ListProps extends HTMLAttributes<HTMLDivElement> {
-}
+interface ListProps extends HTMLAttributes<HTMLDivElement> {}
 
-interface ItemProps extends HTMLAttributes<HTMLDivElement> {
-}
+interface ItemProps extends HTMLAttributes<HTMLDivElement> {}
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 15 : 2)
     .fill(0)

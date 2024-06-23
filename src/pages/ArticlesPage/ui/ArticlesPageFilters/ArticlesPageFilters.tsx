@@ -3,24 +3,24 @@ import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback } from 'react';
 import { ArticleViewSelector } from 'features/ArticleViewSelector/ui/ArticleViewSelector';
 import { ArticleView } from 'entities/Article';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
+import { Card } from 'shared/ui/Card/Card';
+import { Input } from 'shared/ui/Input/input';
+import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import { SortOrders } from 'shared/types';
+import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
     getArticlesPageSort,
     getArticlesPageType,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/input';
-import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
-import { SortOrders } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+} from '../../model/selectors/articlesPageSelectors';
+import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFiltersProps {

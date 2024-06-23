@@ -9,8 +9,9 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfinitScroll/useInfinitScroll';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
-import { getScrollPositionByPath, PositionSaverActions } from 'widgets/Page';
+import { PositionSaverActions } from '../model/slices/PositionSaverSlice';
 import cls from './Page.module.scss';
+import { getScrollPositionByPath } from '../model/selectors/PositionSaverSelector';
 
 interface PageProps {
     className?: string;

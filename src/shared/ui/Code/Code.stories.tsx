@@ -1,9 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { OutlineDark } from 'shared/ui/Button/Button.stories';
 import { Code } from './Code';
 
 const meta: Meta<typeof Code> = {

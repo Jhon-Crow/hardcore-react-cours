@@ -1,24 +1,23 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
-import React, {memo, useCallback} from 'react';
-import {ArticleList} from 'entities/Article';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {useSelector} from 'react-redux';
-import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {Page} from 'widgets/Page/ui/Page';
-import {Text, TextTheme} from 'shared/ui/Text/Text';
-import {ArticlesPageFilters} from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
-import {useSearchParams} from 'react-router-dom';
-import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
+import { classNames } from 'shared/lib/classNames/classNames';
+import React, { useCallback } from 'react';
+import { ArticleList } from 'entities/Article';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useSelector } from 'react-redux';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Page } from 'widgets/Page/ui/Page';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useSearchParams } from 'react-router-dom';
+import { ArticlesPageFilters } from '../../../ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
-import {articlesPageReducer, getArticles} from '../../model/slices/articlesPageSlice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 
 interface ArticlesPageProps {
     className?: string;
@@ -29,8 +28,6 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
-    const {t} = useTranslation('article');
-
     const {
         className,
     } = props;
@@ -51,7 +48,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     });
 
     if (error) {
-        return <Text theme={TextTheme.ERROR} title="ERROR"/>;
+        return <Text theme={TextTheme.ERROR} title="ERROR" />;
     }
 
     return (
@@ -61,7 +58,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 // onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                <ArticlesPageFilters/>
+                <ArticlesPageFilters />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}

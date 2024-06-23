@@ -1,8 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Article, ArticleView } from 'entities/Article';
-import { ArticleType } from '../../model/types/article';
+import { Article, ArticleView, ArticleType } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 const meta: Meta<typeof ArticleList> = {

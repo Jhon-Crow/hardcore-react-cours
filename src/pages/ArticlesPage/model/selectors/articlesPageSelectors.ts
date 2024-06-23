@@ -13,4 +13,3 @@ export const getArticlesPageOrder = (state: StateScheme) => state.articlesPage?.
 export const getArticlesPageSort = (state: StateScheme) => state.articlesPage?.sort || ArticleSortField.CREATED;
 export const getArticlesPageSearch = (state: StateScheme) => state.articlesPage?.search || '';
 export const getArticlesPageType = (state: StateScheme) => state.articlesPage?.type || ArticleType.ALL;
-

@@ -1,6 +1,5 @@
 .ArticleList {
     margin: 0 auto;
-
 }
 
 .SMALL {
@@ -16,15 +15,14 @@
     justify-content: center;
 }
 
-
 .itemWrapper {
     display: flex;
     flex-direction: row;
 
-     flex-wrap: wrap;
+    // flex-wrap: wrap;
     gap: 1rem;
-    align-items: flex-start; // Выравнивание элементов по верхнему краю
-    justify-content: flex-start; // Выравнивание элементов по левому краю
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .child {
@@ -32,20 +30,6 @@
     width: 250px; // Фиксированная ширина для каждого элемента
 }
 
-
 .item {
     height: auto;
-
-// .SMALL {
-//    .card {
-//        display: inline-flex;
-//        width: 300px;
-//        height: 300px;
-//    }
-
-//    .row {
-//        display: flex;
-//        gap: 1.8rem;
-//    }
-
 }
