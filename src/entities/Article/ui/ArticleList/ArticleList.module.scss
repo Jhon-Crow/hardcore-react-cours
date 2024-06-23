@@ -18,16 +18,15 @@
 .itemWrapper {
     display: flex;
     flex-direction: row;
-
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 1rem;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
 .child {
-    flex: 0 1 auto; // Элементы могут сжиматься и растягиваться, но не заполняют всю ширину
-    width: 250px; // Фиксированная ширина для каждого элемента
+    flex: 0 1 auto;
+    width: 250px;
 }
 
 .item {
