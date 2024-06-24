@@ -5,11 +5,14 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import React, { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
+    getProfileData,
+    getProfileReadonly,
+    profileActions,
+    updateProfileData,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -42,7 +45,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     } = props;
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack justify="between" className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
                 <div>
@@ -75,6 +78,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                 </div>
             )}
 
-        </div>
+        </HStack>
     );
 };

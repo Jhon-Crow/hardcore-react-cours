@@ -2,11 +2,13 @@
     z-index: 1;
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
-    position: relative;
+    position: sticky;
     clip-path: inset(0);
     will-change: width;
     margin-top: calc(var(--navbar-height) * -1);
     transition: width 250ms ease-out;
+    height: 100%;
+    top: 0;
 }
 
 .sidebarWrapper {
@@ -19,8 +21,6 @@
 
 .switchers {
     transition: all .4s;
-    position: absolute;
-    bottom: 1.25rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -44,11 +44,10 @@
 }
 
 .linkItems {
+    margin-bottom: 2rem;
     padding-top: 9rem;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.7rem;
 }
 
 .collapsed {

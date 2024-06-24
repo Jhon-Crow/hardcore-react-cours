@@ -9,6 +9,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
@@ -64,13 +65,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <div className={cls.skeleton}>
+            <VStack gap="1rem">
                 <Skeleton className={cls.avatar} height={200} width={200} border="50%" />
                 <Skeleton height="2rem" width="50%" border="0" />
                 <Skeleton height="1.5rem" width="95%" border="0" />
                 <Skeleton height="10rem" width="100%" border="0" />
                 <Skeleton height="10rem" width="100%" border="0" />
-            </div>
+            </VStack>
         );
     } else if (error) {
         content = (
@@ -95,14 +96,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     text={article?.subtitle}
                     size={TextSize.L}
                 />
-                <div className={cls.indicatorWrapper}>
+                <HStack align="center" gap=".2rem">
                     <Icon Svg={EyeIcon} />
                     <Text text={`${article?.views}`} />
-                </div>
-                <div className={cls.indicatorWrapper}>
+                </HStack>
+                <HStack align="center" gap=".2rem">
                     <Icon Svg={CalendarIcon} />
                     <Text text={article?.createdAt} />
-                </div>
+                </HStack>
                 {article?.blocks.map(renderBlock)}
             </>
         );
@@ -110,9 +111,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack max={false} gap="1rem" className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
-            </div>
+            </VStack>
         </DynamicModuleLoader>
 
     );

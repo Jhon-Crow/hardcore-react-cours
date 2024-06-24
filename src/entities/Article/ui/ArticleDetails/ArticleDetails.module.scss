@@ -1,23 +1,8 @@
 .ArticleDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
     min-height: 100vh;
-}
-
-.skeleton {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .avatar {
     margin: 0 auto;
     object-fit: cover;
-}
-
-.indicatorWrapper {
-    display: flex;
-    align-items: center;
-    gap: .2rem;
 }

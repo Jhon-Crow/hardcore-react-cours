@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { VStack } from 'shared/ui/Stack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 import myAvatar from '../../../../shared/assets/icons/user-32-32.png';
@@ -25,13 +25,13 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard, {}, [className])}>
+            <VStack gap="1rem" className={classNames(cls.CommentCard, {}, [className])}>
                 <div className={cls.header}>
                     <Skeleton border="50%" width={30} height={30} />
                     <Skeleton height="1rem" width="5rem" />
                 </div>
                 <Skeleton width="33rem" height="1rem" />
-            </div>
+            </VStack>
         );
     }
 
@@ -40,12 +40,12 @@ export const CommentCard = memo((props: CommentCardProps) => {
     }
 
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
+        <VStack gap="1rem" className={classNames(cls.CommentCard, {}, [className])}>
             <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
                 <Avatar src={comment.user.avatar || myAvatar} size={30} radius={100} />
                 <Text title={comment.user.username} />
             </AppLink>
             <Text text={comment.text} />
-        </div>
+        </VStack>
     );
 });

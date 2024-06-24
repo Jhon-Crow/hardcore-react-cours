@@ -1,8 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import React, { memo } from 'react';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { ArticleImageBlock } from '../../model/types/article';
-import cls from './ArticleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
     className?: string;
@@ -16,11 +15,11 @@ export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponen
     } = props;
 
     return (
-        <div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
-            <img alt={block?.title} src={block?.src} />
+        <VStack justify="center" align="end">
+            <img style={{ width: '100%' }} alt={block?.title} src={block?.src} />
             {block.title && (
                 <Text text={block.title} align={TextAlign.CENTER} />
             )}
-        </div>
+        </VStack>
     );
 });

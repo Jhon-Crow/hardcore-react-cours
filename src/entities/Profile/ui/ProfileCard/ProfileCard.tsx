@@ -1,13 +1,12 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import React from 'react';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
 import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
+import { VStack } from 'shared/ui/Stack';
 import { Currency } from '../../../Currency/model/types/currency';
 import { CurrencySelect } from '../../../Currency/ui/CurrencySelect/CurrencySelect';
 import { Profile } from '../../model/types/profile';
@@ -55,9 +54,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <VStack align="center" className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </VStack>
         );
     }
     if (error) {

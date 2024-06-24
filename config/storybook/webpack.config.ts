@@ -1,6 +1,5 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
-import { CLIPlugin } from 'webpack-cli/lib/plugins/CLIPlugin';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -10,6 +9,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: '',
     };
 
     config!.resolve!.modules = [paths.src, 'node_modules'];
