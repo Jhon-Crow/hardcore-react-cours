@@ -1,7 +1,8 @@
 import { Menu } from '@headlessui/react';
 import React, { Fragment, ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Button } from '../Button/Button';
+import { DropdownDirection } from 'shared/types/ui';
+import { AppLink } from '../../ui/AppLink/AppLink';
 import cls from './Dropdown.module.scss';
 
 export interface DropdownItem {
@@ -17,7 +18,15 @@ interface DropdownProps {
     trigger: ReactNode;
     readonly?: boolean;
     borderlessTrigger?: boolean;
+    direction?: DropdownDirection;
 }
+
+const mapDirectionClass: Record<DropdownDirection, string> = {
+    'bottom-left': cls.optionsBottomLeft,
+    'bottom-right': cls.optionsBottomRight,
+    'top-left': cls.optionsTopLeft,
+    'top-right': cls.optionsTopRight,
+};
 
 export function Dropdown(props: DropdownProps) {
     const {
@@ -26,12 +35,15 @@ export function Dropdown(props: DropdownProps) {
         trigger,
         readonly,
         borderlessTrigger = false,
+        direction = 'bottom-left',
     } = props;
 
     const mods: Mods = {
         [cls.readonly]: readonly,
         [cls.borderlessTrigger]: borderlessTrigger,
     };
+
+    const menuClasses = [mapDirectionClass[direction]];
 
     return (
         <Menu
@@ -44,22 +56,35 @@ export function Dropdown(props: DropdownProps) {
             >
                 {trigger}
             </Menu.Button>
-            <Menu.Items className={cls.menu}>
-                {items.map((item: DropdownItem) => (
-                    <Menu.Item as={Fragment} disabled={item.disabled}>
-                        {({ active }) => (
-                            <Button
-                                onClick={item.onClick}
-                                className={classNames(cls.Item, {
-                                    [cls.active]: active,
-                                    [cls.disabled]: item.disabled,
-                                })}
-                            >
-                                {item.content}
-                            </Button>
-                        )}
-                    </Menu.Item>
-                ))}
+            <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
+                {items.map((item: DropdownItem) => {
+                    const content = ({ active }: {active: boolean}) => (
+                        <button
+                            type="button"
+                            onClick={item.onClick}
+                            className={classNames(cls.Item, {
+                                [cls.active]: active,
+                                [cls.disabled]: item.disabled,
+                            })}
+                        >
+                            {item.content}
+                        </button>
+                    );
+
+                    if (item.href) {
+                        return (
+                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                                {content}
+                            </Menu.Item>
+                        );
+                    }
+
+                    return (
+                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                            {content}
+                        </Menu.Item>
+                    );
+                })}
             </Menu.Items>
         </Menu>
     );

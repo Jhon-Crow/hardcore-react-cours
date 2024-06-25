@@ -51,10 +51,12 @@ export const Navbar = ({ className }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <Dropdown
+                    direction="bottom-right"
                     className={cls.dropDown}
                     borderlessTrigger
                     items={[
                         { content: t('Выйти'), onClick: onLogout },
+                        { content: t('Профиль'), href: RoutePath.profile + authData.id },
                     ]}
                     trigger={<Avatar radius={20} size={42} src={authData.avatar} />}
                 />

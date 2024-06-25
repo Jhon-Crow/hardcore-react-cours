@@ -42,16 +42,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             onChange={onChangeHandler}
             items={CountryList}
             readonly={readonly}
-            direction="top"
+            direction="top-right"
         />
-
-    // <Select
-    //     lable={t('Укажите страну')}
-    //     options={CountryList}
-    //     value={value}
-    //     onChange={onChangeHandler}
-    //     className={classNames('', {}, [className])}
-    //     readonly={readonly}
-    // />
     );
 });

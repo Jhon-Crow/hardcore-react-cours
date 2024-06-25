@@ -47,6 +47,20 @@
     cursor: none;
 }
 
-.optionsTop {
+.optionsBottomLeft {
+    right: 0;
+}
+
+.optionsBottomRight {
+    left: 0;
+}
+
+.optionsTopLeft {
     bottom: 100%;
+    right: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
 }

@@ -3,6 +3,7 @@
 }
 
 .btn {
+    position: relative;
     border-radius: 2rem;
     border: .3rem double var(--inverted-bg-color);
     padding: .1rem .2rem;
@@ -21,6 +22,8 @@
     position: absolute;
     background: none;
     border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .Item {
@@ -29,6 +32,7 @@
     border: .3rem double var(--inverted-bg-color);
     padding: .1rem .2rem;
     cursor: pointer;
+    background: var(--card-bg);
 }
 
 .active {
@@ -47,4 +51,22 @@
     pointer-events: none;
     cursor: none;
     text-decoration: line-through;
+}
+
+.optionsBottomLeft {
+    left: 0;
+}
+
+.optionsBottomRight {
+    left: 0;
+}
+
+.optionsTopLeft {
+    bottom: 100%;
+    right: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
 }
