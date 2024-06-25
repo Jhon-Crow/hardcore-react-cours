@@ -17,8 +17,7 @@
 
 .itemWrapper {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     gap: 1rem;
     align-items: flex-start;
     justify-content: flex-start;

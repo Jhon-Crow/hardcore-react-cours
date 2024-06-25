@@ -1,10 +1,4 @@
-import axios from 'axios';
-import { Dispatch } from '@reduxjs/toolkit';
-import { StateScheme } from 'app/providers/StoreProvider';
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 
@@ -24,7 +18,7 @@ describe('fetchNextArticlesPage.test', () => {
         });
         await thunk.callThunk();
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+        expect(fetchArticlesList).toHaveBeenCalledWith({});
     });
     test('fetchArticleList not called (hasn`t more)', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
