@@ -48,6 +48,8 @@ module.exports = {
             {
                 markupOnly: true,
                 ignoreAttribute: [
+                    'defaultValue',
+                    'as',
                     'role',
                     'data-testid',
                     'to',

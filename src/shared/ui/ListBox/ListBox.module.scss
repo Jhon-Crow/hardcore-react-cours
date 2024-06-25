@@ -1,0 +1,52 @@
+.ListBox {
+    flex-direction: column;
+    position: relative;
+}
+
+.selectBtn {
+    padding: .2rem;
+    background: var(--listbox-bg);
+    border: none;
+    color: var(--primary-color);
+    border-radius: .3rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.options {
+    position: absolute;
+    background: var(--listbox-bg);
+    border: none;
+    color: var(--primary-color);
+    border-radius: .3rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.optionItem {
+    border-radius: .3rem;
+    padding: .2rem;
+    transition: all .18s ease-in;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+    box-shadow: 0 0 4px 2px var(--bg-color);
+    transform: scale(1.05);
+}
+
+.disabled {
+    cursor: default;
+    opacity: .3;
+    text-decoration: line-through;
+}
+
+.readonly {
+    opacity: .6;
+    pointer-events: none;
+    cursor: none;
+}
+
+.optionsTop {
+    bottom: 100%;
+}
