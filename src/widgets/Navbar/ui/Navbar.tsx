@@ -9,6 +9,8 @@ import {
 } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { getUserAuthData, userActions } from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
 
@@ -48,12 +50,14 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
                     {t('Создать статью')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.BACKGROUND_INVERTED}
-                    onClick={onLogout}
-                >
-                    {t('Выйти')}
-                </Button>
+                <Dropdown
+                    className={cls.dropDown}
+                    borderlessTrigger
+                    items={[
+                        { content: t('Выйти'), onClick: onLogout },
+                    ]}
+                    trigger={<Avatar radius={20} size={42} src={authData.avatar} />}
+                />
             </header>
         );
     }

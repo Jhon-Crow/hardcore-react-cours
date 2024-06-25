@@ -1,5 +1,7 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, { CSSProperties, memo, useMemo } from 'react';
+import AvatarImg from '../../assets/icons/user-32-32.png';
+
 import cls from './Avatar.module.scss';
 
 interface TextProps {
@@ -13,7 +15,7 @@ interface TextProps {
 export const Avatar = memo((props: TextProps) => {
     const {
         className,
-        src,
+        src = AvatarImg,
         alt,
         size,
         radius,

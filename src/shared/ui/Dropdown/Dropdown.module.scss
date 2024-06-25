@@ -1,0 +1,50 @@
+.Dropdown {
+    position: relative;
+}
+
+.btn {
+    border-radius: 2rem;
+    border: .3rem double var(--inverted-bg-color);
+    padding: .1rem .2rem;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.borderlessTrigger {
+    border: none;
+}
+
+.menu {
+    position: absolute;
+    background: none;
+    border-radius: 2rem;
+}
+
+.Item {
+    color: var(--inverted-bg-color);
+    border-radius: 2rem;
+    border: .3rem double var(--inverted-bg-color);
+    padding: .1rem .2rem;
+    cursor: pointer;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+    transform: scale(1.05);
+}
+
+.disabled {
+    cursor: default;
+    opacity: .3;
+    text-decoration: line-through;
+}
+
+.readonly {
+    opacity: .6;
+    pointer-events: none;
+    cursor: none;
+    text-decoration: line-through;
+}

@@ -34,7 +34,7 @@ export const Auth: Story = {
 };
 Auth.decorators = [ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
-        user: { authData: {} },
+        user: { authData: { avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4' } },
     }),
 ];
 
