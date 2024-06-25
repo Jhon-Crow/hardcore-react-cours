@@ -9,7 +9,6 @@ import React, {
     ReactNode,
     useCallback,
 } from 'react';
-import { useTranslation } from 'react-i18next';
 import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -18,6 +17,8 @@ import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListIte
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
+
+/* eslint-disable react/no-unstable-nested-components */
 
 interface ArticleListProps {
     className?: string;
@@ -87,8 +88,6 @@ const gridComponents: GridComponents<any> = {
 };
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const { t } = useTranslation();
-
     const {
         className,
         articles,
