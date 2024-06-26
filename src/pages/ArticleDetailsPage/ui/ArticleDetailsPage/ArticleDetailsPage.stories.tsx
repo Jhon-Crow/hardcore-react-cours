@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Article } from 'entities/Article';
+import { Article, ArticleView } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
@@ -59,12 +59,97 @@ const article: Article = {
     ],
 };
 
+const comments = [
+    {
+        id: '1',
+        text: 'some comment',
+        articleId: '1',
+        userId: '1',
+    },
+    {
+        id: '2',
+        text: 'some comment 2',
+        articleId: '1',
+        userId: '1',
+    },
+    {
+        id: '3',
+        text: 'some comment 3',
+        articleId: '1',
+        userId: '1',
+    },
+    {
+        articleId: '1',
+        userId: '1',
+        text: 'TEST',
+        id: '5JKSq7j',
+    },
+    {
+        articleId: '1',
+        userId: '1',
+        text: 'TEST',
+        id: 'yqj4UXr',
+    },
+    {
+        articleId: '1',
+        userId: '1',
+        text: 'TEST',
+        id: 'EhaXWqj',
+    },
+    {
+        articleId: '1',
+        userId: '2',
+        text: 'user2 TEST',
+        id: 'GiidYPV',
+    },
+    {
+        articleId: '1',
+        userId: '2',
+        text: '7357',
+        id: 'm7OJkKU',
+    },
+    {
+        articleId: '1',
+        userId: '2',
+        text: 'works?',
+        id: '_3BdQHU',
+    },
+    {
+        articleId: '2',
+        userId: '2',
+        text: 'половина статьи из другой статьи (вторая)',
+        id: 'Y2AWH2K',
+    },
+    {
+        articleId: '3',
+        userId: '2',
+        text: 'а это просто дубль другой статьи',
+        id: '3115MTq',
+    },
+    {
+        articleId: '7',
+        userId: '1',
+        text: 'blablabla',
+        id: 'ggZjcw2',
+    },
+    {
+        articleId: '3',
+        userId: '1',
+        text: 'комментарии не работают, куда смотрит админ?',
+        id: 'J5vPUO_',
+    },
+    {
+        articleId: '4',
+        userId: '1',
+        text: 'Коммент чтоб поддержать автора',
+        id: 'Zk6RrJA',
+    },
+];
+
 export const Normal: Story = {
-    args: {},
+    args: { },
 };
 
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+Normal.decorators = [
+    StoreDecorator({}),
+];
