@@ -2067,6 +2067,12 @@
       "userId": "1",
       "text": "Коммент чтоб поддержать автора",
       "id": "Zk6RrJA"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "blablabla",
+      "id": "LNEfsC8"
     }
   ],
   "users": [
@@ -2090,7 +2096,7 @@
       "first": "Jhon",
       "lastname": "Crow",
       "age": "23",
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Russia",
       "city": "The City",
       "username": "the_best_username_ever",

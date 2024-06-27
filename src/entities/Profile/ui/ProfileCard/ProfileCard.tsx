@@ -72,12 +72,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
         );
     }
 
-    const optionsList = [
-        { value: '1', content: 'First' },
-        { value: '2', content: 'Second' },
-        { value: '3', content: 'Third' },
-    ];
-
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
             <div className={cls.data}>

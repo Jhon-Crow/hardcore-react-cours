@@ -2,8 +2,8 @@ import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
-import { PositionSaverActions, PositionSaverReducer } from 'widgets/Page';
+import { PositionSaverReducer } from 'widgets/Page';
+import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { counterReducer } from '../../../../entities/Counter/index';
 import { userReducer } from '../../../../entities/User/index';
@@ -19,6 +19,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         PositionSaver: PositionSaverReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -35,7 +36,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArg,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore
