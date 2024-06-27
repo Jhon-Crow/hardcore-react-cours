@@ -1,24 +1,23 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import React, { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import React, { useCallback } from 'react';
-import { useSelector } from 'react-redux';
-import {
-    getProfileData,
-    getProfileReadonly,
-    profileActions,
-    updateProfileData,
-} from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from 'entities/User';
-import { HStack } from 'shared/ui/Stack/HStack/HStack';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { profileActions } from '../../model/slice/profileSlice';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import cls from './EditableProfileCardHeader.module.scss';
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
     const { t } = useTranslation('profile');
 
     const authData = useSelector(getUserAuthData);
@@ -45,7 +44,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     } = props;
 
     return (
-        <HStack justify="between" className={classNames('', {}, [className])}>
+        <HStack justify="between" className={classNames(cls.EditableProfileCardHeader, {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
                 <div>
@@ -77,7 +76,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                         )}
                 </div>
             )}
-
         </HStack>
     );
-};
+});

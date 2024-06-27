@@ -1,19 +1,22 @@
-// import React from 'react';
-// import { ComponentStory, ComponentMeta } from '@storybook/react';
-//
-// import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-//
-// export default {
-//     title: 'features/ArticleRecommendationsList',
-//     component: ArticleRecommendationsList,
-//     argTypes: {
-//         backgroundColor: { control: 'color' },
-//     },
-// } as ComponentMeta<typeof ArticleRecommendationsList>;
-//
-// const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
-//
-// export const Normal = Template.bind({});
-// Normal.args = {
-//
-// };
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
+
+const meta: Meta<typeof ArticleRecommendationsList> = {
+    title: 'shared/ArticleRecommendationsList',
+    component: ArticleRecommendationsList,
+    parameters: {
+        layout: 'centered',
+    },
+    tags: ['autodocs'],
+    argTypes: { },
+    args: { },
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleRecommendationsList>;
+
+export const Normal: Story = {
+    args: { },
+};
