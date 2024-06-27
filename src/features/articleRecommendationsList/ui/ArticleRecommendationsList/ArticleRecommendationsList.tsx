@@ -17,7 +17,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { t } = useTranslation();
     const { isLoading, data: articles, error } = useArticleRecommendationsList(4);
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         console.log(error);
         return null;
     }
@@ -38,7 +38,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
                         target="_blank"
                         article={article}
                         view={ArticleView.SMALL}
-                        key={articles.id}
+                        key={article.id}
                     />
                 ))}
             </HStack>
