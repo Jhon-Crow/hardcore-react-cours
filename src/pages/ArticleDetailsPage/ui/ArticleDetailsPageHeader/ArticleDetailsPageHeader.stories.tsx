@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
-    title: 'shared/ArticleDetailsPageHeader',
+    title: 'page/ArticleDetails/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
     parameters: {
         layout: 'centered',

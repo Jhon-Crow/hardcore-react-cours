@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 const meta: Meta<typeof EditableProfileCardHeader> = {
-    title: 'shared/EditableProfileCardHeader',
+    title: 'features/EditableProfileCardHeader',
     component: EditableProfileCardHeader,
     parameters: {
         layout: 'centered',

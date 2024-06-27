@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const meta: Meta<typeof ArticleInfiniteList> = {
-    title: 'shared/ArticleInfiniteList',
+    title: 'page/Articles/ArticleInfiniteList',
     component: ArticleInfiniteList,
     parameters: {
         layout: 'centered',

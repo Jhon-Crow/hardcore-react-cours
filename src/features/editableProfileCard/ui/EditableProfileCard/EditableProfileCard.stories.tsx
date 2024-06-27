@@ -1,10 +1,15 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const meta: Meta<typeof EditableProfileCard> = {
-    title: 'shared/EditableProfileCard',
+    title: 'features/EditableProfileCard',
     component: EditableProfileCard,
     parameters: {
         layout: 'centered',
@@ -18,5 +23,23 @@ export default meta;
 type Story = StoryObj<typeof EditableProfileCard>;
 
 export const Normal: Story = {
-    args: { },
+    args: {},
 };
+
+Normal.decorators = [
+    StoreDecorator({
+        profile: {
+            form: {
+                first: 'Jhon',
+                lastname: 'Crow',
+                age: 23,
+                currency: Currency.RUB,
+                country: Country.Russia,
+                city: 'The City',
+                username: 'the_best_username_ever',
+                avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+            },
+            readonly: true,
+        },
+    }),
+];

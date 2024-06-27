@@ -6,7 +6,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
-    title: 'page/ArticleDetailsPage',
+    title: 'page/ArticleDetails/ArticleDetailsPage',
     component: ArticleDetailsPage,
     parameters: {
         layout: 'centered',

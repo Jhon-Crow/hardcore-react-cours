@@ -6,7 +6,7 @@ import { ArticleView } from 'entities/Article';
 import ArticlesPage from './ArticlesPage';
 
 const meta: Meta<typeof ArticlesPage> = {
-    title: 'page/Article/ArticlesPage',
+    title: 'page/Articles/ArticlesPage',
     component: ArticlesPage,
     parameters: {
         layout: 'centered',

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 const meta: Meta<typeof ArticleDetailsComments> = {
-    title: 'shared/ArticleDetailsComments',
+    title: 'page/ArticleDetails/ArticleDetailsComments',
     component: ArticleDetailsComments,
     parameters: {
         layout: 'centered',
