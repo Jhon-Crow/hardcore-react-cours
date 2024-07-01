@@ -11,7 +11,9 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { getUserAuthData, userActions } from '../../../entities/User/index';
+import {
+    getUserAuthData, isUserAdmin, isUserChiefEditor, userActions,
+} from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -24,6 +26,8 @@ export const Navbar = ({ className }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const ChiefEditor = useSelector(isUserChiefEditor);
 
     const onClosModal = useCallback(() => {
         setIsOpen(false);
@@ -36,6 +40,8 @@ export const Navbar = ({ className }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
+
+    const isAdminPanelAvailable = isAdmin || ChiefEditor;
 
     if (authData) {
         return (
@@ -55,8 +61,11 @@ export const Navbar = ({ className }: NavbarProps) => {
                     className={cls.dropDown}
                     borderlessTrigger
                     items={[
-                        { content: t('Выйти'), onClick: onLogout },
+                        ...(isAdminPanelAvailable
+                            ? [{ content: t('Админ панель'), href: RoutePath.admin_panel }]
+                            : []),
                         { content: t('Профиль'), href: RoutePath.profile + authData.id },
+                        { content: t('Выйти'), onClick: onLogout },
                     ]}
                     trigger={<Avatar radius={20} size={42} src={authData.avatar} />}
                 />
