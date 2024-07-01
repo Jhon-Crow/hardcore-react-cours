@@ -98,7 +98,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
     const dispatch = useAppDispatch();
 
-    const loadMore = useCallback((_) => {
+    const loadMore = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 

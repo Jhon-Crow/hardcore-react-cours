@@ -147,9 +147,14 @@ const comments = [
 ];
 
 export const Normal: Story = {
-    args: { },
+    args: {
+
+    },
 };
 
 Normal.decorators = [
-    StoreDecorator({}),
-];
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    })];

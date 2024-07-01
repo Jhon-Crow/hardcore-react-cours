@@ -4,7 +4,7 @@ import { Article } from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<
     Article,
-    string,
+    string | undefined,
     ThunkConfig<string>
 >(
     'articleDitales/fetchArticleById',
@@ -17,6 +17,10 @@ export const fetchArticleById = createAsyncThunk<
                     _expand: 'user',
                 },
             });
+
+            if (!articleId) {
+                throw new Error('fetchArticleById Failed! Id is undefined');
+            }
 
             if (!response.data) {
                 throw new Error();

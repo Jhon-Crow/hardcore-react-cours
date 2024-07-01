@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import React, { memo, useCallback } from 'react';
 import { ArticleList } from 'entities/Article';
 import { useSelector } from 'react-redux';

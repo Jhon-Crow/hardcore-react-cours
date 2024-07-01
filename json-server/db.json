@@ -2073,6 +2073,12 @@
       "userId": "1",
       "text": "blablabla",
       "id": "LNEfsC8"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "dflkjdlf",
+      "id": "zSeSYkr"
     }
   ],
   "users": [
@@ -2080,21 +2086,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://avatars.githubusercontent.com/u/133867474?v=4"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s"
     },
     {
       "id": "3",
       "username": "chief",
       "password": "123",
-      "roles": ["CHIEF_EDITOR"],
+      "roles": [
+        "CHIEF_EDITOR"
+      ],
       "avatar": "https://avatars.githubusercontent.com/u/133867474?v=4"
     }
   ],
