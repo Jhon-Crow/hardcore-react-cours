@@ -99,9 +99,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
     const dispatch = useAppDispatch();
 
-    const loadMore = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
-    }, [dispatch]);
+    // const loadMore = useCallback(() => {
+    //     dispatch(fetchNextArticlesPage());
+    // }, [dispatch]);
 
     if (isLoading && !articles.length) {
         return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{getSkeletons(view)}</div>;
@@ -116,7 +116,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     <Virtuoso
                         data={articles}
                         useWindowScroll
-                        endReached={loadMore}
+                        endReached={onScrollEnd}
                         increaseViewportBy={2}
                         itemContent={(index, article) => (
                             <ArticleListItem

@@ -1,4 +1,4 @@
-export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
+// export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 export type { ProfileScheme } from './model/types/editableProfileCardSchema';
 
-export { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts';
+export { ValidateProfileError } from '../editableProfileCard/model/consts/consts';
