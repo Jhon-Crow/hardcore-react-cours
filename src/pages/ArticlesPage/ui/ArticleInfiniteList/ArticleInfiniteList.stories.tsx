@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleType } from 'entities/Article';
+import { Article, ArticleType, ArticleView } from 'entities/Article';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const article = {
@@ -95,7 +95,15 @@ const meta: Meta<typeof ArticleInfiniteList> = {
     title: 'features/ArticleInfiniteList',
     component: ArticleInfiniteList,
     decorators: [
-        StoreDecorator({}),
+        StoreDecorator({
+            articlesPage: {
+                view: ArticleView.SMALL,
+                page: 1,
+                limit: 4,
+                ids: [1, 2, 3, 4],
+                // entities: articles,
+            },
+        }),
     ],
     parameters: {
         mockData: [
@@ -118,3 +126,12 @@ type Story = StoryObj<typeof ArticleInfiniteList>;
 export const Normal: Story = {
     args: {},
 };
+Normal.decorators = [
+    StoreDecorator({
+        articlesPage: {
+            ids: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            // entities: articles,
+            // view: ArticleView.SMALL,
+        },
+    }),
+];

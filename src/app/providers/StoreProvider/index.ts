@@ -7,8 +7,11 @@ import { createReduxStore, AppDispatch } from './config/store';
 export {
     createReduxStore,
     StoreProvider,
-    StateScheme,
     ReduxStoreWithManager,
+};
+
+export type {
     AppDispatch,
+    StateScheme,
     ThunkConfig,
 };

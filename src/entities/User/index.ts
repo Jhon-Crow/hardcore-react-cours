@@ -2,7 +2,7 @@ export {
     userReducer,
     userActions,
 } from './model/slice/userSlice';
-export {
+export type {
     UserScheme,
     User,
 } from './model/types/user';
@@ -13,3 +13,5 @@ export {
     isUserChiefEditor,
     getUserRoles,
 } from './model/selectors/roleSelectors';
+
+export { UserRole } from './model/consts/userConsts';
