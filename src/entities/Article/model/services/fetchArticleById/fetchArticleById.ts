@@ -23,7 +23,7 @@ export const fetchArticleById = createAsyncThunk<
             }
 
             if (!response.data) {
-                throw new Error();
+                throw new Error('NO RESPONSE DATA');
             }
 
             return response.data;
