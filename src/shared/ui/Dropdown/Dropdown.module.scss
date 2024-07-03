@@ -20,20 +20,27 @@
 
 .menu {
     position: absolute;
-    background: none;
-    border-radius: 2rem;
+    background: rgb(255 255 255 / 20%);
+    opacity: .9;
+    backdrop-filter: blur(2px);
+    border-radius: .2rem;
     display: flex;
     flex-direction: column;
     outline: none;
+    gap: .4rem;
+    padding: .2rem;
 }
 
 .Item {
     color: var(--inverted-bg-color);
-    border-radius: 2rem;
+    border-radius: .2rem;
     border: .3rem double var(--inverted-bg-color);
     padding: .1rem .2rem;
     cursor: pointer;
     background: var(--card-bg);
+    width: 100%;
+    font-size: var(--font-size-m);
+    white-space: nowrap;
 }
 
 .active {

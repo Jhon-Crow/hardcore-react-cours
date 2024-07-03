@@ -27,6 +27,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
 
     return (
         <AppLink
+            animated
             className={classNames(cls.item, { [cls.collapsed]: collapsed })}
             theme={AppLinkTheme.SECONDARY}
             to={item.path}

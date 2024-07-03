@@ -3,14 +3,14 @@
     transition: all 280ms ease-in;
     color: var(--primary-color);
 
-    &:hover {
-        transform: rotate(2deg) scale(1.07);
-    }
-
     &:active {
         transform: scale(1.2);
         opacity: .5;
     }
+}
+
+.animated:hover {
+    transform: rotate(2deg) scale(1.07);
 }
 
 .primary {

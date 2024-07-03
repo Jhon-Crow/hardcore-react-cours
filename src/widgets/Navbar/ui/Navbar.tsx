@@ -57,7 +57,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <Dropdown
-                    direction="bottom-right"
+                    direction="bottom-left"
                     className={cls.dropDown}
                     borderlessTrigger
                     items={[
