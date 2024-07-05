@@ -12,6 +12,8 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { HStack } from 'shared/ui/Stack';
 import { NotificationButton } from 'features/notificationButton';
 import { AvatarDropdown } from 'features/avatarDropdown';
+import { NotificationList } from 'entities/Notification';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { getUserAuthData } from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
 

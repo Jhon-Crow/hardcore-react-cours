@@ -15,6 +15,12 @@ body {
     min-width: 100vw;
 }
 
+.app_modal,
+.app_drawer {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
 .content-page {
     display: flex;
 }
