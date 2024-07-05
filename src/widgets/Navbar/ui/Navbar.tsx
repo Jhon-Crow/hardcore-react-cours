@@ -3,17 +3,16 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
     Text, TextAlign, TextSize, TextTheme,
 } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import {
-    getUserAuthData, isUserAdmin, isUserChiefEditor, userActions,
-} from '../../../entities/User/index';
+import { HStack } from 'shared/ui/Stack';
+import { NotificationButton } from 'features/notificationButton';
+import { AvatarDropdown } from 'features/avatarDropdown';
+import { getUserAuthData } from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -22,12 +21,9 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
 
     const authData = useSelector(getUserAuthData);
-    const isAdmin = useSelector(isUserAdmin);
-    const ChiefEditor = useSelector(isUserChiefEditor);
 
     const onClosModal = useCallback(() => {
         setIsOpen(false);
@@ -36,12 +32,6 @@ export const Navbar = ({ className }: NavbarProps) => {
     const showModal = useCallback(() => {
         setIsOpen(true);
     }, []);
-
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout());
-    }, [dispatch]);
-
-    const isAdminPanelAvailable = isAdmin || ChiefEditor;
 
     if (authData) {
         return (
@@ -56,19 +46,14 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
                     {t('Создать статью')}
                 </AppLink>
-                <Dropdown
-                    direction="bottom-left"
-                    className={cls.dropDown}
-                    borderlessTrigger
-                    items={[
-                        ...(isAdminPanelAvailable
-                            ? [{ content: t('Админ панель'), href: RoutePath.admin_panel }]
-                            : []),
-                        { content: t('Профиль'), href: RoutePath.profile + authData.id },
-                        { content: t('Выйти'), onClick: onLogout },
-                    ]}
-                    trigger={<Avatar radius={20} size={42} src={authData.avatar} />}
-                />
+                <HStack
+                    className={cls.actions}
+                    gap=".4rem"
+                    max={false}
+                >
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
             </header>
         );
     }

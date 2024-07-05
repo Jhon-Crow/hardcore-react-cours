@@ -1,0 +1,25 @@
+.selectBtn {
+    padding: .2rem;
+    background: var(--listbox-bg);
+    border: none;
+    color: var(--primary-color);
+    border-radius: .3rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.options {
+    position: absolute;
+    background: var(--listbox-bg);
+    border: none;
+    color: var(--primary-color);
+    border-radius: .3rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.optionItem {
+    border-radius: .3rem;
+    padding: .2rem;
+    transition: all .18s ease-in;
+}

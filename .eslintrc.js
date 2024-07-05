@@ -58,6 +58,8 @@ module.exports = {
                     'align',
                     'direction',
                     'gap',
+                    'border',
+                    'trigger',
                 ],
             },
         ],

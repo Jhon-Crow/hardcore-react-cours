@@ -2,8 +2,10 @@ import { Menu } from '@headlessui/react';
 import React, { Fragment, ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import { AppLink } from '../../ui/AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -21,12 +23,12 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom-left': cls.optionsBottomLeft,
-    'bottom-right': cls.optionsBottomRight,
-    'top-left': cls.optionsTopLeft,
-    'top-right': cls.optionsTopRight,
-};
+// const mapDirectionClass: Record<DropdownDirection, string> = {
+//     'bottom-left': cls.optionsBottomLeft,
+//     'bottom-right': cls.optionsBottomRight,
+//     'top-left': cls.optionsTopLeft,
+//     'top-right': cls.optionsTopRight,
+// };
 
 export function Dropdown(props: DropdownProps) {
     const {
@@ -39,7 +41,7 @@ export function Dropdown(props: DropdownProps) {
     } = props;
 
     const mods: Mods = {
-        [cls.readonly]: readonly,
+        [popupCls.readonly]: readonly,
         [cls.borderlessTrigger]: borderlessTrigger,
     };
 
@@ -48,7 +50,7 @@ export function Dropdown(props: DropdownProps) {
     return (
         <Menu
             as="div"
-            className={classNames(cls.Dropdown, {}, [className])}
+            className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
         >
             <Menu.Button
                 className={classNames(cls.btn, mods, [className])}
@@ -56,15 +58,17 @@ export function Dropdown(props: DropdownProps) {
             >
                 {trigger}
             </Menu.Button>
-            <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
+            <Menu.Items
+                className={classNames(cls.menu, {}, menuClasses)}
+            >
                 {items.map((item: DropdownItem) => {
                     const content = ({ active }: {active: boolean}) => (
                         <button
                             type="button"
                             onClick={item.onClick}
                             className={classNames(cls.Item, {
-                                [cls.active]: active,
-                                [cls.disabled]: item.disabled,
+                                [popupCls.active]: active,
+                                [popupCls.disabled]: item.disabled,
                             })}
                         >
                             {item.content}

@@ -1,7 +1,3 @@
-.Dropdown {
-    position: relative;
-}
-
 .btn {
     position: relative;
     border-radius: 2rem;
@@ -41,40 +37,4 @@
     width: 100%;
     font-size: var(--font-size-m);
     white-space: nowrap;
-}
-
-.active {
-    background: var(--inverted-primary-color);
-    transform: scale(1.05);
-}
-
-.disabled {
-    cursor: default;
-    opacity: .3;
-    text-decoration: line-through;
-}
-
-.readonly {
-    opacity: .6;
-    pointer-events: none;
-    cursor: none;
-    text-decoration: line-through;
-}
-
-.optionsBottomLeft {
-    left: 0;
-}
-
-.optionsBottomRight {
-    left: 0;
-}
-
-.optionsTopLeft {
-    bottom: 100%;
-    right: 0;
-}
-
-.optionsTopRight {
-    bottom: 100%;
-    left: 0;
 }

@@ -1,0 +1,20 @@
+.NotificationListItem {
+    width: 90%;
+}
+
+.link {
+    width: 100%;
+}
+
+a {
+    .link {
+        background: var(--bg-color);
+        border-radius: .75rem;
+        transition: all .1s ease-out;
+        padding: .4rem;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

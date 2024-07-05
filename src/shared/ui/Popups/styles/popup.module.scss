@@ -1,0 +1,39 @@
+.popup {
+    position: relative;
+    flex-direction: column;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+    transform: scale(1.05);
+}
+
+.disabled {
+    cursor: default;
+    opacity: .3;
+    text-decoration: line-through;
+}
+
+.readonly {
+    opacity: .6;
+    pointer-events: none;
+    cursor: none;
+}
+
+.optionsBottomLeft {
+    right: 0;
+}
+
+.optionsBottomRight {
+    left: 0;
+}
+
+.optionsTopLeft {
+    bottom: 100%;
+    right: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}

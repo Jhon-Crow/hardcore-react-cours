@@ -2,9 +2,11 @@ import React, { Fragment, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import { HStack } from '../../ui/Stack';
+import { HStack } from '../../../Stack';
 import cls from './ListBox.module.scss';
-import { Button, ButtonTheme } from '../Button/Button';
+import { Button, ButtonTheme } from '../../../Button/Button';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -23,12 +25,12 @@ interface ListBoxProps {
     label?: string;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom-left': cls.optionsBottomLeft,
-    'bottom-right': cls.optionsBottomRight,
-    'top-left': cls.optionsTopLeft,
-    'top-right': cls.optionsTopRight,
-};
+// const mapDirectionClass: Record<DropdownDirection, string> = {
+//     'bottom-left': cls.optionsBottomLeft,
+//     'bottom-right': cls.optionsBottomRight,
+//     'top-left': cls.optionsTopLeft,
+//     'top-right': cls.optionsTopRight,
+// };
 
 export function ListBox(props: ListBoxProps) {
     const {
@@ -43,14 +45,14 @@ export function ListBox(props: ListBoxProps) {
     } = props;
 
     const mods: Mods = {
-        [cls.readonly]: readonly,
+        [popupCls.readonly]: readonly,
     };
 
     const Classes = [mapDirectionClass[direction]];
 
     return (
         <HStack
-            className={classNames('', mods, [className])}
+            className={classNames('', mods, [className, popupCls.popup])}
         >
             {label && <span>{`${label}> `}</span>}
             <Listbox
@@ -84,8 +86,8 @@ export function ListBox(props: ListBoxProps) {
                                     className={classNames(
                                         cls.optionItem,
                                         {
-                                            [cls.active]: active,
-                                            [cls.disabled]: item.disabled,
+                                            [popupCls.active]: active,
+                                            [popupCls.disabled]: item.disabled,
                                         },
                                     )}
                                 >
