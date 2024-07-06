@@ -28,10 +28,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     // }, []);
 
     const onOpenDrawerSwitch = useCallback(() => {
-        if (isOpen) {
-            setIsOpen(false);
-        } else {
+        console.log('onOpenSwitcher');
+        if (!isOpen) {
             setIsOpen(true);
+        } else {
+            setIsOpen(false);
         }
     }, [isOpen]);
 

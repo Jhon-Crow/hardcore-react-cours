@@ -9,7 +9,7 @@
     padding-right: 2.4rem;
     gap: 1rem;
     justify-content: space-between;
-    z-index: 5;
+    z-index: var(--z-index-navbar);
 }
 
 .links {

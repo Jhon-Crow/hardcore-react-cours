@@ -27,13 +27,14 @@
 .opend {
     pointer-events: auto;
     opacity: 1;
-    z-index: var(--z-index-modal);
+    z-index: 20;
 
     .content {
         transform: scale(1);
     }
 
     .overlay {
+        z-index: 19;
         opacity: 1;
     }
 }
