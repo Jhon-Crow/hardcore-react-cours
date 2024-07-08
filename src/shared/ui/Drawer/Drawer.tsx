@@ -47,17 +47,25 @@ export const Drawer = memo((props: DrawerProps) => {
         });
     }, [api, onClose]);
 
+    const openDrawer = useCallback(() => {
+        api.start({ y: 0, immediate: false });
+    }, [api]);
+
     const bind = useDrag(
         ({
-            last, velocity: [, vy], direction: [, dy], movement: [, my], cancel,
+            last,
+            velocity: [, vy],
+            direction: [, dy],
+            movement: [, my],
+            cancel,
         }) => {
             if (my < -70) cancel();
 
             if (last) {
-                if (my > screenHeight * 0.5 || (vy > 0.5 && dy > 0)) {
-                    close(vy);
+                if (my > screenHeight * 0.5 || (vy > 3 && dy > 0)) {
+                    close();
                 } else {
-                    api.start({ y: 0 });
+                    openDrawer();
                 }
             } else {
                 api.start({ y: my, immediate: true });

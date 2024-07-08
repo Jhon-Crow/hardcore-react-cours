@@ -17,6 +17,7 @@
 .content {
     height: 70%;
     background: var(--bg-color);
+    touch-action: none;
 
     //bottom: 0;
     border-top-left-radius: 12px;
