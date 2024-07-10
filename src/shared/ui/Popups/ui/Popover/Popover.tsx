@@ -1,7 +1,6 @@
-import { useTranslation } from 'react-i18next';
-import React, { memo, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Popover } from '@headlessui/react';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import popupCls from '../../styles/popup.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
@@ -34,6 +33,7 @@ export function HPopover(props: PopoverProps) {
             className={classNames(cls.Popover, {}, [className, popupCls.popup])}
         >
             <Popover.Button
+                as="div"
                 className={classNames(
                     cls.btn,
                     // mods,

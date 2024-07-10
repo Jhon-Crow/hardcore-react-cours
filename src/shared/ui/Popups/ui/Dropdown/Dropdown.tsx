@@ -23,13 +23,6 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-// const mapDirectionClass: Record<DropdownDirection, string> = {
-//     'bottom-left': cls.optionsBottomLeft,
-//     'bottom-right': cls.optionsBottomRight,
-//     'top-left': cls.optionsTopLeft,
-//     'top-right': cls.optionsTopRight,
-// };
-
 export function Dropdown(props: DropdownProps) {
     const {
         className,
@@ -61,7 +54,7 @@ export function Dropdown(props: DropdownProps) {
             <Menu.Items
                 className={classNames(cls.menu, {}, menuClasses)}
             >
-                {items.map((item: DropdownItem) => {
+                {items.map((item: DropdownItem, index) => {
                     const content = ({ active }: {active: boolean}) => (
                         <button
                             type="button"
@@ -78,6 +71,7 @@ export function Dropdown(props: DropdownProps) {
                     if (item.href) {
                         return (
                             <Menu.Item
+                                key={`dropdown-key-${index}`}
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
@@ -88,7 +82,11 @@ export function Dropdown(props: DropdownProps) {
                     }
 
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            key={`dropdown-key-${index}`}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
                             {content}
                         </Menu.Item>
                     );
