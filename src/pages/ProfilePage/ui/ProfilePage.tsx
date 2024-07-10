@@ -1,8 +1,8 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'widgets/Page/ui/Page';
 import { useParams } from 'react-router-dom';
-import { EditableProfileCard } from 'features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page/ui/Page';
+import { EditableProfileCard } from '@/features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard';
 import cls from './ProfilePage.module.scss';
 
 interface ProfilePageProps {

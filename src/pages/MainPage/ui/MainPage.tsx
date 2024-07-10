@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
-import { Input } from 'shared/ui/Input/input';
-import { Page } from 'widgets/Page/ui/Page';
+import { BugButton } from '@/app/providers/ErrorBoundary';
+import { Input } from '@/shared/ui/Input/input';
+import { Page } from '@/widgets/Page/ui/Page';
 import { Counter } from '../../../entities/Counter';
 
 const MainPage = () => {

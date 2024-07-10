@@ -1,5 +1,5 @@
-import { StateScheme } from 'app/providers/StoreProvider';
 import { createSelector } from '@reduxjs/toolkit';
+import { StateScheme } from '@/app/providers/StoreProvider';
 
 import { UserRole } from '../consts/userConsts';
 

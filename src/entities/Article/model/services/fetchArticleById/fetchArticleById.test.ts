@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import { StateScheme } from 'app/providers/StoreProvider';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { StateScheme } from '@/app/providers/StoreProvider';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchArticleById } from './fetchArticleById';
 
 const data = {

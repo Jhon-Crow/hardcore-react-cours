@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleType, ArticleView } from 'entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article, ArticleType, ArticleView } from '@/entities/Article';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const article = {

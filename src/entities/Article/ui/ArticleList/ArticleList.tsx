@@ -1,4 +1,3 @@
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import React, {
     CSSProperties,
     forwardRef,
@@ -10,9 +9,10 @@ import React, {
     useCallback,
 } from 'react';
 import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { fetchNextArticlesPage } from '@/pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Loader } from '@/shared/ui/Loader/Loader';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';

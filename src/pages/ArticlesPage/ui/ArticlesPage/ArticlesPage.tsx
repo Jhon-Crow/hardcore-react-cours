@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import React from 'react';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from 'widgets/Page/ui/Page';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useSearchParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Page } from '@/widgets/Page/ui/Page';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlesPageFilters } from '../../../ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';

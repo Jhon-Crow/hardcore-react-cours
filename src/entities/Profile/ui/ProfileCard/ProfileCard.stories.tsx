@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { ProfileCard } from './ProfileCard';
 import AvatarImg from '../../../../shared/assets/icons/user-32-32.png';
 

@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { Article, ArticleView } from 'entities/Article';
-import { HStack, VStack } from 'shared/ui/Stack';
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Article, ArticleView } from '@/entities/Article';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { ArticleListItem } from '@/entities/Article/ui/ArticleListItem/ArticleListItem';
 import cls from './ArticleRecommendationsList.module.scss';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 

@@ -1,9 +1,9 @@
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { $api } from 'shared/api/api';
-import { PositionSaverReducer } from 'widgets/Page';
-import { rtkApi } from 'shared/api/rtkApi';
+import { $api } from '@/shared/api/api';
+import { PositionSaverReducer } from '@/widgets/Page';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { counterReducer } from '../../../../entities/Counter/index';
 import { userReducer } from '../../../../entities/User/index';
