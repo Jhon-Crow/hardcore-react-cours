@@ -10,26 +10,15 @@
     align-items: flex-end;
 }
 
-.overlay {
-    //transition: .3s opacity;
-}
-
 .content {
     height: 70%;
     background: var(--bg-color);
     touch-action: none;
-
-    //bottom: 0;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-
-    //position: relative;
     width: 100%;
     min-height: 1000px;
     padding: 20px;
-
-    //transition: .3s transform;
-    //transform: translateY(100%);
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 10000;
@@ -38,15 +27,11 @@
 
 .content::before {
     content: "";
-
-    //position: relative;
     display: block;
     width: 100px;
     height: 10px;
     background: var(--bg-color);
     margin: auto;
-
-    //bottom: 40px;
     border-radius: 12px;
 }
 
@@ -54,17 +39,9 @@
     pointer-events: auto;
     opacity: 1;
     z-index: 2;
-
-    .content {
-        //transform: translateY(0%);
-    }
 }
 
 .isClosing {
-    .content {
-        //transform: translateY(100%);
-    }
-
     .overlay {
         opacity: 0;
     }
