@@ -20,16 +20,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    // const onOpenDrawer = useCallback(() => {
-    //     setIsOpen(true);
-    // }, []);
-    //
-    // const onCloseDrawer = useCallback(() => {
-    //     setIsOpen(false);
-    // }, []);
-
     const onOpenDrawerSwitch = useCallback(() => {
-        console.log('onOpenSwitcher');
         if (!isOpen) {
             setIsOpen(true);
         } else {
@@ -55,11 +46,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                {/* <AnimationProvider> */}
                 <Drawer isOpen={isOpen} onClose={onOpenDrawerSwitch}>
                     <NotificationList />
                 </Drawer>
-                {/* </AnimationProvider> */}
             </MobileView>
         </div>
     );
