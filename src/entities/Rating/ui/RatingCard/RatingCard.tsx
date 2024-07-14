@@ -2,7 +2,6 @@ import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-// import cls from './RatingCard.module.scss';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Card } from '@/shared/ui/Card/Card';
 import { Text } from '@/shared/ui/Text/Text';
@@ -11,7 +10,6 @@ import { Modal } from '@/shared/ui/Modal/Modal';
 import { Input } from '@/shared/ui/Input/input';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { NotificationList } from '@/entities/Notification';
 
 interface RatingCardProps {
     className?: string;
@@ -20,6 +18,7 @@ interface RatingCardProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -30,18 +29,14 @@ export const RatingCard = memo((props: RatingCardProps) => {
         title,
         hasFeedback,
         feedbackTitle,
+        rate = 0,
     } = props;
 
     const { t } = useTranslation();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [feedback, setFeedback] = useState('');
-    const [starsCount, setStarsCount] = useState(0);
-
-    //    const mods: Mods = {
-    //        [cls[theme]]: true,
-    //        [cls.disabled]: disabled,
-    //    };
+    const [starsCount, setStarsCount] = useState(rate);
 
     const modalToggle = useCallback(() => {
         setIsModalOpen(!isModalOpen);
@@ -86,8 +81,8 @@ export const RatingCard = memo((props: RatingCardProps) => {
                         align="center"
                         gap="1.2rem"
                     >
-                        <Text title={title} />
-                        <StarRating size={30} onSelect={onSelectStars} />
+                        <Text title={starsCount ? t('Спасибо за оценку!') : title} />
+                        <StarRating size={30} onSelect={onSelectStars} selectedStars={starsCount} />
                     </VStack>
                     <Modal isOpen={isModalOpen} onClose={modalToggle}>
                         <VStack
@@ -99,7 +94,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                                     onClick={cancelHandler}
                                     theme={ButtonTheme.OUTLINE_RED}
                                 >
-                                    {t('Отменить')}
+                                    {t('Отказаться')}
                                 </Button>
                                 <Button
                                     onClick={feedbackHandler}

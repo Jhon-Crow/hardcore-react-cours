@@ -14,7 +14,7 @@ import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
-import EyeIcon from '../../../../shared/assets/icons/eye-20-20.svg';
+import EyeIcon from '../../../../shared/assets/icons/eye-20-20.svg?react';
 
 interface ArticleListItemProps {
     className?: string;

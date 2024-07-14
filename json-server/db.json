@@ -2167,5 +2167,86 @@
       "username": "warning?",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 3,
+      "feedback": "123333",
+      "id": "EK6JEEm"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 5,
+      "feedback": "so good",
+      "id": "u0Ee-AJ"
+    },
+    {
+      "userId": "1",
+      "articleId": "20",
+      "rate": 3,
+      "feedback": "2",
+      "id": "30eoP1M"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Зачётный профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 3,
+      "feedback": "мда, такое такое",
+      "id": "JBSMXWi"
+    }
   ]
 }
