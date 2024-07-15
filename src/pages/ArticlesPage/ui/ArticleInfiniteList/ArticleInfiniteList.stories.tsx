@@ -1,137 +1,128 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import {
+    Article,
+    ArticleView,
+    ArticleType,
+    ArticleBlockType,
+} from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleType, ArticleView } from '@/entities/Article';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const article = {
     id: '1',
-    title: 'Айтишники не нужны? А это точно?',
-    subtitle: 'Кризис на рынке IT',
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s',
-    views: 6,
-    createdAt: '04.06.2024',
+    title: 'Введение в Javascript',
+    subtitle: 'Часть 1',
+    img: '',
+    views: 1024,
+    createdAt: '16.06.2024',
+    type: [ArticleType.IT],
     user: {
-        username: 'Poster',
-        id: '8',
-        avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+        id: '1',
+        username: 'username',
+        avatar: '',
     },
-    type: [
-        'IT', ArticleType.SCIENCE, ArticleType.ECONOMICS,
-        'IT', ArticleType.SCIENCE, ArticleType.ECONOMICS,
-    ],
     blocks: [
         {
             id: '1',
-            type: 'TEXT',
-            title: 'Заголовок этого блока',
+            type: ArticleBlockType.TEXT,
+            title: 'Hello, world!',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
-                'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
-            ],
-        },
-        {
-            id: '4',
-            type: 'CODE',
-            code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
-        },
-        {
-            id: '5',
-            type: 'TEXT',
-            title: 'Заголовок этого блока',
-            paragraphs: [
-                'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
-                'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
+                'Для того чтобы её написать, если вы пользуетесь Google Chrome, откройте меню браузера и выберите в нём команду Дополнительные инструменты > Инструменты разработчика. Окно браузера окажется разделённым на две части. В одной из них будет видна страница, в другой откроется панель с инструментами разработчика, содержащая несколько закладок. Нас интересует закладка Console (Консоль). Щёлкните по ней. Не обращайте внимания на то, что уже может в консоли присутствовать (для её очистки можете воспользоваться комбинацией клавиш Ctrl + L). Нас сейчас интересует приглашение консоли. Именно сюда можно вводить JavaScript-код, который выполняется по нажатию клавиши Enter. Введём в консоль следующее:',
             ],
         },
         {
             id: '2',
-            type: 'IMAGE',
-            src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-            title: 'Рисунок 1 - скриншот сайта',
+            type: ArticleBlockType.CODE,
+            code: 'console.log("Hello, world!")',
         },
         {
             id: '3',
-            type: 'CODE',
-            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+            type: ArticleBlockType.TEXT,
+            title: '',
+            paragraphs: [
+                'Этот текст можно ввести с клавиатуры, можно скопировать и вставить его в консоль. Результат будет одним и тем же, но, если вы учитесь программировать, рекомендуется вводить тексты программ самостоятельно, а не копировать их.',
+                'После того, как текст программы оказался в консоли, нажмём клавишу Enter.',
+                'Если всё сделано правильно — под этой строчкой появится текст Hello, world!. На всё остальное пока не обращайте внимания.',
+            ],
+        },
+        {
+            id: '4',
+            type: ArticleBlockType.IMAGE,
+            src: '',
+            title: 'Рисунок 1 - Первая программа в консоли браузера — вывод сообщения в консоль',
+        },
+        {
+            id: '5',
+            type: ArticleBlockType.TEXT,
+            title: '',
+            paragraphs: [
+                'Ещё один вариант браузерного «Hello, world!» заключается в выводе окна с сообщением. Делается это так:',
+            ],
+        },
+        {
+            id: '6',
+            type: ArticleBlockType.CODE,
+            code: 'alert("Hello, world!")',
         },
         {
             id: '7',
-            type: 'TEXT',
-            title: 'Заголовок этого блока',
-            paragraphs: [
-                'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
-                'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
-            ],
+            type: ArticleBlockType.TEXT,
+            title: '',
+            paragraphs: ['Вот результат выполнения этой программы.'],
         },
         {
             id: '8',
-            type: 'IMAGE',
-            src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-            title: 'Рисунок 1 - скриншот сайта',
-        },
-        {
-            id: '9',
-            type: 'TEXT',
-            title: 'Заголовок этого блока',
-            paragraphs: [
-                'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
-            ],
+            type: ArticleBlockType.IMAGE,
+            src: '',
+            title: 'Рисунок 2 - Вывод сообщения в окне',
         },
     ],
 } as Article;
 
-const articles = new Array(10)
-    .fill(0)
-    .map((item, index) => (
-        {
-            ...article,
-            id: String(index + 1),
-        }
-    )) as Article[];
+const articles = new Array(50).fill(0).map((item, index) => ({
+    ...article,
+    id: String(index + 1),
+})) as Article[];
 
-const meta: Meta<typeof ArticleInfiniteList> = {
-    title: 'features/ArticleInfiniteList',
+const ids = new Array(50).fill(0).map((item, index) => index + 1);
+const entities = articles.reduce((a, v) => ({ ...a, [v.id]: v }), {});
+
+const meta = {
+    title: 'page/Articles/ArticleInfiniteList',
     component: ArticleInfiniteList,
     decorators: [
         StoreDecorator({
             articlesPage: {
-                view: ArticleView.SMALL,
-                page: 1,
-                limit: 4,
-                ids: [1, 2, 3, 4],
-                // entities: articles,
+                ids,
+                entities,
             },
         }),
     ],
     parameters: {
-        mockData: [
-            {
-                url: `${__API__}/articles?_limit=4`,
-                method: 'GET',
-                status: 200,
-                response: articles,
-            },
-        ],
+        loki: {
+            skip: true,
+        },
     },
     tags: ['autodocs'],
-    argTypes: {},
-    args: {},
-};
+} satisfies Meta<typeof ArticleInfiniteList>;
 
 export default meta;
-type Story = StoryObj<typeof ArticleInfiniteList>;
+type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
+export const Primary: Story = {
     args: {},
 };
-Normal.decorators = [
-    StoreDecorator({
-        articlesPage: {
-            ids: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-            // entities: articles,
-            // view: ArticleView.SMALL,
-        },
-    }),
-];
+
+export const Tile: Story = {
+    decorators: [
+        StoreDecorator({
+            articlesPage: {
+                ids,
+                entities,
+                view: ArticleView.SMALL,
+            },
+        }),
+    ],
+};

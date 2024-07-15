@@ -6,10 +6,8 @@ import React, {
     LegacyRef,
     memo,
     ReactNode,
-    useCallback,
 } from 'react';
 import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { fetchNextArticlesPage } from '@/pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Loader } from '@/shared/ui/Loader/Loader';

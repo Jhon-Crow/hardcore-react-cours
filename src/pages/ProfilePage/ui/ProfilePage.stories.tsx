@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ValidateProfileError } from '@/features/editableProfileCard';
@@ -32,15 +33,16 @@ const meta = {
     parameters: {
         mockData: [
             {
-                url: `${__API__}/profile-ratings?userId=1&profileId=`,
+                url: `${__API__}/profile-ratings?userId=1&profileId=1`,
                 method: 'GET',
                 status: 200,
                 response: rating,
             },
+
         ],
     },
 
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
     decorators: [
         StoreDecorator({
             profile: {

@@ -15,5 +15,3 @@ export {
     ArticleView,
     ArticleType, ArticleSortField, ArticleBlockType,
 } from './model/consts/articleConsts';
-
-// export { ArticleView } from './model/consts/articleConsts';
