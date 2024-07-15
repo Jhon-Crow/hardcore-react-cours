@@ -9,6 +9,8 @@ export { ArticleViewSelector } from '../../features/ArticleViewSelector/ui/Artic
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { getArticleDetailsData } from './model/selectors/articleDetails';
+export { ArticleListItem } from './ui/ArticleListItem/ArticleListItem';
+export { articleDetailsReducer, articleDetailsSlice, articleDetailsActions } from './model/slice/articleDetailsSlice';
 
 export type { Article } from './model/types/article';
 export {

@@ -71,7 +71,12 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'jhon-crow-plugin/path-checker': ['error', { alias: '@' }],
+        'jhon-crow-plugin/path-checker': ['error', { alies: '@' }],
+        'jhon-crow-plugin/public-api-imports': ['error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            }],
     },
     globals: {
         __IS_DEV__: true,

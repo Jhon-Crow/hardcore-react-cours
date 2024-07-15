@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { LoginError } from '@/features/AuthByUsername/model/services/loginByUsername';
+// import { LoginError } from '@/features/AuthByUsername/model/services/loginByUsername';
 import { Profile } from '@/entities/Profile';
+import { LoginError } from '@/features/AuthByUsername';
 
 export const fetchProfileData = createAsyncThunk<
     Profile,

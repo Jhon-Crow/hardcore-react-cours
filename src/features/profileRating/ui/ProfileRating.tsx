@@ -5,7 +5,7 @@ import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { useGetProfileRating, useRateProfile } from '../api/profileRatingApi';
-import { getProfileData } from '@/features/editableProfileCard/model/selectors/getProfileData/getProfileData';
+import { getProfileData } from '@/features/editableProfileCard';
 
 export interface ProfileRatingProps {
     className?: string;

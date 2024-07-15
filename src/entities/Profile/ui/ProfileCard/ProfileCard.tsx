@@ -5,7 +5,7 @@ import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
 import { Input } from '@/shared/ui/Input/input';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { CountrySelect } from '@/entities/Country/ui/CountrySelect/CountrySelect';
+import { CountrySelect } from '@/entities/Country';
 import { VStack } from '@/shared/ui/Stack';
 import { Currency } from '../../../Currency/model/types/currency';
 import { CurrencySelect } from '../../../Currency/ui/CurrencySelect/CurrencySelect';

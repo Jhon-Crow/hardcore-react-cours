@@ -4,3 +4,4 @@ export {
 export type { ArticleDetailsCommentScheme } from './model/types/ArticleDetailsCommentScheme';
 export type { ArticleDetailsRecommendationsScheme } from './model/types/ArticleDetailsRecommendationsScheme';
 export type { ArticleDetailsPageScheme } from './model/types/index';
+export { articleDetailsPageReducer } from './model/slice';

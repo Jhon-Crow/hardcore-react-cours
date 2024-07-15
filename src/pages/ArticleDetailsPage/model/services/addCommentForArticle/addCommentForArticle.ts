@@ -2,13 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
 import { getUserAuthData } from '@/entities/User';
-import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails';
-import { addCommentFormActions } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
-import { getAddCommentFormText } from '@/features/addCommentForm/model/selectors/addCommentFormSelectors';
-import { LoginError } from '@/features/AuthByUsername/model/services/loginByUsername';
-import {
-    fetchCommentsByArticleId,
-} from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { getArticleDetailsData } from '@/entities/Article';
+import { LoginError } from '@/features/AuthByUsername';
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const addCommentForArticle = createAsyncThunk<
     Comment,
