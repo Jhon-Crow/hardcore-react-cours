@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+// @ts-ignore
 import path from 'path';
 
 export default {
@@ -38,8 +39,10 @@ export default {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
+        // @ts-ignore
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js', // Добавленная строка
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     reporters: [
         'default',
