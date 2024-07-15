@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { NotificationListItem } from './NotificationListItem';
 
 const meta: Meta<typeof NotificationListItem> = {
-    title: 'shared/NotificationListItem',
+    title: 'entities/Notification/NotificationListItem',
     component: NotificationListItem,
     parameters: {
         layout: 'centered',
@@ -18,5 +18,11 @@ export default meta;
 type Story = StoryObj<typeof NotificationListItem>;
 
 export const Normal: Story = {
-    args: {},
+    args: {
+        item: {
+            id: '1',
+            title: 'title',
+            description: 'description',
+        },
+    },
 };

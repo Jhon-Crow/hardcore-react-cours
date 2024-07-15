@@ -18,5 +18,7 @@ export default meta;
 type Story = StoryObj<typeof StarRating>;
 
 export const Normal: Story = {
-    args: {},
+    args: {
+        size: 30,
+    },
 };

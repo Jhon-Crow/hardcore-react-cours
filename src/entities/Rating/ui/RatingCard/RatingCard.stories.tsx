@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RatingCard } from './RatingCard';
 
 const meta: Meta<typeof RatingCard> = {
-    title: 'shared/RatingCard',
+    title: 'entities/RatingCard',
     component: RatingCard,
     parameters: {
         layout: 'centered',

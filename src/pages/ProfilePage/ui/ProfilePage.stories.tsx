@@ -1,70 +1,86 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { ValidateProfileError } from '@/features/editableProfileCard';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ProfilePage from './ProfilePage';
 
-const meta: Meta<typeof ProfilePage> = {
+const data = {
+    first: 'Test',
+    lastname: 'Test Last',
+    age: 18,
+    country: Country.Russia,
+    currency: Currency.RUB,
+    city: 'Test City',
+    avatar: '',
+    username: 'Test Username',
+};
+
+const rating = [
+    {
+        id: '1',
+        rate: 5,
+        feedback: 'Дефолтный мэн',
+        userId: '1',
+        profileId: '1',
+    },
+];
+
+const meta = {
     title: 'page/ProfilePage',
     component: ProfilePage,
     parameters: {
-        layout: 'centered',
+        mockData: [
+            {
+                url: `${__API__}/profile-ratings?userId=1&profileId=`,
+                method: 'GET',
+                status: 200,
+                response: rating,
+            },
+        ],
     },
+
     tags: ['autodocs'],
-    argTypes: {
-        // backgroundColor: { control: 'color' },
-    },
-    args: {
-        // onClick: fn()
-    },
-};
+    decorators: [
+        StoreDecorator({
+            profile: {
+                form: data,
+                data,
+                readonly: true,
+                isLoading: false,
+            },
+        }),
+    ],
+} satisfies Meta<typeof ProfilePage>;
 
 export default meta;
-type Story = StoryObj<typeof ProfilePage>;
+type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-    args: {
-    },
+export const Primary: Story = {
+    args: {},
 };
-Normal.decorators = [
-    StoreDecorator({
-        profile: {
-            form: {
-                first: 'Jhon',
-                lastname: 'Crow',
-                age: 23,
-                currency: Currency.RUB,
-                country: Country.Russia,
-                city: 'The City',
-                username: 'the_best_username_ever',
-                avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
-            },
-            readonly: true,
-        },
-    }),
-];
 
-export const Dark: Story = {
-    args: {
-    },
-};
-Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        profile: {
-            form: {
-                first: 'Jhon',
-                lastname: 'Crow',
-                age: 23,
-                currency: Currency.RUB,
-                country: Country.Russia,
-                city: 'The City',
-                username: 'the_best_username_ever',
-                avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+export const withErrors: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({
+            // scroll: { scrollSave: {} },
+            profile: {
+                form: {
+                    first: '',
+                    lastname: '',
+                    age: undefined,
+                    country: undefined,
+                    currency: Currency.RUB,
+                    avatar: '',
+                    username: 'ErrorUser',
+                },
+                validateErrors: [
+                    ValidateProfileError.INCORRECT_USER_DATA,
+                    ValidateProfileError.INCORRECT_COUNTRY,
+                    ValidateProfileError.INCORRECT_AGE,
+                ],
             },
-            readonly: true,
-        },
-    }),
-];
+        }),
+    ],
+};

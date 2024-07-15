@@ -1,4 +1,5 @@
 import webpack, { RuleSetRule } from 'webpack';
+// @ts-ignore
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
@@ -8,6 +9,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         build: '',
         html: '',
         entry: '',
+        // @ts-ignore
         src: path.resolve(__dirname, '..', '..', 'src'),
         locales: '',
         buildLocales: '',
@@ -18,6 +20,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     // config!.resolve!.modules!.push(paths.src);
     // config!.resolve!.modules!.push('node_modules');
     config!.resolve!.extensions!.push('.ts', '.tsx');
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@': paths.src,
+    };
 
     // @ts-ignore
     config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
