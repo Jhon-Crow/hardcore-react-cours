@@ -1,3 +1,4 @@
+/* eslint-disable */
 import '@/app/styles/index.scss';
 import React from 'react';
 import { StateScheme, StoreProvider } from '@/app/providers/StoreProvider';

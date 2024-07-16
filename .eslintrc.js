@@ -72,6 +72,13 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'jhon-crow-plugin/path-checker': ['error', { alies: '@' }],
+        'jhon-crow-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'jhon-crow-plugin/public-api-imports': ['error',
             {
                 alias: '@',
