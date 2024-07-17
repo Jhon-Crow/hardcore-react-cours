@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useEffect, useState } from 'react';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import cls from './BugButton.module.scss';
 
 interface BugButtonProps {

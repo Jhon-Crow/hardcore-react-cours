@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
-import { Dropdown } from '@/shared/ui/Popups';
+import { ListBox, Dropdown } from '@/shared/ui/Popups';
 import { Page } from '@/widgets/Page';
 
 const AboutPage = () => {

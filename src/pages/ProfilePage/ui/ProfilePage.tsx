@@ -6,7 +6,7 @@ import { Page } from '@/widgets/Page';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import cls from './ProfilePage.module.scss';
 import { ProfileRating } from '@/features/profileRating';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 
 interface ProfilePageProps {
     className?: string;
