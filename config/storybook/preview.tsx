@@ -7,7 +7,7 @@ import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDec
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
-import { Theme } from '@/shared/const/theme';
+import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
 
