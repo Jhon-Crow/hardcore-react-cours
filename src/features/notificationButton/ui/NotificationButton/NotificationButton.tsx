@@ -5,7 +5,6 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg?react';
 import { NotificationList } from '@/entities/Notification';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import { Drawer } from '@/shared/ui/Drawer';
 import cls from './NotificationButton.module.scss';
 

@@ -1,4 +1,4 @@
-import React, { EffectCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export function useInitialEffect(callback: () => void, dependencies?: React.DependencyList) {
     useEffect(() => {

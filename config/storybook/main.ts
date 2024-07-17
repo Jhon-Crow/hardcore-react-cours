@@ -1,5 +1,3 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
-
 const config: {
     stories: string[];
     framework: { name: string; options: {} };

@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/react';
-import React from 'react';
 import 'loki/configure-react';
 import { TranslationDecorator }
     from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
