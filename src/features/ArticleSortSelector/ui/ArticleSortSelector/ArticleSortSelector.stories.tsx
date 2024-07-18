@@ -3,14 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'features/ArticleSortSelector',
     component: ArticleSortSelector,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {},
-    args: {},
+    argTypes: { },
+    args: { },
 };
 
 export default meta;
