@@ -14,7 +14,10 @@ const ForbiddenPage = (props: ForbiddenPageProps) => {
     } = props;
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page
+            data-testid="ForbiddenPage"
+            className={classNames('', {}, [className])}
+        >
             {t('У вас нет необходимой роли')}
         </Page>
     );

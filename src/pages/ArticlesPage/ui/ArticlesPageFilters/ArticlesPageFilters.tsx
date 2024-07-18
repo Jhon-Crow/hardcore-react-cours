@@ -9,7 +9,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrders } from '@/shared/types';
+import { SortOrders } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import {
     getArticlesPageOrder,

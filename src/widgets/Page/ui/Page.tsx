@@ -12,8 +12,9 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { PositionSaverActions } from '../model/slices/PositionSaverSlice';
 import cls from './Page.module.scss';
 import { getScrollPositionByPath } from '../model/selectors/PositionSaverSelector';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -50,6 +51,7 @@ export const Page = memo((props: PageProps) => {
 
     return (
         <main
+            data-testid={props['data-testid'] ?? 'Page'}
             id={PAGE_ID}
             onScroll={onScroll}
             ref={wrapperRef}
