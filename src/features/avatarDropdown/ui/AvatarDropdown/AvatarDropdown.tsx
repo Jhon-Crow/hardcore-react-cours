@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 import {
-    getUserAuthData, isUserAdmin, isUserChiefEditor, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserChiefEditor,
+    userActions,
 } from '@/entities/User';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 

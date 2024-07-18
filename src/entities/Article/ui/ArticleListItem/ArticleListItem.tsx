@@ -15,6 +15,8 @@ import {
 import cls from './ArticleListItem.module.scss';
 import EyeIcon from '../../../../shared/assets/icons/eye-20-20.svg?react';
 import { getRouteArticleDetails, getRouteProfile } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -62,8 +64,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <Text title={article.title} className={cls.title} />
                     {types}
                     <div className={cls.mainWrapper}>
-                        {/* eslint-disable-next-line i18next/no-literal-string */}
-                        <img src={article.img} alt="article-img" className={cls.img} />
+                        <AppImage
+                            fallback={<Skeleton width="100%" height={250} />}
+                            src={article.img}
+                            /* eslint-disable-next-line i18next/no-literal-string */
+                            alt="article-img"
+                            className={cls.img}
+                        />
                         {textBlock && (
                             <ArticleTextBlockComponent block={{ ...textBlock, title: '' }} className={cls.textBlock} />
                         )}
@@ -97,8 +104,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         >
             <Card>
                 <div className={cls.imageWrapper}>
-                    {/* eslint-disable-next-line i18next/no-literal-string */}
-                    <img alt="articleImg" src={article.img} className={cls.img} />
+                    <AppImage
+                        fallback={<Skeleton width={200} height={200} />}
+                        /* eslint-disable-next-line i18next/no-literal-string */
+                        alt="articleImg"
+                        src={article.img}
+                        className={cls.img}
+                    />
                     <Text text={article.createdAt} className={cls.data} />
                 </div>
                 <div className={cls.infoWrapper}>
