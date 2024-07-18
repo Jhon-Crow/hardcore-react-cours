@@ -13,7 +13,7 @@ import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getUserAuthData } from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -43,7 +43,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                     className={cls.appTitle}
                     title={t('Avangard214 App')}
                 />
-                <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
+                <AppLink to={getRouteCreate()} theme={AppLinkTheme.SECONDARY}>
                     {t('Создать статью')}
                 </AppLink>
                 <HStack

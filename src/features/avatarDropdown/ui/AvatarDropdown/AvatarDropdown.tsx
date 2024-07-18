@@ -6,7 +6,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import {
     getUserAuthData, isUserAdmin, isUserChiefEditor, userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -39,9 +39,9 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             borderlessTrigger
             items={[
                 ...(isAdminPanelAvailable
-                    ? [{ content: t('Админ панель'), href: RoutePath.admin_panel }]
+                    ? [{ content: t('Админ панель'), href: getRouteAdminPanel() }]
                     : []),
-                { content: t('Профиль'), href: RoutePath.profile + authData.id },
+                { content: t('Профиль'), href: getRouteProfile(authData.id) },
                 { content: t('Выйти'), onClick: onLogout },
             ]}
             trigger={<Avatar radius={20} size={42} src={authData.avatar} />}

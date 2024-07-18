@@ -2253,6 +2253,12 @@
       "rate": 3,
       "feedback": "мда, такое такое",
       "id": "JBSMXWi"
+    },
+    {
+      "userId": "2",
+      "profileId": "1",
+      "rate": 4,
+      "id": "fR34Fkt"
     }
   ]
 }

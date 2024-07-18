@@ -14,7 +14,7 @@ import {
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import EyeIcon from '../../../../shared/assets/icons/eye-20-20.svg?react';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails, getRouteProfile } from '@/shared/const/router';
 
 interface ArticleListItemProps {
     className?: string;
@@ -52,7 +52,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <div className={cls.header}>
                         <AppLink
                             className={cls.header}
-                            to={RoutePath.profile + article.user.id}
+                            to={getRouteProfile(article.user.id)}
                         >
                             <Avatar size={30} src={article.user.avatar} />
                             <Text text={article.user.username} />
@@ -70,7 +70,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     </div>
                     <div className={cls.footer}>
                         <a
-                            href={RoutePath.article_details + article.id}
+                            href={getRouteArticleDetails(article.id)}
                             target={target}
                         >
                             <Button
@@ -92,7 +92,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card>
