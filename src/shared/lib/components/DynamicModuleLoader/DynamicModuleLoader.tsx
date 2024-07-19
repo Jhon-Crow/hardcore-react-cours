@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager, StateScheme, StateSchemeKey } from '@/app/providers/StoreProvider';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 export type ReducersList = {
     [name in StateSchemeKey]?: Reducer<NonNullable<StateScheme[name]>>;
@@ -11,6 +12,7 @@ interface DynamicModuleLoaderProps {
     reducers: ReducersList;
     removeAfterUnmount?: boolean;
     children: ReactNode;
+    initialCallback?: () => void;
 }
 
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
@@ -18,6 +20,7 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
         children,
         reducers,
         removeAfterUnmount = true,
+        initialCallback,
     } = props;
 
     const store = useStore() as ReduxStoreWithManager;
@@ -42,6 +45,10 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
             }
         };
         // eslint-disable-next-line
+    }, []);
+
+    useInitialEffect(() => {
+        initialCallback?.();
     }, []);
 
     return (
