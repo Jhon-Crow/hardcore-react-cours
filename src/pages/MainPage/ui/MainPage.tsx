@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 import { RatingCard } from '@/entities/Rating';
-import { Counter } from '@/entities/Counter';
 
 /* eslint-disable i18next/no-literal-string */
 
@@ -12,7 +11,7 @@ const MainPage = () => {
         <Page
             data-testid="MainPage"
         >
-            <Counter />
+            {/* <Counter /> */}
             <RatingCard
                 title="Как вам статья?"
                 hasFeedback
