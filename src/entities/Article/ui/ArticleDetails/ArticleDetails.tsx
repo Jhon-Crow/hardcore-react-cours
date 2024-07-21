@@ -97,11 +97,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     text={article?.subtitle}
                     size={TextSize.L}
                 />
-                <HStack align="center" gap=".2rem">
+                <HStack
+                    align="center"
+                    gap=".2rem"
+                >
                     <Icon Svg={EyeIcon} />
                     <Text text={`${article?.views}`} />
                 </HStack>
-                <HStack align="center" gap=".2rem">
+                <HStack
+                    data-testid="ArticleDetails.Info"
+                    align="center"
+                    gap=".2rem"
+                >
                     <Icon Svg={CalendarIcon} />
                     <Text text={article?.createdAt} />
                 </HStack>
@@ -112,7 +119,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack max={false} gap="1rem" className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack
+                max={false}
+                gap="1rem"
+                className={classNames(cls.ArticleDetails, {}, [className])}
+            >
                 {content}
             </VStack>
         </DynamicModuleLoader>

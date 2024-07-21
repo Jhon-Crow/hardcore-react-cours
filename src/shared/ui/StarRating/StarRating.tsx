@@ -4,7 +4,7 @@ import cls from './StarRating.module.scss';
 import { Icon } from '../Icon/Icon';
 import StarIcon from '@/shared/assets/icons/star.svg?react';
 
-interface StarRatingProps{
+interface StarRatingProps {
     className?: string;
     onSelect?: (starsCount: number) => void;
     size?: number;
@@ -64,6 +64,8 @@ export const StarRating = memo((props: StarRatingProps) => {
                         key={starNumber}
                         width={size}
                         height={size}
+                        data-testid={`StarRating.${starNumber}`}
+                        data-selected={currentStarsCount >= starNumber}
                     />
                 );
             })}

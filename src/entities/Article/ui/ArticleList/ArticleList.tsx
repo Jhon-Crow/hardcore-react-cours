@@ -9,7 +9,6 @@ import React, {
 } from 'react';
 import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Loader } from '@/shared/ui/Loader';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
@@ -28,9 +27,11 @@ interface ArticleListProps {
     onScrollEnd?: () => void;
 }
 
-interface ListProps extends HTMLAttributes<HTMLDivElement> {}
+interface ListProps extends HTMLAttributes<HTMLDivElement> {
+}
 
-interface ItemProps extends HTMLAttributes<HTMLDivElement> {}
+interface ItemProps extends HTMLAttributes<HTMLDivElement> {
+}
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 15 : 2)
     .fill(0)
@@ -40,13 +41,14 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
 
 const Item = (article: Article, view: ArticleView, key: number) => () => (
     <ArticleListItem
+        data-testid="ArticleListItem"
         article={article}
         view={view}
         key={key}
     />
 );
 
-const ItemWrapper = ({ children, ...props }: { children: ReactNode}) => (
+const ItemWrapper = ({ children, ...props }: { children: ReactNode }) => (
     <div
         {...props}
         style={{
@@ -65,7 +67,7 @@ const gridComponents: GridComponents<any> = {
         style,
         children,
         ...props
-    }: {style?: CSSProperties, children?: ReactNode}, ref: LegacyRef<HTMLDivElement>) => (
+    }: { style?: CSSProperties, children?: ReactNode }, ref: LegacyRef<HTMLDivElement>) => (
         <div
             ref={ref}
             {...props}
@@ -77,7 +79,7 @@ const gridComponents: GridComponents<any> = {
             {children}
         </div>
     )),
-    Item: ({ children, ...props }: {children?: ReactNode}) => (
+    Item: ({ children, ...props }: { children?: ReactNode }) => (
         <div
             {...props}
         >
@@ -95,7 +97,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         target,
         onScrollEnd,
     } = props;
-    const dispatch = useAppDispatch();
+    // const dispatch = useAppDispatch();
 
     // const loadMore = useCallback(() => {
     //     dispatch(fetchNextArticlesPage());
@@ -107,7 +109,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (view === ArticleView.BIG) {
         return (
-            <div>
+            <div
+                data-testid="ArticleList"
+            >
                 <div
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 >
@@ -131,7 +135,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
     return (
-        <div>
+        <div
+            data-testid="ArticleList"
+        >
             <VirtuosoGrid
                 className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 style={{ height: '100%' }}

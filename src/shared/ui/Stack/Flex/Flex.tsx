@@ -6,7 +6,18 @@ export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'column' | 'row';
 // eslint-disable-next-line max-len
-export type FlexGap = '.2rem' | '.4rem' | '.8rem' | '1rem' | '1.2rem'| '1.4rem'| '1.8rem' | '2rem' | '2.2rem' | '2.4rem' | '2.8rem'
+export type FlexGap =
+    '.2rem'
+    | '.4rem'
+    | '.8rem'
+    | '1rem'
+    | '1.2rem'
+    | '1.4rem'
+    | '1.8rem'
+    | '2rem'
+    | '2.2rem'
+    | '2.4rem'
+    | '2.8rem'
 
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,
@@ -61,6 +72,7 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         gap = '.4rem',
         max = true,
+        ...otherProps
     } = props;
 
     const classes = [
@@ -76,7 +88,7 @@ export const Flex = (props: FlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)}>
+        <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
             {children}
         </div>
     );

@@ -7,18 +7,10 @@ import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Loader } from '@/shared/ui/Loader';
-import {
-    fetchCommentsByArticleId,
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import {
-    getArticleComments,
-} from '../../model/slice/articleDetailsCommentSlice';
-import {
-    addCommentForArticle,
-} from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {
-    getArticleCommentsIsLoading,
-} from '../../model/selectors/comments';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import cls from './ArticleDetailsComments.module.scss';
 
 interface ArticleDetailsCommentsProps {
@@ -38,7 +30,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
-    });
+    }, [dispatch]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
