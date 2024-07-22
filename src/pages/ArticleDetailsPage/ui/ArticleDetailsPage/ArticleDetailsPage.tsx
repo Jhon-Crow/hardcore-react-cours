@@ -13,6 +13,7 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlag } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -26,6 +27,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
     if (!id) {
         return null;
@@ -36,7 +38,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Page className={classNames('', {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
