@@ -16,8 +16,12 @@ const article = {
         avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
     },
     type: [
-        'IT', ArticleType.SCIENCE, ArticleType.ECONOMICS,
-        'IT', ArticleType.SCIENCE, ArticleType.ECONOMICS,
+        'IT',
+        ArticleType.SCIENCE,
+        ArticleType.ECONOMICS,
+        'IT',
+        ArticleType.SCIENCE,
+        ArticleType.ECONOMICS,
     ],
     blocks: [
         {
@@ -81,21 +85,15 @@ const article = {
     ],
 } as Article;
 
-const articles = new Array(4)
-    .fill(0)
-    .map((item, index) => (
-        {
-            ...article,
-            id: String(index + 1),
-        }
-    )) as Article[];
+const articles = new Array(4).fill(0).map((item, index) => ({
+    ...article,
+    id: String(index + 1),
+})) as Article[];
 
 const meta: Meta<typeof ArticleRecommendationsList> = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
-    decorators: [
-        StoreDecorator({}),
-    ],
+    decorators: [StoreDecorator({})],
     parameters: {
         mockData: [
             {

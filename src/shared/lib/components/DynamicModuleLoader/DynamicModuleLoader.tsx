@@ -1,12 +1,16 @@
 import React, { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager, StateScheme, StateSchemeKey } from '@/app/providers/StoreProvider';
+import {
+    ReduxStoreWithManager,
+    StateScheme,
+    StateSchemeKey,
+} from '@/app/providers/StoreProvider';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 export type ReducersList = {
     [name in StateSchemeKey]?: Reducer<NonNullable<StateScheme[name]>>;
-}
+};
 
 interface DynamicModuleLoaderProps {
     reducers: ReducersList;
@@ -51,9 +55,5 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
         initialCallback?.();
     }, []);
 
-    return (
-        <>
-            {children}
-        </>
-    );
+    return <>{children}</>;
 };

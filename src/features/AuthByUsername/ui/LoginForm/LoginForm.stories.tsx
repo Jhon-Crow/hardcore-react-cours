@@ -23,15 +23,15 @@ export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Normal: Story = {
-    args: {
-    },
+    args: {},
 };
-Normal.decorators = [StoreDecorator({
-    loginForm: { username: 'admin', password: '123' },
-})];
+Normal.decorators = [
+    StoreDecorator({
+        loginForm: { username: 'admin', password: '123' },
+    }),
+];
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
 };
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),

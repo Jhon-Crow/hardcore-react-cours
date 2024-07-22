@@ -3,7 +3,7 @@ const config: {
     framework: { name: string; options: {} };
     docs: { autodocs: boolean };
     addons: string[];
-    typescript: { reactDocgen: string }
+    typescript: { reactDocgen: string };
 } = {
     stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 

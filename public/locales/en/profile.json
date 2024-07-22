@@ -1,15 +1,15 @@
 {
-  "Профиль": "Profile",
-  "Редактировать": "Edit",
-  "Ваше имя": "Your name",
-  "Ваша фамилия": "Your lastname",
-  "Сохранить": "Save",
-  "Отменить": "Cancel",
-  "Ваш возраст": "Your age",
-  "Ваш город": "Your city",
-  "Серверная ошибка при сохранении": "Server error when saving",
-  "Некорректный регион": "Invalid region",
-  "Данные не указаны": "Data not provided",
-  "Некорректные имя или фамилия": "Incorrect first or last name",
-  "Некорректный возраст": "Incorrect age"
+    "Профиль": "Profile",
+    "Редактировать": "Edit",
+    "Ваше имя": "Your name",
+    "Ваша фамилия": "Your lastname",
+    "Сохранить": "Save",
+    "Отменить": "Cancel",
+    "Ваш возраст": "Your age",
+    "Ваш город": "Your city",
+    "Серверная ошибка при сохранении": "Server error when saving",
+    "Некорректный регион": "Invalid region",
+    "Данные не указаны": "Data not provided",
+    "Некорректные имя или фамилия": "Incorrect first or last name",
+    "Некорректный возраст": "Incorrect age"
 }

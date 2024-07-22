@@ -23,6 +23,4 @@ export const Normal: Story = {
         onSendComment: action('onSendComment'),
     },
 };
-Normal.decorators = [
-    StoreDecorator({}),
-];
+Normal.decorators = [StoreDecorator({})];

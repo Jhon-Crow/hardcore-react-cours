@@ -9,8 +9,8 @@ const meta: Meta<typeof ArticleSortSelector> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: { },
-    args: { },
+    argTypes: {},
+    args: {},
 };
 
 export default meta;

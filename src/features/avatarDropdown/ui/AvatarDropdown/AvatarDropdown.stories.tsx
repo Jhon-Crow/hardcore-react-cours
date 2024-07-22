@@ -22,8 +22,13 @@ type Story = StoryObj<typeof AvatarDropdown>;
 export const Normal: Story = {
     args: {},
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL),
+Normal.decorators = [
+    ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
-        user: { authData: { avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4' } },
+        user: {
+            authData: {
+                avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+            },
+        },
     }),
 ];

@@ -54,14 +54,25 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <VStack align="center" className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <VStack
+                align="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Loader />
             </VStack>
         );
     }
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <div
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('ERROR')}

@@ -7,7 +7,7 @@ export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'column' | 'row';
 // eslint-disable-next-line max-len
 export type FlexGap =
-    '.2rem'
+    | '.2rem'
     | '.4rem'
     | '.8rem'
     | '1rem'
@@ -17,7 +17,7 @@ export type FlexGap =
     | '2rem'
     | '2.2rem'
     | '2.4rem'
-    | '2.8rem'
+    | '2.8rem';
 
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,
@@ -51,7 +51,10 @@ const gapClasses: Record<FlexGap, string> = {
     '2.8rem': cls.gap28,
 };
 
-type DivProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
 export interface FlexProps extends DivProps {
     className?: string;

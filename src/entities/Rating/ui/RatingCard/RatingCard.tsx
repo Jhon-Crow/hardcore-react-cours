@@ -42,14 +42,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
         setIsModalOpen(!isModalOpen);
     }, [isModalOpen]);
 
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            modalToggle();
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, modalToggle, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                modalToggle();
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, modalToggle, onAccept],
+    );
 
     const feedbackHandler = useCallback(() => {
         modalToggle();
@@ -80,18 +83,18 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     data-testid="RatingCard"
                     className={classNames('', {}, [className])}
                 >
-                    <VStack
-                        max={false}
-                        align="center"
-                        gap="1.2rem"
-                    >
-                        <Text title={starsCount ? t('Спасибо за оценку!') : title} />
-                        <StarRating size={30} onSelect={onSelectStars} selectedStars={starsCount} />
+                    <VStack max={false} align="center" gap="1.2rem">
+                        <Text
+                            title={starsCount ? t('Спасибо за оценку!') : title}
+                        />
+                        <StarRating
+                            size={30}
+                            onSelect={onSelectStars}
+                            selectedStars={starsCount}
+                        />
                     </VStack>
                     <Modal isOpen={isModalOpen} onClose={modalToggle}>
-                        <VStack
-                            gap="2.4rem"
-                        >
+                        <VStack gap="2.4rem">
                             {modalContent}
                             <HStack justify="between">
                                 <Button
@@ -116,26 +119,14 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
             <MobileView>
                 <Card className={classNames('', {}, [className])}>
-                    <VStack
-                        max={false}
-                        align="center"
-                        gap="1.2rem"
-                    >
+                    <VStack max={false} align="center" gap="1.2rem">
                         <Text title={title} />
                         <StarRating size={30} onSelect={onSelectStars} />
                     </VStack>
-                    <Drawer
-                        isOpen={isModalOpen}
-                        onClose={modalToggle}
-                    >
-                        <VStack
-                            align="center"
-                            gap="2.4rem"
-                        >
+                    <Drawer isOpen={isModalOpen} onClose={modalToggle}>
+                        <VStack align="center" gap="2.4rem">
                             {modalContent}
-                            <HStack
-                                max={false}
-                            >
+                            <HStack max={false}>
                                 <Button
                                     onClick={feedbackHandler}
                                     theme={ButtonTheme.BACKGROUND}

@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux';
 import { ArticleList } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageIsLoading,
+    getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface ArticleInfiniteListProps {
@@ -11,9 +14,7 @@ interface ArticleInfiniteListProps {
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const dispatch = useAppDispatch();
 

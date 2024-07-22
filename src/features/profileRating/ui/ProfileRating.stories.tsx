@@ -25,7 +25,8 @@ export const Normal: Story = {
     },
 };
 
-Normal.decorators = [ThemeDecorator(Theme.NORMAL),
+Normal.decorators = [
+    ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
         user: {
             authData: {

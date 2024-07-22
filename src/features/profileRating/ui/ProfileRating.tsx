@@ -14,10 +14,7 @@ export interface ProfileRatingProps {
 
 const ProfileRating = memo((props: ProfileRatingProps) => {
     const { t } = useTranslation();
-    const {
-        className,
-        profileId,
-    } = props;
+    const { className, profileId } = props;
 
     const userData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
@@ -31,26 +28,35 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
 
     const rating = data?.[0];
 
-    const handleRateProfile = useCallback((starsCount: number, feedback?:string) => {
-        try {
-            rateProfileMutation({
-                userId: userData?.id ?? '',
-                profileId,
-                rate: starsCount,
-                feedback,
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }, [profileId, rateProfileMutation, userData?.id]);
+    const handleRateProfile = useCallback(
+        (starsCount: number, feedback?: string) => {
+            try {
+                rateProfileMutation({
+                    userId: userData?.id ?? '',
+                    profileId,
+                    rate: starsCount,
+                    feedback,
+                });
+            } catch (e) {
+                console.log(e);
+            }
+        },
+        [profileId, rateProfileMutation, userData?.id],
+    );
 
-    const onCancel = useCallback((starsCount: number) => {
-        handleRateProfile(starsCount);
-    }, [handleRateProfile]);
+    const onCancel = useCallback(
+        (starsCount: number) => {
+            handleRateProfile(starsCount);
+        },
+        [handleRateProfile],
+    );
 
-    const onAccept = useCallback((starsCount: number, feedback?: string) => {
-        handleRateProfile(starsCount, feedback);
-    }, [handleRateProfile]);
+    const onAccept = useCallback(
+        (starsCount: number, feedback?: string) => {
+            handleRateProfile(starsCount, feedback);
+        },
+        [handleRateProfile],
+    );
 
     if (canEdit) {
         return null;

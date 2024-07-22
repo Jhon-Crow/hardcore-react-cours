@@ -37,7 +37,6 @@ const meta = {
                 status: 200,
                 response: rating,
             },
-
         ],
     },
 

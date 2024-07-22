@@ -8,18 +8,21 @@ interface ArticleImageBlockComponentProps {
     block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
-    const {
-        className,
-        block,
-    } = props;
+export const ArticleImageBlockComponent = memo(
+    (props: ArticleImageBlockComponentProps) => {
+        const { className, block } = props;
 
-    return (
-        <VStack justify="center" align="end">
-            <img style={{ width: '100%' }} alt={block?.title} src={block?.src} />
-            {block.title && (
-                <Text text={block.title} align={TextAlign.CENTER} />
-            )}
-        </VStack>
-    );
-});
+        return (
+            <VStack justify="center" align="end">
+                <img
+                    style={{ width: '100%' }}
+                    alt={block?.title}
+                    src={block?.src}
+                />
+                {block.title && (
+                    <Text text={block.title} align={TextAlign.CENTER} />
+                )}
+            </VStack>
+        );
+    },
+);

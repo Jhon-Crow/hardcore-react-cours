@@ -1,8 +1,7 @@
 import type { Preview } from '@storybook/react';
 import 'loki/configure-react';
 import { withThemeByClassName } from '@storybook/addon-themes';
-import { TranslationDecorator }
-    from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
+import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
@@ -11,7 +10,6 @@ import { Theme } from '../../src/shared/const/theme';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 
 const preview: Preview = {
-
     parameters: {
         controls: {
             matchers: {

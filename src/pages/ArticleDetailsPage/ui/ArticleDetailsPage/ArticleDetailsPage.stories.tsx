@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-    Article, ArticleType, ArticleBlockType,
-} from '@/entities/Article';
+import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
@@ -147,9 +145,7 @@ const comments = [
 ];
 
 export const Normal: Story = {
-    args: {
-
-    },
+    args: {},
 };
 
 Normal.decorators = [
@@ -157,4 +153,5 @@ Normal.decorators = [
         articleDetails: {
             data: article,
         },
-    })];
+    }),
+];

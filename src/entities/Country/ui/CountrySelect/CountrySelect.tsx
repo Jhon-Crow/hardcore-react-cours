@@ -12,12 +12,7 @@ interface CountrySelectProps {
 }
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-    const {
-        className,
-        value,
-        onChange,
-        readonly,
-    } = props;
+    const { className, value, onChange, readonly } = props;
 
     const { t } = useTranslation();
 
@@ -29,9 +24,12 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         { value: Country.Armenia, content: Country.Armenia },
     ];
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox

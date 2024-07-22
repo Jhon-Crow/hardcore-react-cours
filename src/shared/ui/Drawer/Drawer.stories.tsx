@@ -17,7 +17,5 @@ export default meta;
 type Story = StoryObj<typeof Drawer>;
 
 export const Normal: Story = {
-    args: {
-
-    },
+    args: {},
 };

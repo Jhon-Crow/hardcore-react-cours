@@ -9,9 +9,7 @@ interface ForbiddenPageProps {
 const ForbiddenPage = (props: ForbiddenPageProps) => {
     const { t } = useTranslation();
 
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     return (
         <Page

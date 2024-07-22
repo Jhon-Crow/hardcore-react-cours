@@ -1,7 +1,10 @@
 import { useSelector } from 'react-redux';
 import React, { memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -38,21 +41,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
-    const {
-        className,
-        id,
-    } = props;
+    const { className, id } = props;
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.CODE:
-            return <ArticleCodeBlockComponent block={block} />;
-        case ArticleBlockType.IMAGE:
-            return <ArticleImageBlockComponent block={block} />;
-        case ArticleBlockType.TEXT:
-            return <ArticleTextBlockComponent block={block} />;
-        default:
-            return null;
+            case ArticleBlockType.CODE:
+                return <ArticleCodeBlockComponent block={block} />;
+            case ArticleBlockType.IMAGE:
+                return <ArticleImageBlockComponent block={block} />;
+            case ArticleBlockType.TEXT:
+                return <ArticleTextBlockComponent block={block} />;
+            default:
+                return null;
         }
     }, []);
 
@@ -67,7 +67,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <VStack gap="1rem">
-                <Skeleton className={cls.avatar} height={200} width={200} border="50%" />
+                <Skeleton
+                    className={cls.avatar}
+                    height={200}
+                    width={200}
+                    border="50%"
+                />
                 <Skeleton height="2rem" width="50%" border="0" />
                 <Skeleton height="1.5rem" width="95%" border="0" />
                 <Skeleton height="10rem" width="100%" border="0" />
@@ -97,10 +102,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     text={article?.subtitle}
                     size={TextSize.L}
                 />
-                <HStack
-                    align="center"
-                    gap=".2rem"
-                >
+                <HStack align="center" gap=".2rem">
                     <Icon Svg={EyeIcon} />
                     <Text text={`${article?.views}`} />
                 </HStack>
@@ -127,6 +129,5 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 {content}
             </VStack>
         </DynamicModuleLoader>
-
     );
 });

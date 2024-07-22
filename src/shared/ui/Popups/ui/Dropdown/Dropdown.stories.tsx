@@ -34,7 +34,6 @@ export const Yallow: Story = {
     args: {
         trigger: 'TRIGGER',
         items,
-
     },
 };
 Yallow.decorators = [ThemeDecorator(Theme.YALLOW)];
@@ -43,7 +42,6 @@ export const Dark: Story = {
     args: {
         trigger: 'TRIGGER',
         items,
-
     },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

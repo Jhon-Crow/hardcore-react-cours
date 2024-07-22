@@ -12,8 +12,8 @@ const meta: Meta<typeof EditableProfileCard> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: { },
-    args: { },
+    argTypes: {},
+    args: {},
 };
 
 export default meta;

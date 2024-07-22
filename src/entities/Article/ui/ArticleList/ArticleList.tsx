@@ -27,17 +27,14 @@ interface ArticleListProps {
     onScrollEnd?: () => void;
 }
 
-interface ListProps extends HTMLAttributes<HTMLDivElement> {
-}
+interface ListProps extends HTMLAttributes<HTMLDivElement> {}
 
-interface ItemProps extends HTMLAttributes<HTMLDivElement> {
-}
+interface ItemProps extends HTMLAttributes<HTMLDivElement> {}
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 15 : 2)
-    .fill(0)
-    .map((_, index) => (
-        <ArticleListItemSkeleton key={index} view={view} />
-    ));
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.SMALL ? 15 : 2)
+        .fill(0)
+        .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />);
 
 const Item = (article: Article, view: ArticleView, key: number) => () => (
     <ArticleListItem
@@ -63,28 +60,29 @@ const ItemWrapper = ({ children, ...props }: { children: ReactNode }) => (
 );
 
 const gridComponents: GridComponents<any> = {
-    List: forwardRef(({
-        style,
-        children,
-        ...props
-    }: { style?: CSSProperties, children?: ReactNode }, ref: LegacyRef<HTMLDivElement>) => (
-        <div
-            ref={ref}
-            {...props}
-            className={cls.itemWrapper}
-            style={{
-                ...style,
-            }}
-        >
-            {children}
-        </div>
-    )),
+    List: forwardRef(
+        (
+            {
+                style,
+                children,
+                ...props
+            }: { style?: CSSProperties; children?: ReactNode },
+            ref: LegacyRef<HTMLDivElement>,
+        ) => (
+            <div
+                ref={ref}
+                {...props}
+                className={cls.itemWrapper}
+                style={{
+                    ...style,
+                }}
+            >
+                {children}
+            </div>
+        ),
+    ),
     Item: ({ children, ...props }: { children?: ReactNode }) => (
-        <div
-            {...props}
-        >
-            {children}
-        </div>
+        <div {...props}>{children}</div>
     ),
 };
 
@@ -104,16 +102,26 @@ export const ArticleList = memo((props: ArticleListProps) => {
     // }, [dispatch]);
 
     if (isLoading && !articles.length) {
-        return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{getSkeletons(view)}</div>;
+        return (
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
+                {getSkeletons(view)}
+            </div>
+        );
     }
 
     if (view === ArticleView.BIG) {
         return (
-            <div
-                data-testid="ArticleList"
-            >
+            <div data-testid="ArticleList">
                 <div
-                    className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                    className={classNames(cls.ArticleList, {}, [
+                        className,
+                        cls[view],
+                    ])}
                 >
                     <Virtuoso
                         data={articles}
@@ -130,16 +138,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
                         )}
                     />
                 </div>
-                {isLoading && (<>{getSkeletons(view)}</>)}
+                {isLoading && <>{getSkeletons(view)}</>}
             </div>
         );
     }
     return (
-        <div
-            data-testid="ArticleList"
-        >
+        <div data-testid="ArticleList">
             <VirtuosoGrid
-                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
                 style={{ height: '100%' }}
                 data={articles}
                 components={gridComponents}
@@ -156,7 +165,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     </ItemWrapper>
                 )}
             />
-            {isLoading && (<div className={cls.loader}><Loader /></div>)}
+            {isLoading && (
+                <div className={cls.loader}>
+                    <Loader />
+                </div>
+            )}
         </div>
     );
 });

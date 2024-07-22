@@ -51,9 +51,7 @@ export function ListBox(props: ListBoxProps) {
     const Classes = [mapDirectionClass[direction]];
 
     return (
-        <HStack
-            className={classNames('', mods, [className, popupCls.popup])}
-        >
+        <HStack className={classNames('', mods, [className, popupCls.popup])}>
             {label && <span>{`${label}> `}</span>}
             <Listbox
                 disabled={readonly}
@@ -62,12 +60,8 @@ export function ListBox(props: ListBoxProps) {
                 value={value}
                 onChange={onChange}
             >
-                <Listbox.Button
-                    className={cls.selectBtn}
-                >
-                    <Button
-                        theme={ButtonTheme.CLEAR}
-                    >
+                <Listbox.Button className={cls.selectBtn}>
+                    <Button theme={ButtonTheme.CLEAR}>
                         {value ?? defaultValue}
                     </Button>
                 </Listbox.Button>
@@ -83,13 +77,10 @@ export function ListBox(props: ListBoxProps) {
                         >
                             {({ active, selected }) => (
                                 <li
-                                    className={classNames(
-                                        cls.optionItem,
-                                        {
-                                            [popupCls.active]: active,
-                                            [popupCls.disabled]: item.disabled,
-                                        },
-                                    )}
+                                    className={classNames(cls.optionItem, {
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled,
+                                    })}
                                 >
                                     {selected && '!'}
                                     {item.content}

@@ -11,10 +11,7 @@ interface NotificationListItemProps {
 }
 
 export const NotificationListItem = memo((props: NotificationListItemProps) => {
-    const {
-        className,
-        item,
-    } = props;
+    const { className, item } = props;
 
     const content = (
         <Card

@@ -35,10 +35,7 @@ Normal.decorators = [
 export const NoAuth: Story = {
     args: {},
 };
-NoAuth.decorators = [
-    ThemeDecorator(Theme.NORMAL),
-    StoreDecorator({}),
-];
+NoAuth.decorators = [ThemeDecorator(Theme.NORMAL), StoreDecorator({})];
 
 export const Dark: Story = {
     args: {},

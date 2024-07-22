@@ -14,7 +14,7 @@ const meta: Meta<typeof Text> = {
     argTypes: {
         // backgroundColor: { control: 'color' },
     },
-    args: { },
+    args: {},
 };
 
 export default meta;

@@ -5,13 +5,13 @@ import cls from './Text.module.scss';
 export enum TextTheme {
     PRIMARY = 'primary',
     INVERTED = 'inverted',
-    ERROR = 'error'
+    ERROR = 'error',
 }
 
 export enum TextAlign {
     RIGHT = 'right',
     LEFT = 'left',
-    CENTER = 'center'
+    CENTER = 'center',
 }
 
 export enum TextSize {
@@ -31,7 +31,7 @@ interface TextProps {
     'data-testid'?: string;
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3'
+type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h3',
@@ -60,24 +60,19 @@ export const Text = memo((props: TextProps) => {
 
     return (
         <div className={classNames(cls.Text, mods, [className])}>
-            {title
-                && (
-                    <HeaderTag
-                        data-testid={`${dataTestId}.Header`}
-                        className={cls.title}
-                    >
-                        {title}
-                    </HeaderTag>
-                )}
-            {text
-                && (
-                    <p
-                        data-testid={`${dataTestId}.Paragraph`}
-                        className={cls.text}
-                    >
-                        {text}
-                    </p>
-                )}
+            {title && (
+                <HeaderTag
+                    data-testid={`${dataTestId}.Header`}
+                    className={cls.title}
+                >
+                    {title}
+                </HeaderTag>
+            )}
+            {text && (
+                <p data-testid={`${dataTestId}.Paragraph`} className={cls.text}>
+                    {text}
+                </p>
+            )}
         </div>
     );
 });

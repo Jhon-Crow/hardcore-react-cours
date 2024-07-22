@@ -6,4 +6,8 @@ export { getProfileData } from './model/selectors/getProfileData/getProfileData'
 
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 
-export { profileReducer, profileSlice, profileActions } from './model/slice/profileSlice';
+export {
+    profileReducer,
+    profileSlice,
+    profileActions,
+} from './model/slice/profileSlice';

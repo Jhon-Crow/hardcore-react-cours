@@ -15,13 +15,9 @@ export const PageError = ({ className }: PageErrorProps) => {
         location.reload();
     };
     return (
-
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t('Произошла непредвиденная ошибка')}</p>
-            <Button
-                theme={ButtonTheme.OUTLINE_RED}
-                onClick={reloadPage}
-            >
+            <Button theme={ButtonTheme.OUTLINE_RED} onClick={reloadPage}>
                 {t('Обновить страницу')}
             </Button>
         </div>

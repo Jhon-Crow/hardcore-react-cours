@@ -11,7 +11,9 @@ import { StoreProvider } from '@/app/providers/StoreProvider/index';
 const container = document.getElementById('root');
 
 if (!container) {
-    throw new Error('Контейнер root не найден. Не удаётся вмонтировать реакт приложение');
+    throw new Error(
+        'Контейнер root не найден. Не удаётся вмонтировать реакт приложение',
+    );
 }
 
 const root = createRoot(container); // createRoot(container!) if you use TypeScript

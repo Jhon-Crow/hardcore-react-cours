@@ -43,7 +43,10 @@ export function Dropdown(props: DropdownProps) {
     return (
         <Menu
             as="div"
-            className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
         >
             <Menu.Button
                 className={classNames(cls.btn, mods, [className])}
@@ -51,11 +54,9 @@ export function Dropdown(props: DropdownProps) {
             >
                 {trigger}
             </Menu.Button>
-            <Menu.Items
-                className={classNames(cls.menu, {}, menuClasses)}
-            >
+            <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item: DropdownItem, index) => {
-                    const content = ({ active }: {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
                             onClick={item.onClick}

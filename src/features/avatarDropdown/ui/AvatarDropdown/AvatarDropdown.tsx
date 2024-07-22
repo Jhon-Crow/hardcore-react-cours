@@ -22,9 +22,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     const ChiefEditor = useSelector(isUserChiefEditor);
     const authData = useSelector(getUserAuthData);
 
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
@@ -42,7 +40,12 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             borderlessTrigger
             items={[
                 ...(isAdminPanelAvailable
-                    ? [{ content: t('Админ панель'), href: getRouteAdminPanel() }]
+                    ? [
+                          {
+                              content: t('Админ панель'),
+                              href: getRouteAdminPanel(),
+                          },
+                      ]
                     : []),
                 { content: t('Профиль'), href: getRouteProfile(authData.id) },
                 { content: t('Выйти'), onClick: onLogout },

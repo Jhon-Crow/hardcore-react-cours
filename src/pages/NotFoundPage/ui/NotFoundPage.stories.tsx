@@ -22,12 +22,10 @@ export default meta;
 type Story = StoryObj<typeof NotFoundPage>;
 
 export const Normal: Story = {
-    args: {
-    },
+    args: {},
 };
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

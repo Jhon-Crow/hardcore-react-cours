@@ -4,7 +4,6 @@ import { Rating } from '@/entities/Rating';
 interface GetArticleRatingArg {
     userId: string;
     articleId: string;
-
 }
 interface RatingArticleArg {
     userId: string;

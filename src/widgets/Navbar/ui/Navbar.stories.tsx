@@ -25,22 +25,23 @@ type Story = StoryObj<typeof Navbar>;
 export const Normal: Story = {
     args: {},
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL),
-    StoreDecorator({}),
-];
+Normal.decorators = [ThemeDecorator(Theme.NORMAL), StoreDecorator({})];
 
 export const Auth: Story = {
     args: {},
 };
-Auth.decorators = [ThemeDecorator(Theme.NORMAL),
+Auth.decorators = [
+    ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
-        user: { authData: { avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4' } },
+        user: {
+            authData: {
+                avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
+            },
+        },
     }),
 ];
 
 export const Dark: Story = {
     args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK),
-    StoreDecorator({}),
-];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

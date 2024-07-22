@@ -9,8 +9,8 @@ const meta: Meta<typeof ArticleTypeTabs> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: { },
-    args: { },
+    argTypes: {},
+    args: {},
 };
 
 export default meta;

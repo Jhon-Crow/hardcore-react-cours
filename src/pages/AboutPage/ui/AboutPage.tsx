@@ -18,7 +18,6 @@ const AboutPage = () => {
                     { value: '2', content: 'jghhj', disabled: true },
                     { value: '3', content: '333333' },
                 ]}
-
             />
             <Dropdown
                 trigger="Dropdown"
@@ -28,7 +27,6 @@ const AboutPage = () => {
                     { content: '2222222', disabled: true },
                     { content: '3333333' },
                 ]}
-
             />
             {/* </HStack> */}
         </Page>

@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
-import {
-    Text, TextAlign, TextSize, TextTheme,
-} from '@/shared/ui/Text';
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
@@ -46,11 +44,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <AppLink to={getRouteCreate()} theme={AppLinkTheme.SECONDARY}>
                     {t('Создать статью')}
                 </AppLink>
-                <HStack
-                    className={cls.actions}
-                    gap=".4rem"
-                    max={false}
-                >
+                <HStack className={cls.actions} gap=".4rem" max={false}>
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
@@ -75,12 +69,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                     {t('Войти')}
                 </Button>
             </div>
-            {isOpen && (
-                <LoginModal
-                    isOpen={isOpen}
-                    onClose={onClosModal}
-                />
-            )}
+            {isOpen && <LoginModal isOpen={isOpen} onClose={onClosModal} />}
         </header>
     );
 };

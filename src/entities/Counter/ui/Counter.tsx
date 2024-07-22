@@ -26,13 +26,11 @@ export const Counter = () => {
             <Button data-testid="increment-btn" onClick={incrementHandler}>
                 increment
             </Button>
-            <Button onClick={addFiveHandler}>
-                add5
-            </Button>
+            <Button onClick={addFiveHandler}>add5</Button>
             <Button data-testid="decrement-btn" onClick={decrementHandler}>
                 decrement
             </Button>
         </div>
-    // i18n-enable
+        // i18n-enable
     );
 };

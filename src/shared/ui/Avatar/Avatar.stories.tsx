@@ -13,9 +13,7 @@ const meta: Meta<typeof Avatar> = {
     argTypes: {
         // backgroundColor: { control: 'color' },
     },
-    args: {
-
-    },
+    args: {},
 };
 
 export default meta;

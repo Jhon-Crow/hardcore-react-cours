@@ -27,8 +27,12 @@ const article = {
         avatar: 'https://avatars.githubusercontent.com/u/133867474?v=4',
     },
     type: [
-        'IT', ArticleType.SCIENCE, ArticleType.ECONOMICS,
-        'IT', ArticleType.SCIENCE, ArticleType.ECONOMICS,
+        'IT',
+        ArticleType.SCIENCE,
+        ArticleType.ECONOMICS,
+        'IT',
+        ArticleType.SCIENCE,
+        ArticleType.ECONOMICS,
     ],
     blocks: [
         {

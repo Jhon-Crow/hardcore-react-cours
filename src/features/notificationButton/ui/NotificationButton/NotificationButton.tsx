@@ -13,9 +13,7 @@ interface NotificationButtonProps {
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const [isOpen, setIsOpen] = useState(false);
 

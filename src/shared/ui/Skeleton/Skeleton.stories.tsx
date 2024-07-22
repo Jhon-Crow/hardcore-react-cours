@@ -41,9 +41,7 @@ export const NormalDark: Story = {
         width: '100vw',
     },
 };
-NormalDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-];
+NormalDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const CircleDark: Story = {
     args: {
         border: '50%',
@@ -51,9 +49,7 @@ export const CircleDark: Story = {
         width: '5rem',
     },
 };
-CircleDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-];
+CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const NormalYallow: Story = {
     args: {
@@ -62,9 +58,7 @@ export const NormalYallow: Story = {
         width: '100vw',
     },
 };
-NormalYallow.decorators = [
-    ThemeDecorator(Theme.YALLOW),
-];
+NormalYallow.decorators = [ThemeDecorator(Theme.YALLOW)];
 export const CircleYallow: Story = {
     args: {
         border: '50%',
@@ -72,6 +66,4 @@ export const CircleYallow: Story = {
         width: '5rem',
     },
 };
-CircleYallow.decorators = [
-    ThemeDecorator(Theme.YALLOW),
-];
+CircleYallow.decorators = [ThemeDecorator(Theme.YALLOW)];

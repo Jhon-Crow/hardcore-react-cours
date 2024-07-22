@@ -13,7 +13,11 @@ const meta: Meta<typeof ListBox> = {
     argTypes: {},
     args: {},
     decorators: [
-        (Story) => <div style={{ padding: '10rem' }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: '10rem' }}>
+                <Story />
+            </div>
+        ),
     ],
 };
 

@@ -12,41 +12,38 @@ interface ArticleDetailsPageHeaderProps {
     className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
-    const { t } = useTranslation('article-details');
+export const ArticleDetailsPageHeader = memo(
+    (props: ArticleDetailsPageHeaderProps) => {
+        const { t } = useTranslation('article-details');
 
-    const {
-        className,
-    } = props;
+        const { className } = props;
 
-    const article = useSelector(getArticleDetailsData);
-    const navigate = useNavigate();
-    const canEditArticle = useSelector(getCanEditArticle);
+        const article = useSelector(getArticleDetailsData);
+        const navigate = useNavigate();
+        const canEditArticle = useSelector(getCanEditArticle);
 
-    const onBackToList = useCallback(() => {
-        navigate(getRouteArticles());
-    }, [navigate]);
+        const onBackToList = useCallback(() => {
+            navigate(getRouteArticles());
+        }, [navigate]);
 
-    const onEdit = useCallback(() => {
-        navigate(getRouteArticleEdit(article!.id));
-    }, [article, navigate]);
+        const onEdit = useCallback(() => {
+            navigate(getRouteArticleEdit(article!.id));
+        }, [article, navigate]);
 
-    return (
-        <HStack justify="between">
-            <Button
-                onClick={onBackToList}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-            >
-                {t('Назад к списку')}
-            </Button>
-            {canEditArticle && (
+        return (
+            <HStack justify="between">
                 <Button
-                    onClick={onEdit}
-                    theme={ButtonTheme.CLEAR}
+                    onClick={onBackToList}
+                    theme={ButtonTheme.BACKGROUND_INVERTED}
                 >
-                    {t('Редактировать')}
+                    {t('Назад к списку')}
                 </Button>
-            )}
-        </HStack>
-    );
-});
+                {canEditArticle && (
+                    <Button onClick={onEdit} theme={ButtonTheme.CLEAR}>
+                        {t('Редактировать')}
+                    </Button>
+                )}
+            </HStack>
+        );
+    },
+);

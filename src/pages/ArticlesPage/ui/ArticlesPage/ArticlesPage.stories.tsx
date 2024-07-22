@@ -31,6 +31,5 @@ Normal.decorators = [
             isLoading: false,
             hasMore: true,
         },
-
     }),
 ];
