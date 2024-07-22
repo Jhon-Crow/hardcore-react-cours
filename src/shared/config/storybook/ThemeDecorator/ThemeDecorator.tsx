@@ -9,5 +9,4 @@ export const ThemeDecorator = (theme: Theme) => (StoryComponent: React.FC) => (
             <StoryComponent />
         </div>
     </ThemeProvider>
-
 );
