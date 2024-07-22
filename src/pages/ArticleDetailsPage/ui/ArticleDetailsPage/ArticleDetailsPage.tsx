@@ -13,7 +13,8 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -27,18 +28,24 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
     if (!id) {
         return null;
     }
+
+    const articleRatingCard = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+    });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+                {/* <ArticleRating articleId={id} /> */}
+                {articleRatingCard}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>

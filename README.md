@@ -56,10 +56,11 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 ## Тесты
 
 В проекте используются 4 вида тестов:
+
 1) Обычные unit тесты на jest - `npm run test:unit`
 2) Тесты на компоненты с React testing library -`npm run test:unit`
 3) Скриншотное тестирование с loki `npm run test:ui`
-4)e2e тестирование с Cypress `npm run test:e2e`
+   4)e2e тестирование с Cypress `npm run test:e2e`
 
 Подробнее о тестах - [документация тестирование](docs/tests.md)
 
@@ -72,18 +73,21 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 Также для строгого контроля главных архитектурных принципов
 используется собственный eslint plugin *eslint-plugin-ulbi-tv-plugin*,
 который содержит 3 правила
+
 1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
 2) layer-imports - проверяет корректность использования слоев с точки зрения FSD
    (например widgets нельзя использовать в features и entitites)
 3) public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
 
 ##### Запуск линтеров
+
 - `npm run lint:ts` - Проверка ts файлов линтером
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
 
 ----
+
 ## Storybook
 
 В проекте для каждого компонента описываются стори-кейсы.
@@ -92,6 +96,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
 
 Запустить сторибук можно командой:
+
 - `npm run storybook`
 
 Подробнее о [Storybook](docs/storybook.md)
@@ -106,39 +111,40 @@ import { Button, ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Button> = {
-   title: 'shared/Button',
-   component: Button,
-   parameters: {
-      layout: 'centered',
-   },
-   tags: ['autodocs'],
-   argTypes: {},
-   args: { onClick: fn() },
+    title: 'shared/Button',
+    component: Button,
+    parameters: {
+        layout: 'centered',
+    },
+    tags: ['autodocs'],
+    argTypes: {},
+    args: { onClick: fn() },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Clear: Story = {
-   args: {
-      children: 'Text',
-      theme: ButtonTheme.CLEAR,
-   },
+    args: {
+        children: 'Text',
+        theme: ButtonTheme.CLEAR,
+    },
 };
 ```
-
 
 ----
 
 ## Конфигурация проекта
 
 Для разработки проект содержит 2 конфига:
+
 1. Webpack - ./config/build
 2. vite - vite.config.ts
 
 Оба сборщика адаптированы под основные фичи приложения.
 
 Вся конфигурация хранится в /config
+
 - /config/babel - babel
 - /config/build - конфигурация webpack
 - /config/jest - конфигурация тестовой среды
@@ -168,8 +174,28 @@ export const Clear: Story = {
 [DynamicModuleLoader](src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 ----
 
+### Работа с feature-flags
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+в него передаётся объект с опциями
+
+```
+{
+   name: название фича-флага,
+   on: стрелочная функция, которая отработает после включения фичи
+   off: стрелочная функция, которая отработает после выключения фичи
+}
+```
+
+Для автоматического удаления фичи использовать скрипт remove-feature.ts, который принимает 2 аргумента
+
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
+
+----
 
 ## Сущности (entities)
+
 - [Article](src/entities/Article)
 - [Comment](src/entities/Comment)
 - [Counter](src/entities/Counter)
@@ -181,7 +207,7 @@ export const Clear: Story = {
 - [User](src/entities/User)
 
 ## Фичи (features)
-!!!
+
 - [addCommentForm](src/features/addCommentForm)
 - [articleEditForm](src/features/articleEditForm)
 - [articleRating](src/features/articleRating)
