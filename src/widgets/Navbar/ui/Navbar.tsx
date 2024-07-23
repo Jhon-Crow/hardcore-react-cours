@@ -12,6 +12,7 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getUserAuthData } from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
 import { getRouteCreate } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
     className?: string;
@@ -41,9 +42,21 @@ export const Navbar = ({ className }: NavbarProps) => {
                     className={cls.appTitle}
                     title={t('Avangard214 App')}
                 />
-                <AppLink to={getRouteCreate()} theme={AppLinkTheme.SECONDARY}>
-                    {t('Создать статью')}
-                </AppLink>
+                <ToggleFeatures
+                    feature="isNavbarArticleCreateLinkEnabled"
+                    on={
+                        <AppLink
+                            to={getRouteCreate()}
+                            theme={AppLinkTheme.SECONDARY}
+                        >
+                            {t('Создать статью')}
+                        </AppLink>
+                    }
+                    off={<></>}
+                />
+                {/* <AppLink to={getRouteCreate()} theme={AppLinkTheme.SECONDARY}> */}
+                {/*    {t('Создать статью')} */}
+                {/* </AppLink> */}
                 <HStack className={cls.actions} gap=".4rem" max={false}>
                     <NotificationButton />
                     <AvatarDropdown />

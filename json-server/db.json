@@ -2203,7 +2203,8 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isMainPageTestComponentsEnabled": true,
-        "isAboutPageTestComponentsEnabled": true
+        "isAboutPageTestComponentsEnabled": true,
+        "isNavbarArticleCreateLinkEnabled": true
       },
       "jsonSettings": {
         "theme": "app_yallow_theme",
@@ -2221,7 +2222,8 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isMainPageTestComponentsEnabled": false,
-        "isAboutPageTestComponentsEnabled": false
+        "isAboutPageTestComponentsEnabled": false,
+        "isNavbarArticleCreateLinkEnabled": false
       },
       "jsonSettings": {
         "isFirstVisit": true,
@@ -2241,7 +2243,8 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isMainPageTestComponentsEnabled": false,
-        "isAboutPageTestComponentsEnabled": false
+        "isAboutPageTestComponentsEnabled": false,
+        "isNavbarArticleCreateLinkEnabled": false
       },
       "jsonSettings": {
         "isFirstVisit": true,
@@ -2260,7 +2263,8 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isMainPageTestComponentsEnabled": false,
-        "isAboutPageTestComponentsEnabled": false
+        "isAboutPageTestComponentsEnabled": false,
+        "isNavbarArticleCreateLinkEnabled": false
       },
       "jsonSettings": {
         "isFirstVisit": true,
