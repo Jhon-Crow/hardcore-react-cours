@@ -15,5 +15,3 @@ export const rtkApi = createApi({
     }),
     endpoints: (builder) => ({}),
 });
-
-// export const { useGetPokemonByNameQuery } = pokemonApi;

@@ -2202,7 +2202,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isMainPageTestComponentsEnabled": true,
+        "isAboutPageTestComponentsEnabled": true
       },
       "jsonSettings": {
         "theme": "app_yallow_theme",
@@ -2218,8 +2219,9 @@
         "USER"
       ],
       "features": {
-        "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isArticleRatingEnabled": true,
+        "isMainPageTestComponentsEnabled": false,
+        "isAboutPageTestComponentsEnabled": false
       },
       "jsonSettings": {
         "isFirstVisit": true,
@@ -2238,7 +2240,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isMainPageTestComponentsEnabled": false,
+        "isAboutPageTestComponentsEnabled": false
       },
       "jsonSettings": {
         "isFirstVisit": true,
@@ -2255,8 +2258,9 @@
         "USER"
       ],
       "features": {
-        "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isArticleRatingEnabled": true,
+        "isMainPageTestComponentsEnabled": false,
+        "isAboutPageTestComponentsEnabled": false
       },
       "jsonSettings": {
         "isFirstVisit": true,

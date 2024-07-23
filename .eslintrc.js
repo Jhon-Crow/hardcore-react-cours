@@ -61,6 +61,7 @@ module.exports = {
                     'gap',
                     'border',
                     'trigger',
+                    'feature',
                     '<>',
                 ],
             },
