@@ -4,7 +4,7 @@ import { User, UserScheme } from '../types/user';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { saveJsonSettings } from '../services/saveJsonSettings';
 import { JsonSettings } from '../types/jsonSettings';
-import { initAuthData } from '@/entities/User';
+import { initAuthData } from '../services/initAuthData';
 
 const initialState: UserScheme = {
     _inited: false,
