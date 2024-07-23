@@ -9,3 +9,5 @@ export {
 } from './model/selectors/roleSelectors';
 
 export { UserRole } from './model/consts/userConsts';
+export { useJsonSettings } from './model/selectors/jsonSettings';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
