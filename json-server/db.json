@@ -2205,7 +2205,8 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_yallow_theme"
+        "theme": "app_yallow_theme",
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://avatars.githubusercontent.com/u/133867474?v=4"
     },
@@ -2223,7 +2224,8 @@
       "jsonSettings": {
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
-        "theme": "app_yallow_theme"
+        "theme": "app_yallow_theme",
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysd6Q41MAApaIJoCdFdpGGPu7JCkv0CLyyQ&s"
     },

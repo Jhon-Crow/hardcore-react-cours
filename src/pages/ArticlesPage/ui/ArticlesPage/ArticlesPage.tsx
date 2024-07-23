@@ -16,6 +16,7 @@ import { getArticlesPageError } from '../../model/selectors/articlesPageSelector
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { ArticlePageGreating } from '@/features/articlePageGreating';
 
 interface ArticlesPageProps {
     className?: string;
@@ -48,6 +49,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             >
                 <ArticlesPageFilters />
                 <ArticleInfiniteList />
+                <ArticlePageGreating />
             </Page>
         </DynamicModuleLoader>
     );
