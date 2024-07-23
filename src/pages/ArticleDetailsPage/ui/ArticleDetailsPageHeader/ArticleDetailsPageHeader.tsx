@@ -39,7 +39,7 @@ export const ArticleDetailsPageHeader = memo(
                     {t('Назад к списку')}
                 </Button>
                 {canEditArticle && (
-                    <Button onClick={onEdit} theme={ButtonTheme.CLEAR}>
+                    <Button disabled onClick={onEdit} theme={ButtonTheme.CLEAR}>
                         {t('Редактировать')}
                     </Button>
                 )}
