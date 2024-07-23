@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Page } from "@/widgets/Page";
 import { Card } from "@/shared/ui/Card";
+import { Counter } from "@/entities/Counter";
 
 /* eslint-disable i18next/no-literal-string */
 
@@ -10,13 +11,13 @@ const MainPage = () => {
 
     return (
         <Page data-testid="MainPage">
+            <Counter />
             <Card>{t('Главная страница')}</Card>
-
             {/* <ToggleFeatures */}
             {/*    feature="isMainPageTestComponentsEnabled" */}
             {/*    on={ */}
             {/*        <> */}
-            {/*            <Counter /> <StarRating size={50} /> */}
+            {/* <Counter /> <StarRating size={50} /> */}
             {/*        </> */}
             {/*    } */}
             {/*    off={<Card>{t('Главная страница')}</Card>} */}
