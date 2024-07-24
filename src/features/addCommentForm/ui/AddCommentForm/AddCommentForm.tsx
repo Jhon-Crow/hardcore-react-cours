@@ -18,6 +18,7 @@ import {
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -54,6 +55,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 data-testid="AddCommentForm"
                 className={classNames(cls.AddCommentForm, {}, [className])}
             >
+                {error && <Text text={error} theme={TextTheme.ERROR} />}
                 <Input
                     data-testid="AddCommentForm.Input"
                     className={cls.input}
