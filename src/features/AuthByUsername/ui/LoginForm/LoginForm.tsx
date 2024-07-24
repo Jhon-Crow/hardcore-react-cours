@@ -52,20 +52,27 @@ const LoginForm = memo((props: LoginFormProps) => {
         [dispatch],
     );
 
-    const onLoginClick = useCallback(async () => {
+    const authDataSubmitHandler = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
     }, [onSuccess, dispatch, username, password]);
 
+    const onEnterSubmit = useCallback(
+        (event: React.KeyboardEvent<HTMLButtonElement>) => {
+            if (event.key === 'Enter') {
+                authDataSubmitHandler();
+            }
+        },
+        [authDataSubmitHandler],
+    );
+
     return (
-        // eslint-disable-next-line i18next/no-literal-string
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
                 {error && (
-                    // eslint-disable-next-line
                     <Text
                         theme={TextTheme.ERROR}
                         title={t('ERROR')}
@@ -84,11 +91,12 @@ const LoginForm = memo((props: LoginFormProps) => {
                     placeholder={t('Введите пароль')}
                     onChange={onChangePassword}
                     value={password}
+                    onKeyDown={onEnterSubmit}
                 />
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     className={cls.Btn}
-                    onClick={onLoginClick}
+                    onClick={authDataSubmitHandler}
                     disabled={isLoading}
                 >
                     {t('Войти')}

@@ -33,7 +33,6 @@ export function useModal({
     }, [isOpen]);
 
     const closeHandler = useCallback(() => {
-        console.log('closeHandler', !!onClose);
         if (onClose) {
             setIsClosing(true);
             timerRef.current = setTimeout(() => {
