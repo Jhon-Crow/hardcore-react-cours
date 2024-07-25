@@ -87,7 +87,7 @@ const LoginForm = memo((props: LoginFormProps) => {
                     autofocus
                 />
                 <Input
-                    type="text"
+                    type="password"
                     placeholder={t('Введите пароль')}
                     onChange={onChangePassword}
                     value={password}
