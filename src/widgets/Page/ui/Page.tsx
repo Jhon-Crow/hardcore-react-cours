@@ -17,6 +17,8 @@ import { PositionSaverActions } from '../model/slices/PositionSaverSlice';
 import cls from './Page.module.scss';
 import { getScrollPositionByPath } from '../model/selectors/PositionSaverSelector';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
+import { getUserAuthData } from '@/entities/User';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -32,6 +34,7 @@ export const Page = memo((props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
+    const authData = useSelector(getUserAuthData);
     const scrollPosition = useSelector((state: StateScheme) =>
         getScrollPositionByPath(state, pathname),
     );
@@ -52,6 +55,31 @@ export const Page = memo((props: PageProps) => {
             }),
         );
     }, 500);
+
+    if (authData) {
+        return (
+            <main
+                data-testid={props['data-testid'] ?? 'Page'}
+                id={PAGE_ID}
+                onScroll={onScroll}
+                ref={wrapperRef}
+                className={classNames(
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.PageRedesigned,
+                        off: () => cls.Page,
+                    }),
+                    {},
+                    [className],
+                )}
+            >
+                {children}
+                {onScrollEnd ? (
+                    <div className={cls.trigger} ref={triggerRef} />
+                ) : null}
+            </main>
+        );
+    }
 
     return (
         <main

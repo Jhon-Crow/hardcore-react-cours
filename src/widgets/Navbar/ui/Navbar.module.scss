@@ -1,29 +1,33 @@
 .Navbar {
-    width: 100%;
-    height: var(--navbar-height);
-    background: var(--inverted-bg-color);
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    padding-right: 2.4rem;
-    gap: 1rem;
-    justify-content: space-between;
-    z-index: var(--z-index-navbar);
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--inverted-bg-color);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 2.4rem;
+  gap: 1rem;
+  justify-content: space-between;
+  z-index: var(--z-index-navbar);
+}
+
+.NavbarRedesigned {
+  padding: 1rem;
 }
 
 .links {
-    display: flex;
-    gap: .5rem;
-    margin-left: auto;
+  display: flex;
+  gap: .5rem;
+  margin-left: auto;
 }
 
 .appTitle {
-    width: var(--sidebar-width);
-    filter: drop-shadow(2px 1px 8px var(--bg-color));
+  width: var(--sidebar-width);
+  filter: drop-shadow(2px 1px 8px var(--bg-color));
 }
 
 .actions {
-    margin-top: .2rem;
-    min-width: 7rem;
+  margin-top: .2rem;
+  min-width: 7rem;
 }

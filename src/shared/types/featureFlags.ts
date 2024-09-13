@@ -3,4 +3,5 @@ export interface FeatureFlags {
     isMainPageTestComponentsEnabled?: boolean;
     isAboutPageTestComponentsEnabled?: boolean;
     isNavbarArticleCreateLinkEnabled?: boolean;
+    isAppRedesigned?: boolean;
 }

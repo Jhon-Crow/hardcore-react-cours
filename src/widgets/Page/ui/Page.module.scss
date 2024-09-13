@@ -1,11 +1,19 @@
 .Page {
-    flex-grow: 1;
-    padding: 1.8125rem 1.8125rem 1.8125rem 2.8125rem;
-    width: calc(100vw - var(--sidebar-width));
-    max-height: unset;
+  flex-grow: 1;
+  padding: 1.8125rem 1.8125rem 1.8125rem 2.8125rem;
+  width: calc(100vw - var(--sidebar-width));
+  max-height: unset;
+}
+
+.PageRedesigned {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 1.8125rem 1.8125rem 1.8125rem 2.8125rem;
+  width: calc(100vw - var(--sidebar-width));
+  max-height: unset;
 }
 
 .trigger {
-    height: 1.25rem;
-    margin: .625rem;
+  height: 1.25rem;
+  margin: .625rem;
 }

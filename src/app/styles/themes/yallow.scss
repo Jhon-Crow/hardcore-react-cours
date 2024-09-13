@@ -1,19 +1,30 @@
 .app_yallow_theme {
-    --bg-color: #ffb803;
-    --inverted-bg-color: #fbf9f4;
-    --primary-color: #fbf9f4;
-    --secondary-color: #db1d00;
-    --inverted-primary-color: #db1d00;
-    --inverted-secondary-color: #db1d00;
+  --bg-color: #ffb803;
+  --inverted-bg-color: #fbf9f4;
+  --primary-color: #fbf9f4;
+  --secondary-color: #db1d00;
+  --inverted-primary-color: #db1d00;
+  --inverted-secondary-color: #db1d00;
 
-    // skeleton
-    --skeleton-color: rgb(255 255 255 / 25%);
-    --skeleton-shadow: rgb(251 249 244 / 25%);
-    --code-bg: #db1d00;
+  // redesigned
+  --dark-bg-redesigned: #FFF3D6;
+  --bg-redesigned: #F0C048;
+  --light-bg-redesigned: #F2D791;
+  --text-redesigned: #1B1311;
+  --hint-redesigned: #B8B2A2;
+  --cancel-redesigned: #FF5E5E;
+  --save-redesigned: #52FA81;
+  --icon-redesigned: #4875F0;
+  --accent-redesigned: #1D59FF;
 
-    // card
-    --card-bg: #f8c748;
+  // skeleton
+  --skeleton-color: rgb(255 255 255 / 25%);
+  --skeleton-shadow: rgb(251 249 244 / 25%);
+  --code-bg: #db1d00;
 
-    // listbox
-    --listbox-bg: #f7c33d;
+  // card
+  --card-bg: #f8c748;
+
+  // listbox
+  --listbox-bg: #f7c33d;
 }

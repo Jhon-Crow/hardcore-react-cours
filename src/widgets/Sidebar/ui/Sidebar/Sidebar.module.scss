@@ -1,78 +1,89 @@
 .Sidebar {
-    z-index: 0;
-    width: var(--sidebar-width);
-    background: var(--inverted-bg-color);
-    position: sticky;
-    clip-path: inset(0);
-    will-change: width;
-    margin-top: calc(var(--navbar-height) * -1);
-    transition: width 250ms ease-out;
-    height: 100%;
-    top: 0;
+  z-index: 0;
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  position: sticky;
+  clip-path: inset(0);
+  will-change: width;
+  margin-top: calc(var(--navbar-height) * -1);
+  transition: width 250ms ease-out;
+  height: 100%;
+  top: 0;
 }
 
 .sidebarWrapper {
-    width: var(--sidebar-width);
-    min-height: 100vh;
-    max-height: 100vh;
-    position: relative;
-    top: 0;
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  top: 0;
 }
 
 .switchers {
-    transition: all .4s;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    flex-wrap: wrap;
+  transition: all .4s;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .collapsedBtn {
-    opacity: .9;
-    border: none;
-    top: calc(var(--navbar-height) + .2rem);
-    padding-left: 2.1rem;
-    position: absolute;
-    right: .09rem;
-    font: var(--font-line-m);
-    border-radius: 25%;
+  opacity: .9;
+  border: none;
+  top: calc(var(--navbar-height) + .2rem);
+  padding-left: 2.1rem;
+  position: absolute;
+  right: .09rem;
+  font: var(--font-line-m);
+  border-radius: 25%;
 }
 
 .collapsedBtn:hover {
-    border-radius: .15rem;
+  border-radius: .15rem;
 }
 
 .linkItems {
-    margin-bottom: 2rem;
-    padding-top: 9rem;
-    flex-direction: column;
-    align-items: center;
+  margin-bottom: 2rem;
+  padding-top: 9rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .collapsed {
-    width: var(--sidebar-width-collapsed);
+  width: var(--sidebar-width-collapsed);
 
-    .collapsedBtn {
-        padding-left: 1.9rem;
-        position: absolute;
-        right: 13.79rem;
-        font: var(--font-line-m);
-        border-radius: 25%;
-    }
+  .collapsedBtn {
+    padding-left: 1.9rem;
+    position: absolute;
+    right: 13.79rem;
+    font: var(--font-line-m);
+    border-radius: 25%;
+  }
 
-    .collapsedBtn:hover {
-        border-radius: .15rem;
-    }
+  .collapsedBtn:hover {
+    border-radius: .15rem;
+  }
 
-    .linkItems {
-        align-items: start;
-        margin-left: 2rem;
-    }
+  .linkItems {
+    align-items: start;
+    margin-left: 2rem;
+  }
 
-    .switchers {
-        margin-left: .9rem;
-        width: 20%;
-        gap: 0;
-    }
+  .switchers {
+    margin-left: .9rem;
+    width: 20%;
+    gap: 0;
+  }
+}
+
+.SidebarRedesigened {
+  background: var(--light-bg-redesigned);
+  width: 13.75rem;
+  height: 100%;
+  border-radius: 2rem;
+}
+
+.appLogo {
+  padding-top: 2.5rem;
 }

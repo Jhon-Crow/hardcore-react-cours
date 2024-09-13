@@ -2204,7 +2204,8 @@
         "isArticleRatingEnabled": true,
         "isMainPageTestComponentsEnabled": true,
         "isAboutPageTestComponentsEnabled": true,
-        "isNavbarArticleCreateLinkEnabled": true
+        "isNavbarArticleCreateLinkEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_dark_theme",

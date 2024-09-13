@@ -32,36 +32,61 @@ export const Navbar = ({ className }: NavbarProps) => {
         setIsOpen(true);
     }, []);
 
+    // <ToggleFeatures
+    //     feature="isNavbarArticleCreateLinkEnabled"
+    //     on={
+    //         <AppLink
+    //             to={getRouteCreate()}
+    //             theme={AppLinkTheme.SECONDARY}
+    //         >
+    //             {t('Создать статью')}
+    //         </AppLink>
+    //     }
+    //     off={<></>}
+    // />
+
     if (authData) {
         return (
-            <header className={classNames(cls.Navbar, {}, [className])}>
-                <Text
-                    align={TextAlign.CENTER}
-                    theme={TextTheme.INVERTED}
-                    size={TextSize.M}
-                    className={cls.appTitle}
-                    title={t('Avangard214 App')}
-                />
-                <ToggleFeatures
-                    feature="isNavbarArticleCreateLinkEnabled"
-                    on={
-                        <AppLink
-                            to={getRouteCreate()}
-                            theme={AppLinkTheme.SECONDARY}
-                        >
-                            {t('Создать статью')}
-                        </AppLink>
-                    }
-                    off={<></>}
-                />
-                {/* <AppLink to={getRouteCreate()} theme={AppLinkTheme.SECONDARY}> */}
-                {/*    {t('Создать статью')} */}
-                {/* </AppLink> */}
-                <HStack className={cls.actions} gap=".4rem" max={false}>
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-            </header>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <header
+                        className={classNames(cls.NavbarRedesigned, {}, [
+                            className,
+                        ])}
+                    >
+                        <HStack gap=".4rem" className={cls.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                }
+                off={
+                    <header className={classNames(cls.Navbar, {}, [className])}>
+                        <Text
+                            className={cls.appName}
+                            title={t('Avangard214 App')}
+                            theme={TextTheme.INVERTED}
+                        />
+                        <ToggleFeatures
+                            feature="isNavbarArticleCreateLinkEnabled"
+                            on={
+                                <AppLink
+                                    to={getRouteCreate()}
+                                    theme={AppLinkTheme.SECONDARY}
+                                >
+                                    {t('Создать статью')}
+                                </AppLink>
+                            }
+                            off={<></>}
+                        />
+                        <HStack gap=".4rem" className={cls.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                }
+            />
         );
     }
 

@@ -1,19 +1,30 @@
 .app_dark_theme {
-    --bg-color: #07238d;
-    --inverted-bg-color: #b8c2ec;
-    --primary-color: #64e820;
-    --secondary-color: #1b5e2d;
-    --inverted-primary-color: #235709;
-    --inverted-secondary-color: #71f193;
+  --bg-color: #07238d;
+  --inverted-bg-color: #b8c2ec;
+  --primary-color: #64e820;
+  --secondary-color: #1b5e2d;
+  --inverted-primary-color: #235709;
+  --inverted-secondary-color: #71f193;
 
-    // skeleton
-    --skeleton-color: blue;
-    --skeleton-shadow: rgb(0 0 255 / 25%);
-    --code-bg: #1b5e2d;
+  // redesigned
+  --dark-bg-redesigned: #090F11;
+  --bg-redesigned: #0C1214;
+  --light-bg-redesigned: #151C1F;
+  --text-redesigned: #DBDBDB;
+  --hint-redesigned: #555555;
+  --cancel-redesigned: #D95757;
+  --save-redesigned: #6CD98B;
+  --icon-redesigned: #74A2B2;
+  --accent-redesigned: #5ED3F3;
 
-    // card
-    --card-bg: #0c2b9f;
+  // skeleton
+  --skeleton-color: blue;
+  --skeleton-shadow: rgb(0 0 255 / 25%);
+  --code-bg: #1b5e2d;
 
-    // listbox
-    --listbox-bg: #0c2b9f;
+  // card
+  --card-bg: #0c2b9f;
+
+  // listbox
+  --listbox-bg: #0c2b9f;
 }
