@@ -56,38 +56,22 @@ export const Page = memo((props: PageProps) => {
         );
     }, 500);
 
-    if (authData) {
-        return (
-            <main
-                data-testid={props['data-testid'] ?? 'Page'}
-                id={PAGE_ID}
-                onScroll={onScroll}
-                ref={wrapperRef}
-                className={classNames(
-                    toggleFeatures({
-                        name: 'isAppRedesigned',
-                        on: () => cls.PageRedesigned,
-                        off: () => cls.Page,
-                    }),
-                    {},
-                    [className],
-                )}
-            >
-                {children}
-                {onScrollEnd ? (
-                    <div className={cls.trigger} ref={triggerRef} />
-                ) : null}
-            </main>
-        );
-    }
-
+    // if (authData) {
     return (
         <main
             data-testid={props['data-testid'] ?? 'Page'}
             id={PAGE_ID}
             onScroll={onScroll}
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className],
+            )}
         >
             {children}
             {onScrollEnd ? (
@@ -95,4 +79,20 @@ export const Page = memo((props: PageProps) => {
             ) : null}
         </main>
     );
+    // }
+
+    // return (
+    //     <main
+    //         data-testid={props['data-testid'] ?? 'Page'}
+    //         id={PAGE_ID}
+    //         onScroll={onScroll}
+    //         ref={wrapperRef}
+    //         className={classNames(cls.Page, {}, [className])}
+    //     >
+    //         {children}
+    //         {onScrollEnd ? (
+    //             <div className={cls.trigger} ref={triggerRef} />
+    //         ) : null}
+    //     </main>
+    // );
 });

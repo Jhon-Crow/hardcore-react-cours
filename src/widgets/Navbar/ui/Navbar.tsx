@@ -2,8 +2,6 @@ import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { LoginModal } from '@/features/AuthByUsername';
 import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
@@ -13,6 +11,8 @@ import { getUserAuthData } from '../../../entities/User/index';
 import cls from './Navbar.module.scss';
 import { getRouteCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { LoginModal } from '@/features/AuthByUsername';
 
 interface NavbarProps {
     className?: string;
@@ -35,15 +35,12 @@ export const Navbar = ({ className }: NavbarProps) => {
     // <ToggleFeatures
     //     feature="isNavbarArticleCreateLinkEnabled"
     //     on={
-    //         <AppLink
-    //             to={getRouteCreate()}
-    //             theme={AppLinkTheme.SECONDARY}
-    //         >
+    //         <AppLink to={getRouteCreate()} theme={AppLinkTheme.SECONDARY}>
     //             {t('Создать статью')}
     //         </AppLink>
     //     }
     //     off={<></>}
-    // />
+    // />;
 
     if (authData) {
         return (
@@ -80,7 +77,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                             }
                             off={<></>}
                         />
-                        <HStack gap=".4rem" className={cls.actions}>
+                        <HStack max={false} gap=".4rem" className={cls.actions}>
                             <NotificationButton />
                             <AvatarDropdown />
                         </HStack>
